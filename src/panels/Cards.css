@@ -1,0 +1,13 @@
+
+.Barcode{
+  display: block;
+  width: 40%;
+  max-width: 240px;
+  margin: 20px auto;
+}
+
+.FixedBottomButton {
+  border-radius: 25px !important;
+  width: 48px;
+  height: 48px;
+}

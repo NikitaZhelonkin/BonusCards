@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import connect from '@vkontakte/vk-connect';
 import View from '@vkontakte/vkui/dist/components/View/View';
-import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
+
 import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
-import Persik from './panels/Persik';
+import Card from './panels/Card';
+import AddCard from './panels/AddCard';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
-	const [fetchedUser, setUser] = useState(null);
-	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [args, setArgs] = useState(null);
+
 
 	useEffect(() => {
+		console.log('useEffect');
 		connect.subscribe(({ detail: { type, data }}) => {
 			if (type === 'VKWebAppUpdateConfig') {
 				const schemeAttribute = document.createAttribute('scheme');
@@ -20,22 +22,20 @@ const App = () => {
 				document.body.attributes.setNamedItem(schemeAttribute);
 			}
 		});
-		async function fetchData() {
-			const user = await connect.sendPromise('VKWebAppGetUserInfo');
-			setUser(user);
-			setPopout(null);
-		}
-		fetchData();
+		
 	}, []);
 
-	const go = e => {
-		setActivePanel(e.currentTarget.dataset.to);
+	const go = (name, args) => {
+		console.log('По ссылке кликнули:'+name +' '+ args);
+		setArgs(args);
+		setActivePanel(name);
 	};
 
 	return (
-		<View activePanel={activePanel} popout={popout}>
-			<Home id='home' fetchedUser={fetchedUser} go={go} />
-			<Persik id='persik' go={go} />
+		<View activePanel={activePanel}>
+			<Home id='home' go={go} />
+			<Card id='card' go={go} args={args} />
+			<AddCard id='add' go={go} args={args} />
 		</View>
 	);
 }

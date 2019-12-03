@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { platform, IOS, Group } from '@vkontakte/vkui';
-import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-import HeaderButton from '@vkontakte/vkui/dist/components/HeaderButton/HeaderButton';
+import { platform, IOS, Group, Panel, FixedLayout, Div, Button, ANDROID, PanelHeader, HeaderButton } from '@vkontakte/vkui';
+
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
+import Icon24Delete from '@vkontakte/icons/dist/24/delete'
 
 import './Cards.css';
 import Barcode from 'react-barcode'
@@ -14,8 +13,8 @@ import useStoreon from 'storeon/react'
 const osName = platform();
 
 const Card = props => {
-	const { cards } = useStoreon('cards')
-	const task = cards.filter((card) => card.id === Number(props.args))[0]
+	const { dispatch, cards } = useStoreon('cards')
+	const card = cards.filter((card) => card.id === Number(props.args))[0]
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -25,7 +24,7 @@ const Card = props => {
 			>
 				{
 					typeof props.args !== 'undefined' &&
-					task.name
+					card.name
 				}
 
 
@@ -36,11 +35,41 @@ const Card = props => {
 				typeof props.args !== 'undefined' &&
 				<Group>
 					<div className="Barcode" >
-						<Barcode value={task.number} displayValue='true' fontSize={25} />
+						<Barcode value={card.number.toString()} displayValue={true} fontSize={25} />
 					</div>
 
 				</Group>
 			}
+
+			<FixedLayout vertical='bottom'>
+				{
+					platform() === ANDROID ?
+						<Div style={{ float: 'right' }}>
+							<Button
+								className='FixedBottomButton'
+								onClick={() => {
+									props.go('home')
+									dispatch('cards/delete', ({ cards }, card.id))
+								}}
+							>
+								<Icon24Delete />
+							</Button>
+						</Div>
+						:
+						<Div>
+							<Button
+								size="xl"
+								onClick={() => {
+									props.go('home')
+									dispatch('cards/delete', ({ cards }, card.id))
+								}}
+							>
+								Удалить карту
+									</Button>
+						</Div>
+				}
+
+			</FixedLayout>
 		</Panel>
 	);
 }

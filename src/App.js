@@ -7,6 +7,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
 import Card from './panels/Card';
 import AddCard from './panels/AddCard';
+import Scan from './panels/Scan';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -36,6 +37,7 @@ const App = () => {
 			<Home id='home' go={go} />
 			<Card id='card' go={go} args={args} />
 			<AddCard id='add' go={go} args={args} />
+			<Scan id='scan' go={go} />
 		</View>
 	);
 }

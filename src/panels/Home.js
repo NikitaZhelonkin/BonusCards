@@ -52,7 +52,7 @@ class Home extends React.Component {
 
 		return (
 			<Panel id={id}>
-				<PanelHeader >Bonus Cards</PanelHeader>
+				<PanelHeader noShadow>Bonus Cards</PanelHeader>
 
 				<Search value={this.state.search} onChange={this.onChange} theme="default" />
 

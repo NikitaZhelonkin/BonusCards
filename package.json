@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://nikitazhelonkin.github.io/BonusCards/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "cross-env PORT=10888 react-scripts start",
     "build": "react-scripts build"
   },
@@ -22,6 +25,7 @@
     "babel-eslint": "^10.0.3",
     "chalk": "^2.4.2",
     "core-js": "^3.4.4",
+    "gh-pages": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-barcode": "^1.4.0",

@@ -4,7 +4,7 @@ import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHe
 	'@vkontakte/vkui'
 import Icon24Add from '@vkontakte/icons/dist/24/add'
 import connect from 'storeon/react/connect'
-import vkconnect from '@vkontakte/vk-connect';
+
 
 class Home extends React.Component {
 
@@ -15,20 +15,6 @@ class Home extends React.Component {
 	}
 
 	onChange(search) { this.setState({ search }); }
-
-	scan() {
-		console.log("scan");
-		vkconnect
-			.sendPromise('VKWebAppOpenCodeReader')
-			.then(data => {
-				// Обработка события в случае успеха
-				console.log("data:"+data);
-			})
-			.catch(error => {
-				console.log("error:"+error);
-			});
-
-	}
 
 	get cards() {
 		const cards = this.props.cards;
@@ -82,7 +68,7 @@ class Home extends React.Component {
 							<Div style={{ float: 'right' }}>
 								<Button
 									className='FixedBottomButton'
-									onClick={this.scan}
+									onClick={() => go('add')}
 								>
 									<Icon24Add />
 								</Button>
@@ -91,7 +77,7 @@ class Home extends React.Component {
 							<Div>
 								<Button
 									size="xl"
-									onClick={this.scan}
+									onClick={() => go('add')}
 								>
 									Добавить новую карту
 									</Button>

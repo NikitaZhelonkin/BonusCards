@@ -1,29 +1,5 @@
 export default store => {
-    store.on('@init', () => ({ cards: [ 
-            {	
-                id : 1,
-                name : 'Карусель',
-                number: 123213221312321
-                
-            },
-            {
-                id : 2,
-                name : 'Mвидео',
-                number: 123213221312321,
-                
-            },
-            {
-                id : 3,
-                name : 'Ашан',
-                number: 123213221312321,
-            },
-            {
-                id : 4,
-                name : 'Магнит',
-                number: 123213221312321,
-            }
-        ] 
-    }))
+    store.on('@init', () => ({ cards: [ ] }))
   
     store.on('cards/add', ({ cards }, card) => {
         card.id = cards.length + 1

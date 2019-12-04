@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { platform, IOS, Group, Panel, FixedLayout, Div, Button, ANDROID, PanelHeader, HeaderButton } from '@vkontakte/vkui';
+import { platform, IOS, Group, Panel, FixedLayout, Div, Button, ANDROID, PanelHeader, HeaderButton, Alert } from '@vkontakte/vkui';
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
@@ -15,6 +15,35 @@ const osName = platform();
 const Card = props => {
 	const { dispatch, cards } = useStoreon('cards')
 	const card = cards.filter((card) => card.id === Number(props.args))[0]
+	
+	const closeDialog = () => {
+		props.setPopout(null)
+	}
+
+	const showDeleteDialog = () => {
+		props.setPopout(<Alert
+			actionsLayout="vertical"
+			onClose={closeDialog}
+			actions={[{
+				title: 'Удалить',
+				autoclose: true,
+				style: 'destructive',
+				action: () => {
+					props.go('home')
+					dispatch('cards/delete', ({ cards }, card.id))
+				},
+			}, {
+				title: 'Отмена',
+				autoclose: true,
+				style: 'cancel',
+			}]}
+		>
+			<h2>Подтвердите действие</h2>
+		<p>Вы уверены, что хотите<br></br>удалить карту {card.name}?</p>
+		</Alert>)
+	}
+
+
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -59,16 +88,12 @@ const Card = props => {
 						<Div>
 							<Button
 								size="xl"
-								onClick={() => {
-									props.go('home')
-									dispatch('cards/delete', ({ cards }, card.id))
-								}}
+								onClick={showDeleteDialog}
 							>
 								Удалить карту
 									</Button>
 						</Div>
 				}
-
 			</FixedLayout>
 		</Panel>
 	);

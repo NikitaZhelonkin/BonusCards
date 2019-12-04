@@ -5,11 +5,12 @@ import ReactDOM from 'react-dom';
 import connect from '@vkontakte/vk-connect';
 import App from './App';
 import createStore from 'storeon'
+import persistState from '@storeon/localstorage'
 import cards from './cards'
 import StoreContext from 'storeon/react/context'
 import registerServiceWorker from './sw';
 
-const store = createStore([cards])
+const store = createStore([cards, persistState(['cards'])])
 
 
 // Init VK  Mini App

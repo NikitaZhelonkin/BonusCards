@@ -89,7 +89,7 @@ class AddCard extends React.Component {
                     </HeaderButton>}
 
                 >
-                    Add New Card
+                    Добавить карту
 
 
                 </PanelHeader>

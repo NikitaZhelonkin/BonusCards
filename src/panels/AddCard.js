@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, FormStatus, HeaderButton, Cell, Avatar, Tooltip } from '@vkontakte/vkui'
+import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip } from '@vkontakte/vkui'
 
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';

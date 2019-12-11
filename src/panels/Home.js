@@ -22,8 +22,9 @@ class Home extends React.Component {
 	get cards() {
 		const cards = this.props.cards;
 		const search = this.state.search.toLowerCase();
+		const searchTranslit = cyrillicToTranslit().transform(search);
 		const filtered = cards.filter(({ name }) => {
-			return name.toLowerCase().indexOf(search) > -1 || name.toLowerCase().indexOf(cyrillicToTranslit().transform(search)) > -1;;
+			return name.toLowerCase().indexOf(search) > -1 || name.toLowerCase().indexOf(searchTranslit) > -1;;
 		}).map((card) => {
 			const service = this.state.services.filter(({ id }) => {
 				return id === card.serviceId
@@ -38,7 +39,7 @@ class Home extends React.Component {
 		});
 
 		return filtered;
-	}
+	} 
 
 	componentDidMount() {
 		fetch(`./data.json`)

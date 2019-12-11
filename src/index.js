@@ -11,7 +11,7 @@ import persistState from '@storeon/localstorage'
 import cards from './cards'
 import prefs from './prefs'
 import StoreContext from 'storeon/react/context'
-// import registerServiceWorker from './sw';
+import registerServiceWorker from './sw';
 
 // Init VK  Mini App
 connect.send('VKWebAppInit');
@@ -23,7 +23,7 @@ const router = createRouter()
 // расскомментируйте строку с registerServiceWorker();
 // Но не забывайте, что на данный момент у технологии есть достаточно подводных камней
 // Подробнее про сервис воркеры можно почитать тут — https://vk.cc/8MHpmT
-// registerServiceWorker();
+registerServiceWorker();
 
 router.start(() => {
     ReactDOM.render(

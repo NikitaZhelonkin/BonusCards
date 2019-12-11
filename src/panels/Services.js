@@ -13,6 +13,7 @@ import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
 import './Cards.css';
 
 
+
 const osname = platform();
 
 class Services extends React.Component {
@@ -31,17 +32,16 @@ class Services extends React.Component {
     onChange(search) { this.setState({ search }); }
 
     matchSearch(keyword, search) {
-
-        return keyword.toLowerCase().indexOf(search) > -1 || keyword.toLowerCase().indexOf(cyrillicToTranslit().transform(search)) > -1;
-
+        return keyword.toLowerCase().indexOf(search) > -1;
     }
 
     get services() {
         const search = this.state.search.toLowerCase();
+        const searchTranslit = cyrillicToTranslit().transform(search);
         const filtered = this.state.services.filter((service) => {
            
-            return this.matchSearch(service.name, search) || (service.keywords != null && service.keywords.filter((keyword) => {
-                return  this.matchSearch(keyword, search) }).length > 0);
+            return this.matchSearch(service.name, search) || this.matchSearch(service.name, searchTranslit) || (service.keywords != null && service.keywords.filter((keyword) => {
+                return  this.matchSearch(keyword, search) || this.matchSearch(keyword, searchTranslit) }).length > 0);
         });
 
         if (search.length > 0) {

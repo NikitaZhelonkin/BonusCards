@@ -1,19 +1,20 @@
 import React from 'react';
 
 
-import { Panel, PanelHeader, FormLayout, FormLayoutGroup, Input, FixedLayout, Button, Div, platform, ANDROID, IOS, FormStatus, HeaderButton } from '@vkontakte/vkui'
+import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, FormStatus, HeaderButton, Cell, Avatar, Tooltip } from '@vkontakte/vkui'
 
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
-import Icon24Done from '@vkontakte/icons/dist/24/done'
+import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
 
 import connect from 'storeon/react/connect'
 import vkconnect from '@vkontakte/vk-connect';
 
-import { ReactComponent as YourSvg } from '../img/barcode.svg';
+import { ReactComponent as IconBarcode } from '../img/barcode.svg';
 
 import './Cards.css';
+
 
 class AddCard extends React.Component {
 
@@ -21,11 +22,30 @@ class AddCard extends React.Component {
         super(props);
 
         this.state = {
-            name: '',
-            number: '',
-            error: false
+            tooltip: props.prefs["scan_tooltip_shown"]!=="true",
+            serviceId: props.route.params.serviceid,
+            name: decodeURIComponent(props.route.params.name),
+            number: props.route.params.number != null ? parseInt(props.route.params.number) : '',
+            error: false,
+            service: null,
         };
 
+    }
+
+    componentDidMount() {
+        fetch(`./data.json`)
+            .then(res => res.json())
+            .then(json => this.setState({
+                service: json.data.filter(({ id }) => {
+                    return id === this.state.serviceId
+                })[0]
+            }));
+    }
+
+    onTooltipClose = () => {
+        const prefs = this.props.prefs;
+        this.props.dispatch('prefs/set', ({ prefs }, {key:"scan_tooltip_shown",value: "true"}))
+        this.setState({ tooltip: false })
     }
 
     onDone = (data) => {
@@ -45,23 +65,35 @@ class AddCard extends React.Component {
     }
 
 
+    goBack = () => {
+        if (window.history.length === 1) {
+            this.props.router.navigate("home", {}, { replace: true })
+        } else {
+            window.history.back()
+        }
+    }
+
+    goHome = () => {
+        if (window.history.length === 1) {
+            this.props.router.navigate("home", {}, { replace: true })
+        } else {
+            window.history.go(1 - window.history.length)
+        }
+    }
 
     onClickAddTask = () => {
-        let {
-            go
-        } = this.props
 
         let {
             name,
             number
         } = this.state
 
-
         if (name !== '' && number !== '') {
-            this.setState({ error: false })
+            this.setState({ error: false })            // const data = loadData().data;
             const cards = this.props.cards;
-            this.props.dispatch('cards/add', ({ cards }, { name, number }))
-            go("home")
+            const serviceId = this.state.serviceId;
+            this.props.dispatch('cards/add', ({ cards }, { name, number, serviceId }))
+            this.goHome();
         } else {
             this.setState({ error: true })
         }
@@ -84,91 +116,75 @@ class AddCard extends React.Component {
         return (
             <Panel id={this.props.id}>
                 <PanelHeader
-                    left={<HeaderButton onClick={() => this.props.go('home')} >
+                    left={<HeaderButton onClick={() => this.goBack()} >
                         {osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
                     </HeaderButton>}
 
                 >
-                    Добавить карту
-
+                    Новая карта
 
                 </PanelHeader>
 
 
+                <Cell
+                    style={{ marginTop: 10 }}
+                    before={
+                        this.state.service != null && this.state.service.logo != null ?
+                            <Avatar type="image" src={process.env.PUBLIC_URL + this.state.service.logo} style={{ background: this.state.service.bgColor }} />
+                            :
+                            <Avatar type="image" ><Icon28Money /></Avatar>
+                    }
+                >
+                    {this.state.name}
+                </Cell>
+
 
                 <FormLayout>
-                    {
-                        this.state.error === true &&
-                        <FormStatus title="Некорректные поля" state="error">
-                            Заполните все поля
-                            </FormStatus>
-                    }
+                   
 
-                    <FormLayoutGroup top="Название магазина">
-                        <Input
-                            onChange={this.onChangeNameTask}
-                            type='text'
-                            value={this.state.name}
-                            placeholder='Введите название магазина'
-                        />
-                    </FormLayoutGroup>
+                    <div >
+                        <Tooltip text="Карту можно отсканировать"
+                            isShown={this.state.tooltip}
+                            alignX="right"
+                            cornerOffset={-10}
+                            offsetX={-5}
+                            offsetY={5}
+                            onClose={this.onTooltipClose}>
+                            <Input
+                                autoFocus
+                                status={this.state.error === true ? 'error' : 'valid'}
+                                onChange={this.onChangeTextTask}
+                                value={this.state.number}
+                                type='number'
+                                placeholder='Введите номер карты' />
 
-                    <FormLayoutGroup top="Номер карты">
-                        <Input
-                            onChange={this.onChangeTextTask}
-                            value={this.state.number}
-                            placeholder='Введите номер карты' />
+                        </Tooltip>
 
-                        <Button
-                            level="secondary"
-                            before={<YourSvg className="Scan" width={30} fill="var(--control_foreground)" />}
-                            size='l'
-                            onClick={this.scan}
-                        >
-                            Сканировать
-                </Button>
-
-                    </FormLayoutGroup>
+                        <IconBarcode onClick={this.scan} className="Scan" width={30} height={30} fill="var(--control_foreground)" />
 
 
-
-
+                    </div>
 
                 </FormLayout>
 
 
 
+                <Div>
+                    <Button
+                        size='xl'
+                        onClick={(e) => this.onClickAddTask(e)}>
+                        Создать
+                    </Button>
+                </Div>
 
-                <FixedLayout vertical='bottom'>
-                    {
-                        osname === ANDROID ?
-                            <Div style={{ float: 'right' }}>
-                                <Button
-                                    className='FixedBottomButton'
-                                    onClick={(e) => this.onClickAddTask(e)}
-                                >
-                                    <Icon24Done />
-                                </Button>
-                            </Div>
-                            :
-                            <Div>
-                                <Button
-                                    size='xl'
-                                    onClick={(e) => this.onClickAddTask(e)}
-                                >
-                                    Добавить
-                                </Button>
-                            </Div>
-                    }
-                </FixedLayout>
+               
+
 
             </Panel>
         );
     }
 
 
-
-
 }
 
-export default connect('cards', AddCard)
+export default connect('cards', "prefs", AddCard)

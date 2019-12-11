@@ -1,21 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { platform, IOS, Group, Panel, FixedLayout, Div, Button, ANDROID, PanelHeader, HeaderButton, Alert } from '@vkontakte/vkui';
+import React, { useState } from 'react';
+
+import { platform, IOS, Group, Panel, Div, Button, PanelHeader, HeaderButton, Alert, Footer, Snackbar } from '@vkontakte/vkui';
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon24Delete from '@vkontakte/icons/dist/24/delete'
+import Icon24Share from '@vkontakte/icons/dist/24/share'
 
 import './Cards.css';
 import Barcode from 'react-barcode'
 import useStoreon from 'storeon/react'
 
+import vkconnect from '@vkontakte/vk-connect';
+
 const osName = platform();
 
 const Card = props => {
 	const { dispatch, cards } = useStoreon('cards')
-	const card = cards.filter((card) => card.id === Number(props.args))[0]
-	
+
+	const [snackbar, setSnackbar] = useState(null);
+
+
+	const card = cards.filter((card) => card.id === Number(props.route.params.id))[0]
+
+
 	const closeDialog = () => {
 		props.setPopout(null)
 	}
@@ -29,7 +37,7 @@ const Card = props => {
 				autoclose: true,
 				style: 'destructive',
 				action: () => {
-					props.go('home')
+					window.history.back()
 					dispatch('cards/delete', ({ cards }, card.id))
 				},
 			}, {
@@ -39,70 +47,69 @@ const Card = props => {
 			}]}
 		>
 			<h2>Подтвердите действие</h2>
-		<p>Вы уверены, что хотите<br></br>удалить карту {card.name}?</p>
+			<p>Вы уверены, что хотите<br></br>удалить карту {card.name}?</p>
 		</Alert>)
 	}
 
+	const share = () => {
+		const link = 'https://vk.com/app7225850#/add?name=' + encodeURIComponent(card.name)+'&serviceid=' + card.serviceId + '&number=' + card.number;
+		console.log(link)
+		vkconnect.send("VKWebAppShare", { "link": link });
+	}
+
+	const copyToClipboard = () => {
+		setSnackbar(true)
+		vkconnect.send("VKWebAppCopyText", { text: card.number });
+	}
 
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
-				left={<HeaderButton onClick={() => props.go('home')} >
+				left={<HeaderButton onClick={() => window.history.back()} >
 					{osName === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
 				</HeaderButton>}
 			>
 				{
-					typeof props.args !== 'undefined' &&
+					typeof card !== 'undefined' &&
 					card.name
 				}
-
 
 			</PanelHeader>
 
 
 			{
-				typeof props.args !== 'undefined' &&
-				<Group>
-					<div className="Barcode" >
-						<Barcode value={card.number.toString()} displayValue={true} fontSize={25} />
-					</div>
+				typeof card !== 'undefined' &&
+				<div>
+					<Group >
+						<div className="Barcode" onClick={copyToClipboard} >
+							<Barcode value={card.number.toString()} displayValue={true} fontSize={25} height={120} />
+						</div>
 
-				</Group>
+					</Group>
+
+
+					<Footer>Предьявите этот код на кассе магазина</Footer>
+
+					<Div style={{ display: 'flex' }}>
+						<Button before={<Icon24Share />} size="l" stretched level="secondary" onClick={share} style={{ marginRight: 8 }}>Поделиться</Button>
+						<Button before={<Icon24Delete />} size="l" stretched level="secondary" onClick={showDeleteDialog}>Удалить</Button>
+					</Div>
+				</div>
+			}
+			{
+				snackbar && <Snackbar
+					layout="vertical"
+					onClose={() => setSnackbar(false)}
+				>
+					Номер скопирован в буфер обмена
+	  			</Snackbar>
 			}
 
-			<FixedLayout vertical='bottom'>
-				{
-					platform() === ANDROID ?
-						<Div style={{ float: 'right' }}>
-							<Button
-								className='FixedBottomButton'
-								onClick={() => {
-									props.go('home')
-									dispatch('cards/delete', ({ cards }, card.id))
-								}}
-							>
-								<Icon24Delete />
-							</Button>
-						</Div>
-						:
-						<Div>
-							<Button
-								size="xl"
-								onClick={showDeleteDialog}
-							>
-								Удалить карту
-									</Button>
-						</Div>
-				}
-			</FixedLayout>
+
 		</Panel>
 	);
 }
 
-Card.propTypes = {
-	id: PropTypes.string.isRequired,
-	go: PropTypes.func.isRequired,
-	args: PropTypes.any
-};
+
 
 export default Card;

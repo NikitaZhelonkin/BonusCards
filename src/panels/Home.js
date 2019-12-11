@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Footer } from
+
+import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Footer, Avatar } from
 	'@vkontakte/vkui'
 import Icon24Add from '@vkontakte/icons/dist/24/add'
+import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
 import connect from 'storeon/react/connect'
+import cyrillicToTranslit from 'cyrillic-to-translit-js'
 import persik from '../img/persik.png';
 import './Cards.css';
 
@@ -11,7 +13,7 @@ class Home extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { search: '' };
+		this.state = { search: '', services: [] };
 		this.onChange = this.onChange.bind(this);
 	}
 
@@ -21,25 +23,42 @@ class Home extends React.Component {
 		const cards = this.props.cards;
 		const search = this.state.search.toLowerCase();
 		const filtered = cards.filter(({ name }) => {
-			return name.toLowerCase().indexOf(search) > -1;
+			return name.toLowerCase().indexOf(search) > -1 || name.toLowerCase().indexOf(cyrillicToTranslit().transform(search)) > -1;;
+		}).map((card) => {
+			const service = this.state.services.filter(({ id }) => {
+				return id === card.serviceId
+			})[0];
+			return ({
+				id: card.id,
+				name: card.name,
+				number: card.number,
+				logo: service != null ? service.logo : null,
+				bgColor: service != null ? service.bgColor : null
+			})
 		});
 
 		return filtered;
 	}
 
-
+	componentDidMount() {
+		fetch(`./data.json`)
+			.then(res => res.json())
+			.then(json => this.setState({ services: json.data }));
+	} 
 
 	render() {
 		let {
 			id,
-			go,
+			router,
 			cards,
 			dispatch
 		} = this.props
 
+
+
 		return (
 			<Panel id={id}>
-				<PanelHeader noShadow>Bonus Cards</PanelHeader>
+				<PanelHeader noShadow>Бонус карты</PanelHeader>
 
 				<Search value={this.state.search} onChange={this.onChange} theme="default" />
 
@@ -59,20 +78,26 @@ class Home extends React.Component {
 
 				<List>
 					{
-						this.cards.map((card) => (
-							<Cell
+						this.cards.map((card) =>
+							(
+								<Cell
+									before={
+										typeof card.logo !== 'undefined' && card.logo != null ?
+											<Avatar type="image" src={process.env.PUBLIC_URL + card.logo} style={{ background: card.bgColor }} />
+											:
+											<Avatar type="image" ><Icon28Money /></Avatar>
+									}
+									multiline
+									expandable
+									removable={false}
+									key={card.id}
+									onRemove={() => dispatch('cards/delete', ({ cards }, card.id))}
+									onClick={() => router.navigate('card', { id: card.id })}
 
-								multiline
-								expandable
-								removable={false}
-								key={card.id}
-								onRemove={() => dispatch('cards/delete', ({ cards }, card.id))}
-								onClick={() => go('card', card.id)}
-
-							>
-								{card.name}
-							</Cell>
-						))
+								>
+									{card.name}
+								</Cell>
+							))
 					}
 				</List>
 
@@ -82,7 +107,7 @@ class Home extends React.Component {
 							<Div style={{ float: 'right' }}>
 								<Button
 									className='FixedBottomButton'
-									onClick={() => go('add')}
+									onClick={() => router.navigate('services')}
 								>
 									<Icon24Add />
 								</Button>
@@ -91,7 +116,7 @@ class Home extends React.Component {
 							<Div>
 								<Button
 									size="xl"
-									onClick={() => go('add')}
+									onClick={() => router.navigate('services')}
 								>
 									Добавить новую карту
 									</Button>
@@ -104,9 +129,5 @@ class Home extends React.Component {
 	}
 }
 
-Home.propTypes = {
-	id: PropTypes.string.isRequired,
-	go: PropTypes.func.isRequired
-};
 
 export default connect('cards', Home)

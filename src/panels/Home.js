@@ -43,7 +43,7 @@ class Home extends React.Component {
 	}
 
 	componentDidMount() {
-		
+
 		fetch(`./data.json`)
 			.then(res => res.json())
 			.then(json => this.setState({ services: json.data.all }));

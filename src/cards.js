@@ -2,69 +2,70 @@
 import firebase from './firebase'
 
 export default store => {
+
     store.on('@init', () => ({ cards: [] }))
 
     store.on('cards/save', ({ cards }, { cardsToSave }) => {
         return { cards: cardsToSave }
     })
 
-    store.on('cards/add', ({ cards }, card) => {
-        card.id = cards.length + 1
-        return { cards: cards.concat([card]) }
-    })
 
-    store.on('cards/delete', ({ cards }, id) => {
-        return { cards: cards.filter((card) => card.id !== id) }
+    store.on('cards/listen', ({ cards }, {uid}) => {
+        const db = firebase.firestore();
+        db.collection('cards').where("uid", "==", uid)
+            .onSnapshot({ includeMetadataChanges: true }, function (snapshot) {
+                console.log("onSnapshot "+snapshot);
+                store.dispatch('cards/api/get', uid)
+            });
     })
 
     store.on('cards/api/get', ({ cards }, uid) => {
         const db = firebase.firestore();
-        
+        db.collection('cards').where("uid", "==", uid).get().then((snapshot)=>{
+                const cardsToSave = snapshot.docs.map((doc)=>{
+                    return {
+                        docId: doc.id,
+                        uid: doc.data().uid,
+                        id: doc.data().id,
+                        name: doc.data().name,
+                        number: doc.data().number,
+                        serviceId: doc.data().service_id,
+                    }
+                })
+                console.log("updated length>"+cardsToSave.length);
+                store.dispatch('cards/save', {cardsToSave})
 
-        db.collection('cards').where("uid", "==", uid).get().then(function(querySnapshot) {
-            
-            const cardsToSave = querySnapshot.docs.map((doc)=>{
-                return{
-                    id : doc.id,
-                    name: doc.data().name,
-                    number :doc.data().number,
-                    serviceId: doc.data().service_id,
-                }
-            })
-        
-            store.dispatch('cards/save', { cardsToSave })
-        });
-
+        })
+      
     })
 
-    store.on('cards/api/add', ({ cards }, card) => {
 
+    store.on('cards/api/add', ({ cards }, card) => {
         const db = firebase.firestore();
-       
-        
+        card.id = makeid(20);
         db.collection('cards').add({
             uid: card.uid,
+            id: card.id,
             name: card.name,
             number: card.number,
             service_id: card.serviceId
-        }).then((cardRef)=>{
-            card.id = cardRef.id
-            console.log(card.id)
-            const cardsToSave = cards.concat([card]);
-            store.dispatch('cards/save', { cardsToSave })
         })
     })
 
-    store.on('cards/api/delete', ({ cards }, id) => {
-        
+
+    store.on('cards/api/delete', ({ cards }, card) => {
         const db = firebase.firestore();
-       
-        db.collection("cards").doc(id).delete().then(function() {
-            console.log("Document successfully deleted!");
-            const cardsToSave = cards.filter((card) => card.id !== id);
-            store.dispatch('cards/save', { cardsToSave })
-        }).catch(function(error) {
-            console.error("Error removing document: ", error);
-        });
+        db.collection("cards").doc(card.docId).delete();
     })
+
+    function makeid(length) {
+        var result = '';
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
 }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import vkconnect from '@vkontakte/vk-connect';
 import connect from 'storeon/react/connect'
-import { View, Root, Panel, Spinner } from '@vkontakte/vkui'
+import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder } from '@vkontakte/vkui'
+import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 import { RouteNode } from 'react-router5'
 import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
@@ -9,14 +10,16 @@ import Card from './panels/Card';
 import AddCard from './panels/AddCard';
 import Services from './panels/Services';
 import firebase from './firebase'
+import packageJson from './package.alias.json';
+
 
 
 const App = (props) => {
 
 	const [popout, setPopout] = useState(null);
 	const [user, setUser] = useState(null);
+	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
-
 
 
 	const toQueryString = (params) => {
@@ -29,22 +32,22 @@ const App = (props) => {
 			const launchParams = toQueryString(props.route.params);
 			console.log("launchParams:" + launchParams)
 			//TODO fail if uid is null
-			if(firebase.auth().currentUser!=null) return firebase.auth().currentUser;
-			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token?uid="+props.route.params.vk_user_id)
+			if (firebase.auth().currentUser != null) return firebase.auth().currentUser;
+			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token?uid=" + props.route.params.vk_user_id)
 			const json = await response.json();
-			const data =  await firebase.auth().signInWithCustomToken(json.token);
+			const data = await firebase.auth().signInWithCustomToken(json.token);
 			return data.user;
-
 		}
 
 		authorise().then((user) => {
 			console.log("auth ok:" + user.uid)
 			setUser(user);
 			setLoading(false);
-			props.dispatch('cards/api/get', user.uid)
+			// props.dispatch('cards/sync', {uid:user.uid})
+			props.dispatch('cards/listen', { uid: user.uid })
 
 		}).catch((error) => {
-			//TODO handle error
+			setError(error);
 			setLoading(false);
 			console.log("auth error:" + error)
 		})
@@ -63,14 +66,26 @@ const App = (props) => {
 	}, []);
 
 	return (
-		<Root activeView={loading ? "splash" : "main"}>
+		<Root activeView={loading ? "splash" : error != null ? "error" : "main"}>
 			<View id="splash" activePanel="splash">
 				<Panel id="splash">
-
 					<div style={{ margin: 'auto', }}>
 						<Spinner size="large" style={{ marginTop: 20 }} />
 
 					</div>
+					<FixedLayout vertical='bottom'>
+						<Footer>{packageJson.version}</Footer>
+					</FixedLayout>
+				</Panel>
+
+			</View>
+
+			<View id="error" activePanel="error">
+				<Panel id="error">
+					<Placeholder
+							icon={<Icon56InfoOutline />}>
+							Произошла ошибка, попробуйте еще раз
+					</Placeholder>
 				</Panel>
 
 			</View>

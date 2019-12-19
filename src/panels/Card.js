@@ -38,7 +38,7 @@ const Card = props => {
 				style: 'destructive',
 				action: () => {
 					window.history.back()
-					dispatch('cards/api/delete', ({ cards }, card.id))
+					dispatch('cards/api/delete', ({ cards }, card))
 				},
 			}, {
 				title: 'Отмена',

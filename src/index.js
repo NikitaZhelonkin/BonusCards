@@ -14,25 +14,29 @@ import StoreContext from 'storeon/react/context'
 import registerServiceWorker from './sw';
 import firebase from './firebase'
 
+
+firebase.firestore().enablePersistence()
+    .then(() => {
+        console.log("penablePersistence true")
+    })
+    .catch(function (err) {
+        console.log("penablePersistence error:" + err)
+
+    });
+
 // Init VK  Mini App
 connect.send('VKWebAppInit');
 
 const store = createStore([cards, prefs, persistState(['prefs']),])
 const router = createRouter()
 
-firebase.firestore().enablePersistence()
-    .then(() => {
-        console.log("success enablingPersistance")
-    })
-    .catch(function (err) {
-        console.log("error enablingPersistance:" + err)
-    });
 
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();
 // Но не забывайте, что на данный момент у технологии есть достаточно подводных камней
 // Подробнее про сервис воркеры можно почитать тут — https://vk.cc/8MHpmT
 registerServiceWorker();
+
 
 router.start(() => {
     ReactDOM.render(

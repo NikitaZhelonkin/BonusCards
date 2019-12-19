@@ -12,12 +12,21 @@ import cards from './cards'
 import prefs from './prefs'
 import StoreContext from 'storeon/react/context'
 import registerServiceWorker from './sw';
+import firebase from './firebase'
 
 // Init VK  Mini App
 connect.send('VKWebAppInit');
 
-const store = createStore([cards, prefs, persistState(['cards', 'prefs']),  ])
+const store = createStore([cards, prefs, persistState(['prefs']),])
 const router = createRouter()
+
+firebase.firestore().enablePersistence()
+    .then(() => {
+        console.log("success enablingPersistance")
+    })
+    .catch(function (err) {
+        console.log("error enablingPersistance:" + err)
+    });
 
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();
@@ -29,7 +38,7 @@ router.start(() => {
     ReactDOM.render(
         <RouterProvider router={router}>
             <StoreContext.Provider value={store}>
-                <App router={router}/>
+                <App router={router} />
             </StoreContext.Provider>
         </RouterProvider>, document.getElementById('root'));
 })

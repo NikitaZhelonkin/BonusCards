@@ -1,5 +1,11 @@
 {
-   "data":[
+   
+   "data":{
+   "popular":[
+      "lenta", "pyaterochka", "ostin", "l_etual_red", "perekrestok","kari"
+     
+   ],
+   "all":[
       {
          "id":"1001tur",
          "name":"1001 Тур",
@@ -3523,4 +3529,5 @@
          "bgColor":"#FFFFFF"
       }
    ]
+}
 }

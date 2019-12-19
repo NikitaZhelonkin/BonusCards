@@ -4,6 +4,7 @@ import React from 'react';
 import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip } from '@vkontakte/vkui'
 
 
+
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
@@ -22,13 +23,15 @@ class AddCard extends React.Component {
         super(props);
 
         this.state = {
-            tooltip: props.prefs["scan_tooltip_shown"]!=="true",
+            tooltip: props.prefs["scan_tooltip_shown"] !== "true",
             serviceId: props.route.params.serviceid,
             name: decodeURIComponent(props.route.params.name),
             number: props.route.params.number != null ? parseInt(props.route.params.number) : '',
             error: false,
-            service: null,
+            service: null
         };
+
+
 
     }
 
@@ -36,7 +39,7 @@ class AddCard extends React.Component {
         fetch(`./data.json`)
             .then(res => res.json())
             .then(json => this.setState({
-                service: json.data.filter(({ id }) => {
+                service: json.data.all.filter(({ id }) => {
                     return id === this.state.serviceId
                 })[0]
             }));
@@ -44,7 +47,7 @@ class AddCard extends React.Component {
 
     onTooltipClose = () => {
         const prefs = this.props.prefs;
-        this.props.dispatch('prefs/set', ({ prefs }, {key:"scan_tooltip_shown",value: "true"}))
+        this.props.dispatch('prefs/set', ({ prefs }, { key: "scan_tooltip_shown", value: "true" }))
         this.setState({ tooltip: false })
     }
 
@@ -74,11 +77,11 @@ class AddCard extends React.Component {
     }
 
     goHome = () => {
-        if (window.history.length === 1) {
+        // if (window.history.length === 1) {
             this.props.router.navigate("home", {}, { replace: true })
-        } else {
-            window.history.go(1 - window.history.length)
-        }
+        // } else {
+        //     window.history.go(1 - window.history.length)
+        // }
     }
 
     onClickAddTask = () => {
@@ -92,7 +95,8 @@ class AddCard extends React.Component {
             this.setState({ error: false })            // const data = loadData().data;
             const cards = this.props.cards;
             const serviceId = this.state.serviceId;
-            this.props.dispatch('cards/add', ({ cards }, { name, number, serviceId }))
+            const uid = this.props.user.uid;
+            this.props.dispatch('cards/api/add', ({ cards }, { uid, name, number, serviceId }))
             this.goHome();
         } else {
             this.setState({ error: true })
@@ -140,7 +144,7 @@ class AddCard extends React.Component {
 
 
                 <FormLayout>
-                   
+
 
                     <div >
                         <Tooltip text="Карту можно отсканировать"
@@ -176,9 +180,6 @@ class AddCard extends React.Component {
                         Создать
                     </Button>
                 </Div>
-
-               
-
 
             </Panel>
         );

@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Footer, Avatar } from
+import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Avatar, Placeholder } from
 	'@vkontakte/vkui'
 import Icon24Add from '@vkontakte/icons/dist/24/add'
 import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
 import connect from 'storeon/react/connect'
 import cyrillicToTranslit from 'cyrillic-to-translit-js'
-import persik from '../img/persik.png';
+
+import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 import './Cards.css';
 
 class Home extends React.Component {
@@ -39,13 +40,15 @@ class Home extends React.Component {
 		});
 
 		return filtered;
-	} 
+	}
 
 	componentDidMount() {
+		
 		fetch(`./data.json`)
 			.then(res => res.json())
-			.then(json => this.setState({ services: json.data }));
-	} 
+			.then(json => this.setState({ services: json.data.all }));
+	}
+
 
 	render() {
 		let {
@@ -54,7 +57,6 @@ class Home extends React.Component {
 			cards,
 			dispatch
 		} = this.props
-
 
 
 		return (
@@ -66,15 +68,15 @@ class Home extends React.Component {
 				{
 					this.cards.length === 0 && this.state.search.length === 0 ?
 
-						<Footer>
-							<img className="Persik" src={persik} alt="Persik The Cat" />
+						<Placeholder
+							icon={<Icon56InfoOutline />}>
 							Вы пока не добавили ни одной карточки
-						</Footer>
+						</Placeholder>
 						: this.cards.length === 0 &&
-						<Footer>
-							<img className="Persik" src={persik} alt="Persik The Cat" />
+						<Placeholder
+							icon={<Icon56InfoOutline />}>
 							По вашему запросу ничего не найдено
-						</Footer>
+						</Placeholder>
 				}
 
 				<List>
@@ -92,8 +94,9 @@ class Home extends React.Component {
 									expandable
 									removable={false}
 									key={card.id}
-									onRemove={() => dispatch('cards/delete', ({ cards }, card.id))}
+									onRemove={() => dispatch('cards/api/delete', ({ cards }, card.id))}
 									onClick={() => router.navigate('card', { id: card.id })}
+									description={card.id}
 
 								>
 									{card.name}
@@ -125,6 +128,8 @@ class Home extends React.Component {
 					}
 
 				</FixedLayout>
+
+
 			</Panel>
 		);
 	}

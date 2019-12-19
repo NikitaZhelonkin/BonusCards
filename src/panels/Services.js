@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Panel, HeaderButton, IOS, platform, List, Cell, PanelHeader, Search, Avatar, Spinner } from
+import { Panel, HeaderButton, IOS, platform, Cell, PanelHeader, Search, Avatar, Spinner, Header } from
     '@vkontakte/vkui'
 
 import { List as Virtualized, AutoSizer, CellMeasurer, CellMeasurerCache } from "react-virtualized";
@@ -20,7 +20,7 @@ class Services extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { search: '', services: [] };
+        this.state = { search: '', services: [], popular: [] };
         this.onChange = this.onChange.bind(this);
 
         this.cache = new CellMeasurerCache({
@@ -39,9 +39,10 @@ class Services extends React.Component {
         const search = this.state.search.toLowerCase();
         const searchTranslit = cyrillicToTranslit().transform(search);
         const filtered = this.state.services.filter((service) => {
-           
+
             return this.matchSearch(service.name, search) || this.matchSearch(service.name, searchTranslit) || (service.keywords != null && service.keywords.filter((keyword) => {
-                return  this.matchSearch(keyword, search) || this.matchSearch(keyword, searchTranslit) }).length > 0);
+                return this.matchSearch(keyword, search) || this.matchSearch(keyword, searchTranslit)
+            }).length > 0);
         });
 
         if (search.length > 0) {
@@ -59,7 +60,21 @@ class Services extends React.Component {
     componentDidMount() {
         fetch(`./data.json`)
             .then(res => res.json())
-            .then(json => this.setState({ services: json.data }));
+            .then(json => this.setState({
+                services: json.data.all, popular: json.data.all.filter(({ id }) => {
+                    return json.data.popular.includes(id)
+                })
+            }));
+    }
+
+    renderHeader() {
+        return (
+            <div>
+                <Header level="secondary">Популярное</Header>
+                {this.state.popular.map((service) => this.renderCard(service))}
+                <Header level="secondary">Все</Header>
+            </div>
+        )
     }
 
 
@@ -73,25 +88,32 @@ class Services extends React.Component {
                 columnIndex={0}
                 rowIndex={index}>
                 <div key={key} style={style} >
-                    <Cell
-                        before={
-                            typeof card.logo !== 'undefined' && card.logo != null ?
-                                <Avatar type="image" src={process.env.PUBLIC_URL + card.logo} style={{ background: card.bgColor }} />
-                                :
-                                <Avatar type="image" ><Icon28Money /></Avatar>
-                        }
-                        multiline
-                        expandable
-                        removable={false}
-                        key={card.id}
-                        onClick={() => {
-                            this.props.router.navigate('add', { name: card.name, serviceid: card.id })
-                        }}
-                    >
-                        {card.name}
-                    </Cell>
+                    {/* {index === 0 && this.state.search.length == 0 && this.renderHeader()} */}
+                    {this.renderCard(card)}
                 </div>
             </CellMeasurer>
+        )
+    }
+
+    renderCard(card) {
+        return (
+            <Cell
+                before={
+                    typeof card.logo !== 'undefined' && card.logo != null ?
+                        <Avatar type="image" src={process.env.PUBLIC_URL + card.logo} style={{ background: card.bgColor }} />
+                        :
+                        <Avatar type="image" ><Icon28Money /></Avatar>
+                }
+                multiline
+                expandable
+                removable={false}
+                key={card.id}
+                onClick={() => {
+                    this.props.router.navigate('add', { name: card.name, serviceid: card.id })
+                }}
+            >
+                {card.name}
+            </Cell>
         )
     }
 
@@ -118,6 +140,7 @@ class Services extends React.Component {
                         onChange={this.onChange}
                         onClose={this.goBack}
                     />
+
                 </PanelHeader>
 
                 {
@@ -126,24 +149,27 @@ class Services extends React.Component {
                 }
 
 
+
                 <AutoSizer>
                     {({ height, width }) => (
-                        <List>
-                            <Virtualized
-                                width={width}
-                                height={height}
-                                deferredMeasurementCache={this.cache}
-                                rowHeight={this.cache.rowHeight}
-                                rowRenderer={({ index, key, style, parent }) => this.renderRow(index, key, style, parent)}
-                                rowCount={this.services.length}
-                                overscanRowCount={3} />
-                        </List>
+
+
+                        <Virtualized
+
+                            width={width}
+                            height={height}
+                            deferredMeasurementCache={this.cache}
+                            rowHeight={this.cache.rowHeight}
+                            rowRenderer={({ index, key, style, parent }) => this.renderRow(index, key, style, parent)}
+                            rowCount={this.services.length}
+                            overscanRowCount={3} >
+
+                        </Virtualized>
+
+
                     )}
 
                 </AutoSizer>
-
-
-
 
 
             </Panel>

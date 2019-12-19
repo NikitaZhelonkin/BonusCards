@@ -21,7 +21,7 @@ const Card = props => {
 	const [snackbar, setSnackbar] = useState(null);
 
 
-	const card = cards.filter((card) => card.id === Number(props.route.params.id))[0]
+	const card = cards.filter((card) => card.id === props.route.params.id)[0]
 
 
 	const closeDialog = () => {
@@ -38,7 +38,7 @@ const Card = props => {
 				style: 'destructive',
 				action: () => {
 					window.history.back()
-					dispatch('cards/delete', ({ cards }, card.id))
+					dispatch('cards/api/delete', ({ cards }, card.id))
 				},
 			}, {
 				title: 'Отмена',
@@ -52,7 +52,7 @@ const Card = props => {
 	}
 
 	const share = () => {
-		const link = 'https://vk.com/app7225850#/add?name=' + encodeURIComponent(card.name)+'&serviceid=' + card.serviceId + '&number=' + card.number;
+		const link = 'https://vk.com/app7225850#/add?name=' + encodeURIComponent(card.name) + '&serviceid=' + card.serviceId + '&number=' + card.number;
 		console.log(link)
 		vkconnect.send("VKWebAppShare", { "link": link });
 	}
@@ -92,7 +92,7 @@ const Card = props => {
 
 					<Div style={{ display: 'flex' }}>
 						<Button before={<Icon24Share />} size="l" stretched level="secondary" onClick={share} style={{ marginRight: 8 }}>Поделиться</Button>
-						<Button before={<Icon24Delete />} size="l" stretched level="secondary" onClick={showDeleteDialog}>Удалить</Button>
+						<Button before={<Icon24Delete />} size="l" stretched level="destructive" onClick={showDeleteDialog}>Удалить</Button>
 					</Div>
 				</div>
 			}

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-import { platform, IOS, Group, Panel, Div, Button, PanelHeader, HeaderButton, Alert, Footer, Snackbar } from '@vkontakte/vkui';
+import { platform, IOS, Group, Panel, Div, Button, PanelHeader, HeaderButton, Alert, Footer, Snackbar,Placeholder } from '@vkontakte/vkui';
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon24Delete from '@vkontakte/icons/dist/24/delete'
 import Icon24Share from '@vkontakte/icons/dist/24/share'
+import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 
 import './Cards.css';
 import Barcode from 'react-barcode'
@@ -70,8 +71,7 @@ const Card = props => {
 				</HeaderButton>}
 			>
 				{
-					typeof card !== 'undefined' &&
-					card.name
+					typeof card !== 'undefined' ? card.name : "Упс"
 				}
 
 			</PanelHeader>
@@ -95,6 +95,14 @@ const Card = props => {
 						<Button before={<Icon24Delete />} size="l" stretched level="destructive" onClick={showDeleteDialog}>Удалить</Button>
 					</Div>
 				</div>
+			}
+			{
+				typeof card === 'undefined' &&
+				<Placeholder
+					icon={<Icon56InfoOutline />}>
+					Такой карточки нет, либо она была удалена
+				</Placeholder>
+
 			}
 			{
 				snackbar && <Snackbar

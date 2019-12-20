@@ -70,7 +70,7 @@ class AddCard extends React.Component {
                         onClose={() => this.props.setModal(null)}
                         icon={<Avatar type="app" src={imgBarcode} size={72} />}
                         title="Чтобы отсканировать, наведите код на нижнюю часть рамки"
-                        caption="И еще найдите хорошее освещение"
+                        caption="Найдите хорошее освещение"
                         actions={[{
                             title: 'Понял',
                             type: 'primary',

@@ -123,11 +123,10 @@ class AddCard extends React.Component {
         } = this.state
 
         if (name !== '' && number !== '') {
-            this.setState({ error: false })            // const data = loadData().data;
-            const cards = this.props.cards;
+            this.setState({ error: false })           
             const serviceId = this.state.serviceId;
             const uid = this.props.user.uid;
-            this.props.dispatch('cards/api/add', ({ cards }, { uid, name, number, serviceId }))
+            this.props.dispatch('cards/api/add', { uid, name, number, serviceId })
             this.goHome();
         } else {
             this.setState({ error: true })

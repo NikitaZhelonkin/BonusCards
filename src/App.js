@@ -20,7 +20,7 @@ const App = (props) => {
 	const [modal, setModal] = useState(null);
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState(null);
-	const [loading, setLoading] = useState(true);
+	
 
 
 	const toQueryString = (params) => {
@@ -57,7 +57,6 @@ const App = (props) => {
 		authorise().then((user) => {
 			console.log("auth ok:" + user.uid)
 			setUser(user);
-			setLoading(false);
 
 			props.dispatch('cards/listen', { uid: user.uid })
 
@@ -69,7 +68,7 @@ const App = (props) => {
 
 		}).catch((error) => {
 			setError(error);
-			setLoading(false);
+
 			console.log("auth error:" + error)
 		})
 
@@ -88,14 +87,14 @@ const App = (props) => {
 
 	
 	return (
-		<Root activeView={loading ? "splash" : error != null ? "error" : "main"}>
+		<Root activeView={error != null ? "error" : props.cards.loading === true ? "splash"  : "main"}>
 			<View id="splash" activePanel="splash">
 				<Panel id="splash">
 
 
 
 					<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-						<Spinner size="large" />
+						<Spinner size="large" style={{ marginBottom: 20 }}/>
 					</div>
 
 					<FixedLayout vertical='bottom'>

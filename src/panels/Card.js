@@ -22,7 +22,7 @@ const Card = props => {
 	const [snackbar, setSnackbar] = useState(null);
 
 
-	const card = cards.filter((card) => card.id === props.route.params.id)[0]
+	const card = cards.data.filter((card) => card.id === props.route.params.id)[0]
 
 
 	const closeDialog = () => {
@@ -39,7 +39,7 @@ const Card = props => {
 				style: 'destructive',
 				action: () => {
 					window.history.back()
-					dispatch('cards/api/delete', ({ cards }, card))
+					dispatch('cards/api/delete', card)
 				},
 			}, {
 				title: 'Отмена',

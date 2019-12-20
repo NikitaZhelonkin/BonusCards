@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Avatar, Placeholder } from
+import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Avatar, Placeholder, Spinner } from
 	'@vkontakte/vkui'
 import Icon24Add from '@vkontakte/icons/dist/24/add'
 import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
@@ -21,7 +21,7 @@ class Home extends React.Component {
 	onChange(search) { this.setState({ search }); }
 
 	get cards() {
-		const cards = this.props.cards;
+		const cards = this.props.cards.data;
 		const search = this.state.search.toLowerCase();
 		const searchTranslit = cyrillicToTranslit().transform(search);
 		const filtered = cards.filter(({ name }) => {
@@ -54,8 +54,6 @@ class Home extends React.Component {
 		let {
 			id,
 			router,
-			cards,
-			dispatch
 		} = this.props
 
 
@@ -94,7 +92,6 @@ class Home extends React.Component {
 									expandable
 									removable={false}
 									key={card.id}
-									onRemove={() => dispatch('cards/api/delete', ({ cards }, card.id))}
 									onClick={() => router.navigate('card', { id: card.id })}
 									description={card.number}
 

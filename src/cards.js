@@ -3,10 +3,12 @@ import firebase from './firebase'
 
 export default store => {
 
-    store.on('@init', () => ({ cards: [] }))
+    store.on('@init', () => ({ cards: { loading: true, data: [] } }))
 
     store.on('cards/save', ({ cards }, { cardsToSave }) => {
-        return { cards: cardsToSave }
+        cards.data = cardsToSave;
+        cards.loading = false;
+        return { cards: cards }
     })
 
 
@@ -15,7 +17,7 @@ export default store => {
         db.collection('cards').where("uid", "==", uid)
             .onSnapshot({ includeMetadataChanges: true }, function (snapshot) {
                 console.log("onSnapshot " + snapshot);
-                
+
                 store.dispatch('cards/api/get', uid)
             });
     })

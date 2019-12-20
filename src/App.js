@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import vkconnect from '@vkontakte/vk-connect';
 import connect from 'storeon/react/connect'
-import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder } from '@vkontakte/vkui'
+import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder, PanelHeader } from '@vkontakte/vkui'
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 import { RouteNode } from 'react-router5'
 import '@vkontakte/vkui/dist/vkui.css';
@@ -17,6 +17,7 @@ import packageJson from './package.alias.json';
 const App = (props) => {
 
 	const [popout, setPopout] = useState(null);
+	const [modal, setModal] = useState(null);
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -47,7 +48,7 @@ const App = (props) => {
 			if (firebase.auth().currentUser != null) return firebase.auth().currentUser;
 			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token" + props.search)
 			const json = await response.json();
-			
+
 
 			const data = await firebase.auth().signInWithCustomToken(json.token);
 			return data.user;
@@ -57,7 +58,7 @@ const App = (props) => {
 			console.log("auth ok:" + user.uid)
 			setUser(user);
 			setLoading(false);
-			
+
 			props.dispatch('cards/listen', { uid: user.uid })
 
 			const hashParams = parseQueryString(props.hash)
@@ -85,12 +86,13 @@ const App = (props) => {
 
 	}, []);
 
+	
 	return (
 		<Root activeView={loading ? "splash" : error != null ? "error" : "main"}>
 			<View id="splash" activePanel="splash">
 				<Panel id="splash">
 
-					
+
 
 					<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
 						<Spinner size="large" />
@@ -106,6 +108,7 @@ const App = (props) => {
 
 			<View id="error" activePanel="error">
 				<Panel id="error">
+					<PanelHeader >Бонус карты</PanelHeader>
 					<Placeholder
 						icon={<Icon56InfoOutline />}>
 						Произошла ошибка, попробуйте еще раз
@@ -114,11 +117,11 @@ const App = (props) => {
 
 			</View>
 
-			<View id="main" activePanel={props.route.name} popout={popout}>
+			<View id="main" activePanel={props.route.name} popout={popout} modal={modal}>
 				<Home id='home' router={props.router} route={props.route} user={user} />
 				<Card id='card' router={props.router} route={props.route} setPopout={setPopout} />
 				<Services id='services' router={props.router} route={props.route} />
-				<AddCard id='add' router={props.router} route={props.route} user={user} />
+				<AddCard id='add' router={props.router} route={props.route} user={user} setModal={setModal} />
 
 			</View>
 		</Root>

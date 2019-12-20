@@ -96,7 +96,7 @@ class Home extends React.Component {
 									key={card.id}
 									onRemove={() => dispatch('cards/api/delete', ({ cards }, card.id))}
 									onClick={() => router.navigate('card', { id: card.id })}
-									description={card.id}
+									description={card.number}
 
 								>
 									{card.name}

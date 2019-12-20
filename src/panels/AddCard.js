@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip } from '@vkontakte/vkui'
+import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip, ModalCard, ModalRoot } from '@vkontakte/vkui'
 
 
 
@@ -13,6 +13,7 @@ import connect from 'storeon/react/connect'
 import vkconnect from '@vkontakte/vk-connect';
 
 import { ReactComponent as IconBarcode } from '../img/barcode.svg';
+import imgBarcode from '../img/barcode_how.png';
 
 import './Cards.css';
 
@@ -23,7 +24,7 @@ class AddCard extends React.Component {
         super(props);
 
         this.state = {
-            tooltip: props.prefs["scan_tooltip_shown"] !== "true",
+            tooltip: props.prefs["scan_tooltip_shown"] !== true,
             serviceId: props.route.params.serviceid,
             name: decodeURIComponent(props.route.params.name),
             number: props.route.params.number != null ? parseInt(props.route.params.number) : '',
@@ -46,8 +47,8 @@ class AddCard extends React.Component {
     }
 
     onTooltipClose = () => {
-        const prefs = this.props.prefs;
-        this.props.dispatch('prefs/set', ({ prefs }, { key: "scan_tooltip_shown", value: "true" }))
+
+        this.props.dispatch('prefs/set',{ key: "scan_tooltip_shown", value: true })
         this.setState({ tooltip: false })
     }
 
@@ -58,6 +59,36 @@ class AddCard extends React.Component {
     onError = (error) => {
         //TODO show error
     }
+
+    onScanClick = (prop) => {
+        const showScanIosTooltip = this.props.prefs["scan_ios_tooltip_shown"] !== true && platform === IOS
+        if (showScanIosTooltip) {
+            this.props.setModal(
+                <ModalRoot activeModal="modal">
+                    <ModalCard
+                        id="modal"
+                        onClose={() => this.props.setModal(null)}
+                        icon={<Avatar type="app" src={imgBarcode} size={72} />}
+                        title="Чтобы отсканировать, наведите код на нижнюю часть рамки"
+                        caption="И еще найдите хорошее освещение"
+                        actions={[{
+                            title: 'Понял',
+                            type: 'primary',
+                            action: () => {
+                                this.props.dispatch('prefs/set',  { key: "scan_ios_tooltip_shown", value: true })
+                                this.props.setModal(null);
+                                this.scan(prop);
+                            }
+                        }
+                        ]}
+                    />
+                </ModalRoot>)
+        } else {
+            this.scan(prop);
+        }
+
+    }
+
 
     scan = (prop) => {
         vkconnect
@@ -164,7 +195,7 @@ class AddCard extends React.Component {
 
                         </Tooltip>
 
-                        <IconBarcode onClick={this.scan} className="Scan" width={30} height={30} fill="var(--control_foreground)" />
+                        <IconBarcode onClick={this.onScanClick} className="Scan" width={30} height={30} fill="var(--control_foreground)" />
 
 
                     </div>

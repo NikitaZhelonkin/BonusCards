@@ -52,7 +52,7 @@ const Card = props => {
 	}
 
 	const share = () => {
-		const link = 'https://vk.com/app7225850#/add?name=' + encodeURIComponent(card.name) + '&serviceid=' + card.serviceId + '&number=' + card.number;
+		const link = 'https://vk.com/app7225850#add_name=' + encodeURIComponent(card.name) + '&add_service_id=' + card.serviceId + '&add_number=' + card.number;
 		console.log(link)
 		vkconnect.send("VKWebAppShare", { "link": link });
 	}

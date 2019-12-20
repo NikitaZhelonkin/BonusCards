@@ -26,15 +26,29 @@ const App = (props) => {
 		return Object.keys(params).map(key => key + '=' + params[key]).join('&');
 	}
 
+	const parseQueryString = (string) => {
+		return string.slice(1).split('&')
+			.map((queryParam) => {
+				let kvp = queryParam.split('=');
+				return { key: kvp[0], value: kvp[1] }
+			})
+			.reduce((query, kvp) => {
+				query[kvp.key] = kvp.value;
+				return query
+			}, {})
+	};
+
 	useEffect(() => {
 
 		const authorise = async function () {
-			const launchParams = toQueryString(props.route.params);
-			console.log("launchParams:" + launchParams)
-			//TODO fail if uid is null
+
+			const searchParams = parseQueryString(props.search)
+
 			if (firebase.auth().currentUser != null) return firebase.auth().currentUser;
-			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token?uid=" + props.route.params.vk_user_id)
+			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token" + props.search)
 			const json = await response.json();
+			
+
 			const data = await firebase.auth().signInWithCustomToken(json.token);
 			return data.user;
 		}
@@ -43,8 +57,14 @@ const App = (props) => {
 			console.log("auth ok:" + user.uid)
 			setUser(user);
 			setLoading(false);
-			// props.dispatch('cards/sync', {uid:user.uid})
+			
 			props.dispatch('cards/listen', { uid: user.uid })
+
+			const hashParams = parseQueryString(props.hash)
+			if (hashParams.add_number != null && hashParams.add_name != null) {
+
+				props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+			}
 
 		}).catch((error) => {
 			setError(error);
@@ -69,11 +89,15 @@ const App = (props) => {
 		<Root activeView={loading ? "splash" : error != null ? "error" : "main"}>
 			<View id="splash" activePanel="splash">
 				<Panel id="splash">
-					<div style={{ margin: 'auto', }}>
-						<Spinner size="large" style={{ marginTop: 20 }} />
 
+					
+
+					<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+						<Spinner size="large" />
 					</div>
+
 					<FixedLayout vertical='bottom'>
+
 						<Footer>{packageJson.version}</Footer>
 					</FixedLayout>
 				</Panel>
@@ -83,8 +107,8 @@ const App = (props) => {
 			<View id="error" activePanel="error">
 				<Panel id="error">
 					<Placeholder
-							icon={<Icon56InfoOutline />}>
-							Произошла ошибка, попробуйте еще раз
+						icon={<Icon56InfoOutline />}>
+						Произошла ошибка, попробуйте еще раз
 					</Placeholder>
 				</Panel>
 

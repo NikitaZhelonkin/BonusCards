@@ -10,33 +10,34 @@ export default store => {
     })
 
 
-    store.on('cards/listen', ({ cards }, {uid}) => {
+    store.on('cards/listen', ({ cards }, { uid }) => {
         const db = firebase.firestore();
         db.collection('cards').where("uid", "==", uid)
             .onSnapshot({ includeMetadataChanges: true }, function (snapshot) {
-                console.log("onSnapshot "+snapshot);
+                console.log("onSnapshot " + snapshot);
+                
                 store.dispatch('cards/api/get', uid)
             });
     })
 
     store.on('cards/api/get', ({ cards }, uid) => {
         const db = firebase.firestore();
-        db.collection('cards').where("uid", "==", uid).get().then((snapshot)=>{
-                const cardsToSave = snapshot.docs.map((doc)=>{
-                    return {
-                        docId: doc.id,
-                        uid: doc.data().uid,
-                        id: doc.data().id,
-                        name: doc.data().name,
-                        number: doc.data().number,
-                        serviceId: doc.data().service_id,
-                    }
-                })
-                console.log("updated length>"+cardsToSave.length);
-                store.dispatch('cards/save', {cardsToSave})
+        db.collection('cards').where("uid", "==", uid).get().then((snapshot) => {
+            const cardsToSave = snapshot.docs.map((doc) => {
+                return {
+                    docId: doc.id,
+                    uid: doc.data().uid,
+                    id: doc.data().id,
+                    name: doc.data().name,
+                    number: doc.data().number,
+                    serviceId: doc.data().service_id,
+                }
+            })
+            console.log("updated store:" + JSON.stringify(cardsToSave));
+            store.dispatch('cards/save', { cardsToSave })
 
         })
-      
+
     })
 
 

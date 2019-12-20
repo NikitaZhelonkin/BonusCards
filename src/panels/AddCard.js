@@ -77,11 +77,11 @@ class AddCard extends React.Component {
     }
 
     goHome = () => {
-        // if (window.history.length === 1) {
+        if (window.history.length === 1) {
             this.props.router.navigate("home", {}, { replace: true })
-        // } else {
-        //     window.history.go(1 - window.history.length)
-        // }
+        } else {
+            window.history.go(1 - window.history.length)
+        }
     }
 
     onClickAddTask = () => {

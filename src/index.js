@@ -15,14 +15,6 @@ import registerServiceWorker from './sw';
 import firebase from './firebase'
 
 
-firebase.firestore().enablePersistence()
-    .then(() => {
-        console.log("penablePersistence true")
-    })
-    .catch(function (err) {
-        console.log("penablePersistence error:" + err)
-
-    });
 
 // Init VK  Mini App
 connect.send('VKWebAppInit');
@@ -37,12 +29,15 @@ const router = createRouter()
 // Подробнее про сервис воркеры можно почитать тут — https://vk.cc/8MHpmT
 registerServiceWorker();
 
+const search = window.location.search
+const hash = window.location.hash
+
 
 router.start(() => {
     ReactDOM.render(
         <RouterProvider router={router}>
             <StoreContext.Provider value={store}>
-                <App router={router} />
+                <App router={router} search={search} hash={hash} />
             </StoreContext.Provider>
         </RouterProvider>, document.getElementById('root'));
 })

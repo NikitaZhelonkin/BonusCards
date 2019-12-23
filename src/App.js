@@ -20,12 +20,9 @@ const App = (props) => {
 	const [modal, setModal] = useState(null);
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState(null);
-	
 
 
-	const toQueryString = (params) => {
-		return Object.keys(params).map(key => key + '=' + params[key]).join('&');
-	}
+
 
 	const parseQueryString = (string) => {
 		return string.slice(1).split('&')
@@ -43,34 +40,38 @@ const App = (props) => {
 
 		const authorise = async function () {
 
-			const searchParams = parseQueryString(props.search)
-
-			if (firebase.auth().currentUser != null) return firebase.auth().currentUser;
 			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token" + props.search)
+
 			const json = await response.json();
 
+			console.log("signin...")
+			await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+			await firebase.auth().signInWithCustomToken(json.token);
 
-			const data = await firebase.auth().signInWithCustomToken(json.token);
-			return data.user;
 		}
 
-		authorise().then((user) => {
-			console.log("auth ok:" + user.uid)
-			setUser(user);
+		firebase.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				console.log("auth ok:" + user.uid)
+				setUser(user);
 
-			props.dispatch('cards/listen', { uid: user.uid })
+				props.dispatch('cards/listen', { uid: user.uid })
 
-			const hashParams = parseQueryString(props.hash)
-			if (hashParams.add_number != null && hashParams.add_name != null) {
+				const hashParams = parseQueryString(props.hash)
+				if (hashParams.add_number != null && hashParams.add_name != null) {
 
-				props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+					props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+				}
+			} else {
+				authorise().catch((error) => {
+					setError(error);
+
+					console.log("auth error:" + error)
+				})
 			}
+		});
 
-		}).catch((error) => {
-			setError(error);
 
-			console.log("auth error:" + error)
-		})
 
 
 		vkconnect.subscribe(({ detail: { type, data } }) => {
@@ -85,16 +86,16 @@ const App = (props) => {
 
 	}, []);
 
-	
+
 	return (
-		<Root activeView={error != null ? "error" : props.cards.loading === true ? "splash"  : "main"}>
+		<Root activeView={error != null ? "error" : props.cards.loading === true ? "splash" : "main"}>
 			<View id="splash" activePanel="splash">
 				<Panel id="splash">
 
 
+					<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh' }}>
 
-					<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-						<Spinner size="large" style={{ marginBottom: 20 }}/>
+						<Spinner size="large" />
 					</div>
 
 					<FixedLayout vertical='bottom'>

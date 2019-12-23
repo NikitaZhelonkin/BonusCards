@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip, ModalCard, ModalRoot } from '@vkontakte/vkui'
+import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip, ModalCard, ModalRoot, ANDROID } from '@vkontakte/vkui'
 
 
 
@@ -71,15 +71,25 @@ class AddCard extends React.Component {
                         icon={<Avatar type="app" src={imgBarcode} size={72} />}
                         title="Чтобы отсканировать, наведите код на нижнюю часть рамки"
                         caption="Найдите хорошее освещение"
-                        actions={[{
+                        actions={[
+                            {
+                                title: 'Больше не показывать',
+                                type: 'secondary',
+                                action: () => {
+                                    this.props.dispatch('prefs/set',  { key: "scan_ios_tooltip_shown", value: true })
+                                    this.props.setModal(null);
+                                    this.scan(prop);
+                                }
+                            },
+                            {
                             title: 'Понял',
                             type: 'primary',
                             action: () => {
-                                this.props.dispatch('prefs/set',  { key: "scan_ios_tooltip_shown", value: true })
                                 this.props.setModal(null);
                                 this.scan(prop);
                             }
                         }
+                       
                         ]}
                     />
                 </ModalRoot>)
@@ -100,11 +110,7 @@ class AddCard extends React.Component {
 
 
     goBack = () => {
-        if (window.history.length === 1) {
-            this.props.router.navigate("home", {}, { replace: true })
-        } else {
-            window.history.back()
-        }
+        window.history.back()
     }
 
     goHome = () => {

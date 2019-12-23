@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Avatar, Placeholder, Spinner } from
+import { Panel, FixedLayout, Div, Button, platform, ANDROID, List, Cell, PanelHeader, Search, Avatar, Placeholder } from
 	'@vkontakte/vkui'
 import Icon24Add from '@vkontakte/icons/dist/24/add'
 import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'

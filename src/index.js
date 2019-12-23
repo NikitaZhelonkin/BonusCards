@@ -12,7 +12,7 @@ import cards from './cards'
 import prefs from './prefs'
 import StoreContext from 'storeon/react/context'
 import registerServiceWorker from './sw';
-import firebase from './firebase'
+
 
 
 

@@ -88,7 +88,7 @@ const Card = props => {
 					</Group>
 
 
-					<Footer>Предьявите этот код на кассе магазина</Footer>
+					<Footer>Предъявите этот код на кассе магазина</Footer>
 
 					<Div style={{ display: 'flex' }}>
 						<Button before={<Icon24Share />} size="l" stretched level="secondary" onClick={share} style={{ marginRight: 8 }}>Поделиться</Button>

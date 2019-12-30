@@ -10,6 +10,7 @@ import Icon24Back from '@vkontakte/icons/dist/24/back'
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back'
 import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
 
+
 import './Cards.css';
 
 
@@ -29,14 +30,16 @@ class Services extends React.Component {
         });
     }
 
-    onChange(search) { this.setState({ search }); }
+    onChange(search) {
+        this.setState({ search: search.substring(0, 40) });
+    }
 
     matchSearch(keyword, search) {
         return keyword.toLowerCase().indexOf(search) > -1;
     }
 
     get services() {
-        const search = this.state.search.toLowerCase();
+        const search = this.state.search.toLowerCase().trim();
         const searchTranslit = cyrillicToTranslit().transform(search);
         const filtered = this.state.services.filter((service) => {
 
@@ -66,6 +69,7 @@ class Services extends React.Component {
                 })
             }));
     }
+
 
     renderHeader() {
         return (
@@ -136,6 +140,7 @@ class Services extends React.Component {
 
                     <Search
                         theme="header"
+                        style={{ paddingRight: 56 }}
                         value={this.state.search}
                         onChange={this.onChange}
                         onClose={this.goBack}

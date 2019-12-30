@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import vkconnect from '@vkontakte/vk-connect';
+import React, { useState, useEffect, useRef } from 'react';
 import connect from 'storeon/react/connect'
 import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder, PanelHeader } from '@vkontakte/vkui'
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
@@ -13,7 +12,6 @@ import firebase from './firebase'
 import packageJson from './package.alias.json';
 
 
-
 const App = (props) => {
 
 	const [popout, setPopout] = useState(null);
@@ -21,7 +19,7 @@ const App = (props) => {
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState(null);
 
-
+	const poputRef = useRef(popout);
 
 
 	const parseQueryString = (string) => {
@@ -37,6 +35,26 @@ const App = (props) => {
 	};
 
 	useEffect(() => {
+		poputRef.current = popout;
+		
+		//Почему в реакте такая геморная навигация????
+		props.router.canActivate("home", (router) => (toState, fromState) => {
+			if (fromState.name === "card" && poputRef.current!==null) {
+				setPopout(null)
+				window.history.go(1)
+				return false;
+			}else{
+				return true;
+			}
+			
+		});
+
+	}, [popout])
+
+
+	useEffect(() => {
+
+
 
 		const authorise = async function () {
 
@@ -72,16 +90,6 @@ const App = (props) => {
 		});
 
 
-
-
-		vkconnect.subscribe(({ detail: { type, data } }) => {
-
-			if (type === 'VKWebAppUpdateConfig') {
-				const schemeAttribute = document.createAttribute('scheme');
-				schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
-				document.body.attributes.setNamedItem(schemeAttribute);
-			}
-		});
 
 
 	}, []);

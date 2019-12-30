@@ -11,11 +11,11 @@ export default function configureRouter() {
 
     // router.usePlugin(loggerPlugin)
     router.usePlugin(
-            browserPlugin({
-                useHash: true
-            })
-        )
-   
+        browserPlugin({
+            useHash: true
+        })
+    )
+
 
     return router
 }

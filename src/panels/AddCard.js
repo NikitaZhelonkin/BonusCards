@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip, ModalCard, ModalRoot, ANDROID } from '@vkontakte/vkui'
+import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip, ModalCard, ModalRoot } from '@vkontakte/vkui'
 
 
 
@@ -16,6 +16,7 @@ import { ReactComponent as IconBarcode } from '../img/barcode.svg';
 import imgBarcode from '../img/barcode_how.png';
 
 import './Cards.css';
+import { bool } from 'prop-types';
 
 
 class AddCard extends React.Component {
@@ -23,16 +24,15 @@ class AddCard extends React.Component {
     constructor(props) {
         super(props);
 
+        let number = props.route.params.number != null ? parseInt(props.route.params.number) : '';
         this.state = {
             tooltip: props.prefs["scan_tooltip_shown"] !== true,
             serviceId: props.route.params.serviceid,
             name: decodeURIComponent(props.route.params.name),
-            number: props.route.params.number != null ? parseInt(props.route.params.number) : '',
-            error: false,
+            number: number,
+            error: !this.isValidCard(number),
             service: null
         };
-
-
 
     }
 
@@ -48,7 +48,7 @@ class AddCard extends React.Component {
 
     onTooltipClose = () => {
 
-        this.props.dispatch('prefs/set',{ key: "scan_tooltip_shown", value: true })
+        this.props.dispatch('prefs/set', { key: "scan_tooltip_shown", value: true })
         this.setState({ tooltip: false })
     }
 
@@ -76,20 +76,20 @@ class AddCard extends React.Component {
                                 title: 'Больше не показывать',
                                 type: 'secondary',
                                 action: () => {
-                                    this.props.dispatch('prefs/set',  { key: "scan_ios_tooltip_shown", value: true })
+                                    this.props.dispatch('prefs/set', { key: "scan_ios_tooltip_shown", value: true })
                                     this.props.setModal(null);
                                     this.scan(prop);
                                 }
                             },
                             {
-                            title: 'Понял',
-                            type: 'primary',
-                            action: () => {
-                                this.props.setModal(null);
-                                this.scan(prop);
+                                title: 'Понял',
+                                type: 'primary',
+                                action: () => {
+                                    this.props.setModal(null);
+                                    this.scan(prop);
+                                }
                             }
-                        }
-                       
+
                         ]}
                     />
                 </ModalRoot>)
@@ -121,15 +121,15 @@ class AddCard extends React.Component {
         }
     }
 
-    onClickAddTask = () => {
+    onAddClick = () => {
 
         let {
             name,
             number
         } = this.state
 
-        if (name !== '' && number !== '') {
-            this.setState({ error: false })           
+        if (this.isValidName(name) && this.isValidCard(number)) {
+            this.setState({ error: false })
             const serviceId = this.state.serviceId;
             const uid = this.props.user.uid;
             this.props.dispatch('cards/api/add', { uid, name, number, serviceId })
@@ -140,14 +140,17 @@ class AddCard extends React.Component {
 
     }
 
-    onChangeNameTask = (e) => {
-        const name = e.target.value
-        this.setState({ name })
+    onChangeText = (e) => {
+        const number = e.target.value.substring(0, 24).replace(/[^\x00-\x7F]/g, "")
+        this.setState({ number, error: !this.isValidCard(number) })
     }
 
-    onChangeTextTask = (e) => {
-        const number = e.target.value
-        this.setState({ number })
+    isValidName(name) {
+        return name !== '';
+    }
+
+    isValidCard(number) {
+        return number.match("^[\x00-\x7F]{6,24}$");
     }
 
     render() {
@@ -191,13 +194,13 @@ class AddCard extends React.Component {
                             offsetY={5}
                             onClose={this.onTooltipClose}>
                             <Input
+                                style={{ paddingRight: 56 }}
                                 autoFocus
-                                status={this.state.error === true ? 'error' : 'valid'}
-                                onChange={this.onChangeTextTask}
+                                status='default'
+                                onChange={this.onChangeText}
                                 value={this.state.number}
-                                type='number'
+                                type="text"
                                 placeholder='Введите номер карты' />
-
                         </Tooltip>
 
                         <IconBarcode onClick={this.onScanClick} className="Scan" width={30} height={30} fill="var(--control_foreground)" />
@@ -211,8 +214,9 @@ class AddCard extends React.Component {
 
                 <Div>
                     <Button
+                        disabled={this.state.error === true}
                         size='xl'
-                        onClick={(e) => this.onClickAddTask(e)}>
+                        onClick={(e) => this.onAddClick(e)}>
                         Создать
                     </Button>
                 </Div>

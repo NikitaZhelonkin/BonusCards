@@ -35,9 +35,10 @@ const Card = props => {
 			onClose={closeDialog}
 			actions={[{
 				title: 'Удалить',
-				autoclose: true,
+				false: true,
 				style: 'destructive',
 				action: () => {
+					closeDialog()
 					window.history.back()
 					dispatch('cards/api/delete', card)
 				},

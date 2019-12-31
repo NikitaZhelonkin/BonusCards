@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import connect from 'storeon/react/connect'
+import vkconnect from '@vkontakte/vk-connect';
 import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder, PanelHeader } from '@vkontakte/vkui'
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 import { RouteNode } from 'react-router5'
@@ -18,9 +19,10 @@ const App = (props) => {
 	const [modal, setModal] = useState(null);
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState(null);
-
+	
+	
 	const poputRef = useRef(popout);
-
+	const userRef = useRef(user);
 
 	const parseQueryString = (string) => {
 		return string.slice(1).split('&')
@@ -48,13 +50,20 @@ const App = (props) => {
 			}
 			
 		});
-
+	// eslint-disable-next-line
 	}, [popout])
+
+	useEffect(()=>{
+		userRef.current = user;
+
+		vkconnect.subscribe((e) => {
+			console.log("User:"+userRef.current)
+		 });
+	}, [user])
 
 
 	useEffect(() => {
-
-
+		console.log("app useEffect");
 
 		const authorise = async function () {
 
@@ -68,30 +77,33 @@ const App = (props) => {
 
 		}
 
-		firebase.auth().onAuthStateChanged(function (user) {
-			if (user) {
-				console.log("auth ok:" + user.uid)
-				setUser(user);
-
-				props.dispatch('cards/listen', { uid: user.uid })
-
-				const hashParams = parseQueryString(props.hash)
-				if (hashParams.add_number != null && hashParams.add_name != null) {
-
-					props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+		const init = function() {
+			firebase.auth().onAuthStateChanged(function (user) {
+				if (user) {
+					console.log("auth ok:" + user.uid)
+					setUser(user);
+	
+					props.dispatch('cards/listen', { uid: user.uid })
+	
+					const hashParams = parseQueryString(props.hash)
+					if (hashParams.add_number != null && hashParams.add_name != null) {
+	
+						props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+					}
+				} else {
+					authorise().catch((error) => {
+						setError(error);
+	
+						console.log("auth error:" + error)
+					})
 				}
-			} else {
-				authorise().catch((error) => {
-					setError(error);
+			});
+		}
 
-					console.log("auth error:" + error)
-				})
-			}
-		});
+		init();
 
 
-
-
+	// eslint-disable-next-line
 	}, []);
 
 

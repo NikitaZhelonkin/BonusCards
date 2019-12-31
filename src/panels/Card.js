@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { platform, IOS, Group, Panel, Div, Button, PanelHeader, HeaderButton, Alert, Footer, Snackbar,Placeholder } from '@vkontakte/vkui';
+import { platform, IOS, Group, Panel, Div, Button, PanelHeader, HeaderButton, Alert, Footer, Snackbar, Placeholder } from '@vkontakte/vkui';
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
@@ -82,8 +82,11 @@ const Card = props => {
 				typeof card !== 'undefined' &&
 				<div>
 					<Group >
-						<div className="Barcode" onClick={copyToClipboard} >
-							<Barcode value={card.number.toString()} displayValue={true} fontSize={25} height={120} />
+
+						<div className="BarcodeContainer" onClick={copyToClipboard} >
+							<div className="Barcode">
+								<Barcode value={card.number.toString()} displayValue={true} fontSize={25} height={120} />
+							</div>
 						</div>
 
 					</Group>

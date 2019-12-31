@@ -8,6 +8,7 @@ import connect from 'storeon/react/connect'
 import cyrillicToTranslit from 'cyrillic-to-translit-js'
 
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
+
 import './Cards.css';
 
 class Home extends React.Component {
@@ -22,7 +23,7 @@ class Home extends React.Component {
 
 	get cards() {
 		const cards = this.props.cards.data;
-		const search = this.state.search.toLowerCase();
+		const search = this.state.search.toLowerCase().trim();
 		const searchTranslit = cyrillicToTranslit().transform(search);
 		const filtered = cards.filter(({ name }) => {
 			return name.toLowerCase().indexOf(search) > -1 || name.toLowerCase().indexOf(searchTranslit) > -1;;
@@ -61,23 +62,39 @@ class Home extends React.Component {
 			<Panel id={id}>
 				<PanelHeader noShadow>Бонус карты</PanelHeader>
 
-				<Search value={this.state.search} onChange={this.onChange} theme="default" />
+				<FixedLayout vertical='top'>
+
+					<Search value={this.state.search} onChange={this.onChange} theme="default" />
+
+				</FixedLayout>
+
 
 				{
 					this.cards.length === 0 && this.state.search.length === 0 ?
+						<div>
+							<div style={{ height: 52 }} />
+							<Placeholder
 
-						<Placeholder
-							icon={<Icon56InfoOutline />}>
-							Вы пока не добавили ни одной карточки
+								icon={<Icon56InfoOutline />}>
+									
+								Вы не добавили ни одной карточки
 						</Placeholder>
+						</div>
+
 						: this.cards.length === 0 &&
-						<Placeholder
-							icon={<Icon56InfoOutline />}>
-							По вашему запросу ничего не найдено
-						</Placeholder>
+						<div>
+							<div style={{ height: 52 }} />
+							<Placeholder
+
+								icon={<Icon56InfoOutline />}>
+								По вашему запросу ничего не найдено
+							</Placeholder>
+						</div>
+
 				}
 
-				<List>
+
+				<List style={{ paddingTop:60, marginBottom: 60 }}>
 					{
 						this.cards.map((card) =>
 							(

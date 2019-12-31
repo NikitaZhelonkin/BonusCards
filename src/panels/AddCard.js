@@ -16,7 +16,6 @@ import { ReactComponent as IconBarcode } from '../img/barcode.svg';
 import imgBarcode from '../img/barcode_how.png';
 
 import './Cards.css';
-import { bool } from 'prop-types';
 
 
 class AddCard extends React.Component {
@@ -47,13 +46,12 @@ class AddCard extends React.Component {
     }
 
     onTooltipClose = () => {
-
         this.props.dispatch('prefs/set', { key: "scan_tooltip_shown", value: true })
         this.setState({ tooltip: false })
     }
 
     onDone = (data) => {
-        this.setState({ number: data.qr_data })
+        this.setState({ number: data.qr_data, error:false })
     }
 
     onError = (error) => {
@@ -141,6 +139,7 @@ class AddCard extends React.Component {
     }
 
     onChangeText = (e) => {
+        // eslint-disable-next-line
         const number = e.target.value.substring(0, 24).replace(/[^\x00-\x7F]/g, "")
         this.setState({ number, error: !this.isValidCard(number) })
     }

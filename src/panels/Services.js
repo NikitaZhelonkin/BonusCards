@@ -21,6 +21,7 @@ class Services extends React.Component {
 
     constructor(props) {
         super(props);
+        
         this.state = { search: '', services: [], popular: [] };
         this.onChange = this.onChange.bind(this);
 
@@ -46,17 +47,22 @@ class Services extends React.Component {
             return this.matchSearch(service.name, search) || this.matchSearch(service.name, searchTranslit) || (service.keywords != null && service.keywords.filter((keyword) => {
                 return this.matchSearch(keyword, search) || this.matchSearch(keyword, searchTranslit)
             }).length > 0);
+        }).map((service)=>{
+            return service
         });
 
         if (search.length > 0) {
             filtered.unshift({
                 id: null,
                 logo: null,
-                name: search.charAt(0).toUpperCase() + search.slice(1)
+                name: search
             });
         }
 
-        return filtered;
+        return filtered.map((service)=>{
+            service.name = service.name.charAt(0).toUpperCase() + service.name.slice(1);
+            return service
+        });
     }
 
 
@@ -140,7 +146,7 @@ class Services extends React.Component {
 
                     <Search
                         theme="header"
-                        style={{ paddingRight: 56 }}
+                        style={{ paddingRight: platform == IOS ? 0 : 56 }}
                         value={this.state.search}
                         onChange={this.onChange}
                         onClose={this.goBack}

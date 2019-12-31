@@ -8,6 +8,7 @@ export default store => {
     store.on('cards/save', ({ cards }, { cardsToSave }) => {
         cards.data = cardsToSave;
         cards.loading = false;
+        console.log("update cards");
         return { cards: cards }
     })
 
@@ -16,7 +17,7 @@ export default store => {
         const db = firebase.firestore();
         db.collection('cards').where("uid", "==", uid)
             .onSnapshot({ includeMetadataChanges: true }, function (snapshot) {
-                console.log("onSnapshot " + snapshot);
+                console.log("onSnapshot ");
 
                 store.dispatch('cards/api/get', uid)
             });
@@ -35,7 +36,6 @@ export default store => {
                     serviceId: doc.data().service_id,
                 }
             })
-            console.log("updated store:" + JSON.stringify(cardsToSave));
             store.dispatch('cards/save', { cardsToSave })
 
         })

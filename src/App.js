@@ -120,7 +120,7 @@ const App = (props) => {
 
 					<FixedLayout vertical='bottom'>
 
-						<Footer>{packageJson.version}</Footer>
+						<Footer className="unselectable">{packageJson.version}</Footer>
 					</FixedLayout>
 				</Panel>
 

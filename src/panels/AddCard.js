@@ -140,7 +140,7 @@ class AddCard extends React.Component {
 
     onChangeText = (e) => {
         // eslint-disable-next-line
-        const number = e.target.value.substring(0, 24).replace(/[^\x00-\x7F]/g, "")
+        const number = e.target.value.trim().substring(0, 24).replace(/[^\x00-\x7F]/g, "")
         this.setState({ number, error: !this.isValidCard(number) })
     }
 

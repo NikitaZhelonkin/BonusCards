@@ -21,7 +21,7 @@ class Services extends React.Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = { search: '', services: [], popular: [] };
         this.onChange = this.onChange.bind(this);
 
@@ -47,7 +47,7 @@ class Services extends React.Component {
             return this.matchSearch(service.name, search) || this.matchSearch(service.name, searchTranslit) || (service.keywords != null && service.keywords.filter((keyword) => {
                 return this.matchSearch(keyword, search) || this.matchSearch(keyword, searchTranslit)
             }).length > 0);
-        }).map((service)=>{
+        }).map((service) => {
             return service
         });
 
@@ -59,7 +59,7 @@ class Services extends React.Component {
             });
         }
 
-        return filtered.map((service)=>{
+        return filtered.map((service) => {
             service.name = service.name.charAt(0).toUpperCase() + service.name.slice(1);
             return service
         });
@@ -69,11 +69,13 @@ class Services extends React.Component {
     componentDidMount() {
         fetch(`./data.json`)
             .then(res => res.json())
-            .then(json => this.setState({
-                services: json.data.all, popular: json.data.all.filter(({ id }) => {
-                    return json.data.popular.includes(id)
+            .then(json =>
+                this.setState({
+                    services: json.data.all, popular: json.data.all.filter(({ id }) => {
+                        return json.data.popular.includes(id)
+                    })
                 })
-            }));
+            );
     }
 
 
@@ -114,7 +116,7 @@ class Services extends React.Component {
                         :
                         <Avatar type="image" ><Icon28Money /></Avatar>
                 }
-                multiline
+
                 expandable
                 removable={false}
                 key={card.id}
@@ -146,7 +148,7 @@ class Services extends React.Component {
 
                     <Search
                         theme="header"
-                        style={{ paddingRight: platform == IOS ? 0 : 56 }}
+                        style={{ paddingRight: osname === IOS ? 0 : 56 }}
                         value={this.state.search}
                         onChange={this.onChange}
                         onClose={this.goBack}

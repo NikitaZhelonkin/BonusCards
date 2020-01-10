@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { platform, IOS, Group, Panel, Div, Button, PanelHeader, HeaderButton, Alert, Footer, Snackbar, Placeholder } from '@vkontakte/vkui';
 
@@ -92,7 +92,7 @@ const Card = props => {
 					</Group>
 
 
-					<Footer>Предъявите этот код на кассе магазина</Footer>
+					<Footer className="unselectable">Предъявите этот код на кассе магазина</Footer>
 
 					<Div style={{ display: 'flex' }}>
 						<Button before={<Icon24Share />} size="l" stretched level="secondary" onClick={share} style={{ marginRight: 8 }}>Поделиться</Button>

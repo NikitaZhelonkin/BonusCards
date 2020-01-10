@@ -87,7 +87,7 @@ class Home extends React.Component {
 							<Placeholder
 
 								icon={<Icon56InfoOutline />}>
-								По вашему запросу ничего не найдено
+								По Вашему запросу ничего не найдено
 							</Placeholder>
 						</div>
 

@@ -1,0 +1,3923 @@
+{
+   "data": {
+      "popular": [
+         "lenta",
+         "pyaterochka",
+         "ostin",
+         "l_etual_red",
+         "perekrestok",
+         "kari"
+      ],
+      "all": [
+         {
+            "id": "1001tur",
+            "name": "1001 Тур",
+            "logo": "/images/1001tur_.png",
+            "keywords": [
+               "1001 Tur"
+            ],
+            "bgColor": "#cff1f2"
+         },
+         {
+            "id": "36_6",
+            "name": "36,6",
+            "logo": "/images/36_6.png",
+            "keywords": null,
+            "bgColor": "#88e5d2"
+         },
+         {
+            "id": "5karmanov",
+            "name": "5 карманов",
+            "logo": "/images/5karmanov.png",
+            "keywords": [
+               "5 karmanov"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "585",
+            "name": "585",
+            "logo": "/images/585_.png",
+            "keywords": null,
+            "bgColor": "#e7984e"
+         },
+         {
+            "id": "aa",
+            "name": "AA",
+            "logo": "/images/aa_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "abacus",
+            "name": "Abacus",
+            "logo": "/images/abacus_.png",
+            "keywords": null,
+            "bgColor": "#f1f1f1"
+         },
+         {
+            "id": "abbahotels",
+            "name": "Abba Hotels",
+            "logo": "/images/abbahotels_.png",
+            "keywords": null,
+            "bgColor": "#005361"
+         },
+         {
+            "id": "aclub",
+            "name": "Accor Le Club",
+            "logo": "/images/aclub_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "acoola",
+            "name": "Acoola",
+            "logo": "/images/acoola_.png",
+            "keywords": null,
+            "bgColor": "#01b5d0"
+         },
+         {
+            "id": "adidas",
+            "name": "Adidas",
+            "logo": "/images/adidas.png",
+            "keywords": [
+               "адидас"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "adria",
+            "name": "Adria",
+            "logo": "/images/adria_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "aegeanair",
+            "name": "Aegean Airlines",
+            "logo": "/images/aegeanair_.png",
+            "keywords": null,
+            "bgColor": "#223369"
+         },
+         {
+            "id": "lingus",
+            "name": "Aer Lingus",
+            "logo": "/images/lingus_.png",
+            "keywords": null,
+            "bgColor": "#008c7f"
+         },
+         {
+            "id": "aeroflot",
+            "name": "Aeroflot",
+            "logo": "/images/aeroflot_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "aerolineasargentinas",
+            "name": "Aerolineas Argentinas",
+            "logo": "/images/aerolineasargentinas_.png",
+            "keywords": null,
+            "bgColor": "#eaf3f7"
+         },
+         {
+            "id": "aeroplan",
+            "name": "Aeroplan",
+            "logo": "/images/aeroplan_.png",
+            "keywords": null,
+            "bgColor": "#ff7403"
+         },
+         {
+            "id": "airasia",
+            "name": "Air Asia",
+            "logo": "/images/airasia_.png",
+            "keywords": null,
+            "bgColor": "#d91f20"
+         },
+         {
+            "id": "airnewzealand",
+            "name": "Air New Zealand",
+            "logo": "/images/airnewzealand_.png",
+            "keywords": null,
+            "bgColor": "#050608"
+         },
+         {
+            "id": "airberlin",
+            "name": "airberlin topbonus",
+            "logo": "/images/airberlin_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "aki",
+            "name": "AKI",
+            "logo": "/images/aki_.png",
+            "keywords": null,
+            "bgColor": "#5caf7a"
+         },
+         {
+            "id": "alaskaairlines",
+            "name": "Alaska Airlines",
+            "logo": "/images/alaskaairlines_.png",
+            "keywords": null,
+            "bgColor": "#01426a"
+         },
+         {
+            "id": "alessandrofrenza",
+            "name": "alessandro frenza",
+            "logo": "/images/alessandrofrenza_.png",
+            "keywords": null,
+            "bgColor": "#0a0a00"
+         },
+         {
+            "id": "alitalia",
+            "name": "Alitalia",
+            "logo": "/images/alitalia_.png",
+            "keywords": null,
+            "bgColor": "#008434"
+         },
+         {
+            "id": "amc",
+            "name": "AMC Stubs",
+            "logo": "/images/amc_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "arber",
+            "name": "Arber",
+            "logo": "/images/arber_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "argo",
+            "name": "Argo",
+            "logo": "/images/argo_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "asiamiles",
+            "name": "Asia Miles",
+            "logo": "/images/asiamiles_.png",
+            "keywords": null,
+            "bgColor": "#fed700"
+         },
+         {
+            "id": "asianaairlines",
+            "name": "Asiana Airlines",
+            "logo": "/images/asianaairlines_.png",
+            "keywords": null,
+            "bgColor": "#eaecee"
+         },
+         {
+            "id": "austinreed",
+            "name": "Austin Reed",
+            "logo": "/images/austinreed_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "avantage",
+            "name": "Avantage",
+            "logo": "/images/avantage_.png",
+            "keywords": null,
+            "bgColor": "#f7f7f7"
+         },
+         {
+            "id": "avia",
+            "name": "AVIA",
+            "logo": "/images/avia_.png",
+            "keywords": null,
+            "bgColor": "#fe0000"
+         },
+         {
+            "id": "avios",
+            "name": "Avios",
+            "logo": "/images/avios_.png",
+            "keywords": null,
+            "bgColor": "#f3edf1"
+         },
+         {
+            "id": "avis",
+            "name": "Avis",
+            "logo": "/images/avis_.png",
+            "keywords": null,
+            "bgColor": "#e7e7e7"
+         },
+         {
+            "id": "bnbhotels",
+            "name": "B&B Hotels",
+            "logo": "/images/bnbhotels_.png",
+            "keywords": null,
+            "bgColor": "#512514"
+         },
+         {
+            "id": "bandq",
+            "name": "B&Q",
+            "logo": "/images/bandq_.png",
+            "keywords": null,
+            "bgColor": "#ff6600"
+         },
+         {
+            "id": "bangkokairways",
+            "name": "Bangkok Airways",
+            "logo": "/images/bangkokairways_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "baon",
+            "name": "Baon",
+            "logo": "/images/baon.png",
+            "keywords": null,
+            "bgColor": "#342110"
+         },
+         {
+            "id": "beefeater",
+            "name": "Beefeater",
+            "logo": "/images/beefeater_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "befree",
+            "name": "befree",
+            "logo": "/images/befree.png",
+            "keywords": null,
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "benaffetto",
+            "name": "BENAFFETTO",
+            "logo": "/images/card-benaffetto.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "benetton",
+            "name": "Benetton",
+            "logo": "/images/benetton.png",
+            "keywords": null,
+            "bgColor": "#009036"
+         },
+         {
+            "id": "bestwestern",
+            "name": "Best Western",
+            "logo": "/images/bestwestern_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "blockbuster",
+            "name": "Blockbuster",
+            "logo": "/images/blockbuster_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "bonjoli",
+            "name": "Bon Joli",
+            "logo": "/images/bonjoli_.png",
+            "keywords": null,
+            "bgColor": "#181818"
+         },
+         {
+            "id": "boots",
+            "name": "Boots",
+            "logo": "/images/boots_.png",
+            "keywords": null,
+            "bgColor": "#1b448e"
+         },
+         {
+            "id": "bosanova",
+            "name": "Bosanova",
+            "logo": "/images/bosanova_.png",
+            "keywords": null,
+            "bgColor": "#0073c0"
+         },
+         {
+            "id": "bottegaverde",
+            "name": "Bottega Verde",
+            "logo": "/images/bottegaverde_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "bouxavenue",
+            "name": "Boux Avenue",
+            "logo": "/images/bouxavenue_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "bpbonusclub",
+            "name": "BP Bonus Club",
+            "logo": "/images/bpbonusclub_.png",
+            "keywords": null,
+            "bgColor": "#c7de1d"
+         },
+         {
+            "id": "executiveclub",
+            "name": "British Airways",
+            "logo": "/images/executiveclub_.png",
+            "keywords": null,
+            "bgColor": "#ededed"
+         },
+         {
+            "id": "brocard",
+            "name": "BROCARD",
+            "logo": "/images/brocard_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "brownthomas",
+            "name": "Brown Thomas",
+            "logo": "/images/brownthomas_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "buildabear",
+            "name": "Build-A-Bear",
+            "logo": "/images/buildabear_.png",
+            "keywords": null,
+            "bgColor": "#0057a2"
+         },
+         {
+            "id": "cacharel",
+            "name": "Cacharel",
+            "logo": "/images/cacharel_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "calipso",
+            "name": "CALIPSO",
+            "logo": "/images/calipso_.png",
+            "keywords": null,
+            "bgColor": "#cc0001"
+         },
+         {
+            "id": "calvin_klein",
+            "name": "Calvin Klein",
+            "logo": "/images/calvin_klein.png",
+            "keywords": [
+               "Калвин",
+               "Келвин",
+               "Кляйн"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "camelot",
+            "name": "Camelot",
+            "logo": "/images/camelot.png",
+            "keywords": [
+               "Камелот"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "carlo_pazolini",
+            "name": "Carlo Pazolini",
+            "logo": "/images/carlo_pazolini.png",
+            "keywords": [
+               "Карло",
+               "Пазолини"
+            ],
+            "bgColor": "#231f20"
+         },
+         {
+            "id": "carrefour",
+            "name": "Carrefour",
+            "logo": "/images/carrefour_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "caterinaleman",
+            "name": "Caterina Leman",
+            "logo": "/images/caterinaleman_.png",
+            "keywords": null,
+            "bgColor": "#ebebeb"
+         },
+         {
+            "id": "cathaypacific",
+            "name": "Cathay Pacific",
+            "logo": "/images/cathaypacific_.png",
+            "keywords": null,
+            "bgColor": "#046261"
+         },
+         {
+            "id": "cats_dogs",
+            "name": "Cats&Dogs",
+            "logo": "/images/cats_dogs.png",
+            "keywords": [
+               "Кет",
+               "Кат",
+               "Догс",
+               "Кетc",
+               "Катc"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "chinaeastern",
+            "name": "China Eastern",
+            "logo": "/images/chinaeastern_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "chinasouthernairlines",
+            "name": "China Southern Airlines",
+            "logo": "/images/chinasouthernairlines_.png",
+            "keywords": null,
+            "bgColor": "#e1eaef"
+         },
+         {
+            "id": "choicehotels",
+            "name": "Choice Hotels",
+            "logo": "/images/choicehotels_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "clubcarlson",
+            "name": "Club Carlson",
+            "logo": "/images/clubcarlson_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "med",
+            "name": "Club Med",
+            "logo": "/images/med_.png",
+            "keywords": null,
+            "bgColor": "#045789"
+         },
+         {
+            "id": "colins",
+            "name": "COLIN`S",
+            "logo": "/images/colins.png",
+            "keywords": [
+               "Колинс",
+               "Колинз"
+            ],
+            "bgColor": "#1a1919"
+         },
+         {
+            "id": "columbia",
+            "name": "Columbia",
+            "logo": "/images/columbia.png",
+            "keywords": [
+               "Колумбия"
+            ],
+            "bgColor": "#0092ce"
+         },
+         {
+            "id": "comfy",
+            "name": "COMFY",
+            "logo": "/images/comfy_.png",
+            "keywords": null,
+            "bgColor": "#6ab572"
+         },
+         {
+            "id": "concept_club",
+            "name": "Concept Club",
+            "logo": "/images/concept_club.png",
+            "keywords": [
+               "Концепт",
+               "Клуб"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "corsocomo",
+            "name": "Corso Como",
+            "logo": "/images/corsocomo.png",
+            "keywords": [
+               "Корсо",
+               "Комо",
+               "Корсо комо"
+            ],
+            "bgColor": "#e0dabc"
+         },
+         {
+            "id": "cortefiel",
+            "name": "Cortefiel",
+            "logo": "/images/cortefiel_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "costa",
+            "name": "Costa",
+            "logo": "/images/costa_.png",
+            "keywords": null,
+            "bgColor": "#8b1d31"
+         },
+         {
+            "id": "cotsworld",
+            "name": "Cotsworld Outdoor",
+            "logo": "/images/cotsworld_.png",
+            "keywords": null,
+            "bgColor": "#d10a11"
+         },
+         {
+            "id": "debenhams",
+            "name": "Debenhams",
+            "logo": "/images/debenhams_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "decathlon",
+            "name": "Decathlon",
+            "logo": "/images/decathlon.png",
+            "keywords": [
+               "Декатлон"
+            ],
+            "bgColor": "#0198f1"
+         },
+         {
+            "id": "deltaskymiles",
+            "name": "Delta Skymiles",
+            "logo": "/images/deltaskymiles_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "desigual",
+            "name": "Desigual",
+            "logo": "/images/desigual_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "dia",
+            "name": "DIA",
+            "logo": "/images/dia_.png",
+            "keywords": null,
+            "bgColor": "#e31818"
+         },
+         {
+            "id": "dns_shop",
+            "name": "DNS",
+            "logo": "/images/card__0024_dns.png",
+            "keywords": null,
+            "bgColor": "#017dc5"
+         },
+         {
+            "id": "domani",
+            "name": "Domani",
+            "logo": "/images/domani.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "douglas",
+            "name": "Douglas",
+            "logo": "/images/douglas_.png",
+            "keywords": null,
+            "bgColor": "#b6e2cf"
+         },
+         {
+            "id": "dupareilaumeme",
+            "name": "Du Pareil Au Même",
+            "logo": "/images/dupareilaumeme_.png",
+            "keywords": null,
+            "bgColor": "#cd0a2d"
+         },
+         {
+            "id": "e96",
+            "name": "E96.RU",
+            "logo": "/images/e96.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "ecco",
+            "name": "ECCO",
+            "logo": "/images/ecco.png",
+            "keywords": [
+               "экко"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "corte",
+            "name": "El Corte Inglés",
+            "logo": "/images/corte_.png",
+            "keywords": null,
+            "bgColor": "#02872a"
+         },
+         {
+            "id": "elganso",
+            "name": "El Ganso",
+            "logo": "/images/elganso_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "skywards",
+            "name": "Emirates Skywards",
+            "logo": "/images/skywards_.png",
+            "keywords": null,
+            "bgColor": "#d71a21"
+         },
+         {
+            "id": "enterprise",
+            "name": "Enterprise",
+            "logo": "/images/enterprise_.png",
+            "keywords": null,
+            "bgColor": "#181918"
+         },
+         {
+            "id": "eroski",
+            "name": "Eroski",
+            "logo": "/images/eroski_.png",
+            "keywords": null,
+            "bgColor": "#df0021"
+         },
+         {
+            "id": "esprit",
+            "name": "Esprit",
+            "logo": "/images/esprit_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "esso",
+            "name": "Esso",
+            "logo": "/images/esso_.png",
+            "keywords": null,
+            "bgColor": "#0533b6"
+         },
+         {
+            "id": "etam",
+            "name": "Etam",
+            "logo": "/images/etam_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "etihad",
+            "name": "Etihad",
+            "logo": "/images/etihad_.png",
+            "keywords": null,
+            "bgColor": "#450619"
+         },
+         {
+            "id": "europcar",
+            "name": "Europcar",
+            "logo": "/images/europcar_.png",
+            "keywords": null,
+            "bgColor": "#009900"
+         },
+         {
+            "id": "eva",
+            "name": "EVA",
+            "logo": "/images/eva_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "evita",
+            "name": "Evita",
+            "logo": "/images/evita_.png",
+            "keywords": null,
+            "bgColor": "#ff0000"
+         },
+         {
+            "id": "expert",
+            "name": "Expert",
+            "logo": "/images/expert_.png",
+            "keywords": null,
+            "bgColor": "#f68b1f"
+         },
+         {
+            "id": "fairmont",
+            "name": "Fairmont",
+            "logo": "/images/fairmont_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "fashiongalaxy",
+            "name": "Fashion Galaxy",
+            "logo": "/images/fashiongalaxy_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "finn_flare",
+            "name": "Finn Flare",
+            "logo": "/images/finn_flare.png",
+            "keywords": null,
+            "bgColor": "#cac8c5"
+         },
+         {
+            "id": "finnair",
+            "name": "Finnair",
+            "logo": "/images/finnair_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "fishka",
+            "name": "FISHKA",
+            "logo": "/images/fishka_.png",
+            "keywords": null,
+            "bgColor": "#ef4046"
+         },
+         {
+            "id": "fix_price",
+            "name": "FIX Price",
+            "logo": "/images/card__0033_fix-price.png",
+            "keywords": null,
+            "bgColor": "#80bb42"
+         },
+         {
+            "id": "flyingblue",
+            "name": "Flying Blue",
+            "logo": "/images/flyingblue_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "forman",
+            "name": "FORMAN Мужская одежда",
+            "logo": "/images/card-forman.png",
+            "keywords": [
+               "FORMAN Muzhskaya odezhda"
+            ],
+            "bgColor": "#242424"
+         },
+         {
+            "id": "francescodonni",
+            "name": "Francesco Donni",
+            "logo": "/images/francescodonni_.png",
+            "keywords": null,
+            "bgColor": "#f21618"
+         },
+         {
+            "id": "fresh",
+            "name": "Fresh",
+            "logo": "/images/fresh_.png",
+            "keywords": null,
+            "bgColor": "#94c032"
+         },
+         {
+            "id": "game",
+            "name": "Game",
+            "logo": "/images/game_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "gap",
+            "name": "GAP",
+            "logo": "/images/gap.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "geox",
+            "name": "Geox",
+            "logo": "/images/geox_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "gha",
+            "name": "GHA",
+            "logo": "/images/gha_.png",
+            "keywords": null,
+            "bgColor": "#393637"
+         },
+         {
+            "id": "glance",
+            "name": "Glance",
+            "logo": "/images/glance.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "gloria_jeans",
+            "name": "Gloria Jeans",
+            "logo": "/images/gloria_jeans.png",
+            "keywords": null,
+            "bgColor": "#012d6b"
+         },
+         {
+            "id": "gnc",
+            "name": "GNC",
+            "logo": "/images/gnc_.png",
+            "keywords": null,
+            "bgColor": "#e51937"
+         },
+         {
+            "id": "gooutdoors",
+            "name": "GO Outdoors",
+            "logo": "/images/gooutdoors_.png",
+            "keywords": null,
+            "bgColor": "#003298"
+         },
+         {
+            "id": "golfstream",
+            "name": "Golfstream",
+            "logo": "/images/golfstream_.png",
+            "keywords": null,
+            "bgColor": "#0038a7"
+         },
+         {
+            "id": "guess",
+            "name": "Guess",
+            "logo": "/images/guess_.png",
+            "keywords": null,
+            "bgColor": "#0a0a0a"
+         },
+         {
+            "id": "gulliver",
+            "name": "Gulliver",
+            "logo": "/images/gulliver_.png",
+            "keywords": null,
+            "bgColor": "#164a76"
+         },
+         {
+            "id": "hairhouse",
+            "name": "HAIRHOUSE",
+            "logo": "/images/hairhouse_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "hardrock",
+            "name": "Hard Rock",
+            "logo": "/images/hardrock_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "harrods",
+            "name": "Harrods",
+            "logo": "/images/harrods_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "baaworldpoints",
+            "name": "Heathrow Rewards",
+            "logo": "/images/baaworldpoints_.png",
+            "keywords": null,
+            "bgColor": "#482272"
+         },
+         {
+            "id": "helix",
+            "name": "Helix",
+            "logo": "/images/helix_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "henderson",
+            "name": "Henderson",
+            "logo": "/images/henderson.png",
+            "keywords": null,
+            "bgColor": "#004e8e"
+         },
+         {
+            "id": "hertz",
+            "name": "Hertz",
+            "logo": "/images/hertz_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "hiltonhonors",
+            "name": "Hilton HHonors",
+            "logo": "/images/hiltonhonors_.png",
+            "keywords": null,
+            "bgColor": "#b1b1b1"
+         },
+         {
+            "id": "hobbycraft",
+            "name": "Hobbycraft",
+            "logo": "/images/hobbycraft_.png",
+            "keywords": null,
+            "bgColor": "#410e28"
+         },
+         {
+            "id": "hoff",
+            "name": "Hoff",
+            "logo": "/images/hoff_.png",
+            "keywords": null,
+            "bgColor": "#ff0004"
+         },
+         {
+            "id": "honda",
+            "name": "Honda Riders Club",
+            "logo": "/images/honda_.png",
+            "keywords": null,
+            "bgColor": "#e70d31"
+         },
+         {
+            "id": "houseoffraser",
+            "name": "House of Fraser",
+            "logo": "/images/houseoffraser_.png",
+            "keywords": null,
+            "bgColor": "#1a1818"
+         },
+         {
+            "id": "hugoboss",
+            "name": "Hugo Boss",
+            "logo": "/images/hugoboss_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "hyatt",
+            "name": "Hyatt",
+            "logo": "/images/hyatt_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "iberia",
+            "name": "Iberia",
+            "logo": "/images/iberia_.png",
+            "keywords": null,
+            "bgColor": "#b1081b"
+         },
+         {
+            "id": "businessclub",
+            "name": "IHG Business Club",
+            "logo": "/images/businessclub_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "priorityclubrewards",
+            "name": "IHG Rewards",
+            "logo": "/images/priorityclubrewards_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "ikea_family",
+            "name": "IKEA family",
+            "logo": "/images/ikea_family.png",
+            "keywords": null,
+            "bgColor": "#fd6a02"
+         },
+         {
+            "id": "imaginarium",
+            "name": "Imaginarium",
+            "logo": "/images/imaginarium.png",
+            "keywords": null,
+            "bgColor": "#5d5653"
+         },
+         {
+            "id": "implozia",
+            "name": "Implozia",
+            "logo": "/images/implozia_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "incanto",
+            "name": "INCANTO",
+            "logo": "/images/incanto_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "incity",
+            "name": "INCITY",
+            "logo": "/images/incity.png",
+            "keywords": null,
+            "bgColor": "#282425"
+         },
+         {
+            "id": "intersport",
+            "name": "Intersport",
+            "logo": "/images/intersport_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "intertrop",
+            "name": "INTERTOP",
+            "logo": "/images/intertrop_.png",
+            "keywords": null,
+            "bgColor": "#00a2b4"
+         },
+         {
+            "id": "invitro",
+            "name": "INVITRO",
+            "logo": "/images/card-invitro.png",
+            "keywords": null,
+            "bgColor": "#62b4bd"
+         },
+         {
+            "id": "itaita",
+            "name": "ITAITA",
+            "logo": "/images/card-itaita.png",
+            "keywords": null,
+            "bgColor": "#90afc9"
+         },
+         {
+            "id": "jal",
+            "name": "JAL",
+            "logo": "/images/jal_.png",
+            "keywords": null,
+            "bgColor": "#eaeaea"
+         },
+         {
+            "id": "jeans_symphony",
+            "name": "Jeans Symphony",
+            "logo": "/images/jeans_symphony.png",
+            "keywords": null,
+            "bgColor": "#22245d"
+         },
+         {
+            "id": "josef_seibel",
+            "name": "Josef Seibel",
+            "logo": "/images/josef_seibel.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "kanzler",
+            "name": "Kanzler",
+            "logo": "/images/kanzler.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "kapricci",
+            "name": "Kapricci",
+            "logo": "/images/kapricci_.png",
+            "keywords": null,
+            "bgColor": "#181818"
+         },
+         {
+            "id": "karen_millen",
+            "name": "Karen Millen",
+            "logo": "/images/karen_millen.png",
+            "keywords": null,
+            "bgColor": "#eb962c"
+         },
+         {
+            "id": "kari",
+            "name": "Kari",
+            "logo": "/images/kari.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "kfc",
+            "name": "KFC",
+            "logo": "/images/kfc_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "kiabi",
+            "name": "Kiabi",
+            "logo": "/images/kiabi_.png",
+            "keywords": null,
+            "bgColor": "#0a0a36"
+         },
+         {
+            "id": "kiko",
+            "name": "KIKO",
+            "logo": "/images/kiko_.png",
+            "keywords": null,
+            "bgColor": "#8e79b2"
+         },
+         {
+            "id": "kira_plastinina",
+            "name": "Kira Plastinina",
+            "logo": "/images/kira_plastinina.png",
+            "keywords": null,
+            "bgColor": "#ec008c"
+         },
+         {
+            "id": "klo",
+            "name": "KLO",
+            "logo": "/images/klo_.png",
+            "keywords": null,
+            "bgColor": "#ffda00"
+         },
+         {
+            "id": "lego",
+            "name": "Lego VIP",
+            "logo": "/images/legovip.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "leroymerlin",
+            "name": "Leroy Merlin",
+            "logo": "/images/leroymerlin_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "levis",
+            "name": "Levi`s",
+            "logo": "/images/levis.png",
+            "keywords": [
+               "левайс",
+               "левис",
+               "levis"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "libertylondon",
+            "name": "Liberty London",
+            "logo": "/images/libertylondon_.png",
+            "keywords": null,
+            "bgColor": "#6f2c96"
+         },
+         {
+            "id": "love_republic",
+            "name": "Love Republic",
+            "logo": "/images/love_republic.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "ltb",
+            "name": "LTB",
+            "logo": "/images/ltb.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "lvb",
+            "name": "LVb",
+            "logo": "/images/lvb_.png",
+            "keywords": null,
+            "bgColor": "#363636"
+         },
+         {
+            "id": "l_occitane",
+            "name": "L`Occitane",
+            "logo": "/images/l_occitane.png",
+            "keywords": null,
+            "bgColor": "#fed44a"
+         },
+         {
+            "id": "mlife",
+            "name": "M life",
+            "logo": "/images/mlife_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "mafia",
+            "name": "Mafia",
+            "logo": "/images/mafia_.png",
+            "keywords": null,
+            "bgColor": "#0a0a0a"
+         },
+         {
+            "id": "malaysiaair",
+            "name": "Malaysia Airlines Enrich",
+            "logo": "/images/malaysiaair_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "mamaroma",
+            "name": "MAMA ROMA",
+            "logo": "/images/mamaroma_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "mango",
+            "name": "Mango",
+            "logo": "/images/mango_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "marksspencer",
+            "name": "Marks & Spencer",
+            "logo": "/images/marksspencer_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "marriott",
+            "name": "Marriott",
+            "logo": "/images/marriott_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "mascotte",
+            "name": "Mascotte",
+            "logo": "/images/mascotte.png",
+            "keywords": [
+               "маскотте"
+            ],
+            "bgColor": "#ed1c24"
+         },
+         {
+            "id": "mavi",
+            "name": "Mavi",
+            "logo": "/images/mavi_.png",
+            "keywords": null,
+            "bgColor": "#154278"
+         },
+         {
+            "id": "mayoral",
+            "name": "Mayoral",
+            "logo": "/images/mayoral_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "media_markt",
+            "name": "Media Markt",
+            "logo": "/images/card__0035_media-markt.png",
+            "keywords": null,
+            "bgColor": "#df0000"
+         },
+         {
+            "id": "megasport",
+            "name": "Megasport",
+            "logo": "/images/megasport_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "melon",
+            "name": "Melon Fashion Club",
+            "logo": "/images/melon_fashion_club.png",
+            "keywords": [
+               "мелон",
+               "клуб",
+               "фейшн"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "metro",
+            "name": "Metro",
+            "logo": "/images/metro.png",
+            "keywords": null,
+            "bgColor": "#002a58"
+         },
+         {
+            "id": "mexx",
+            "name": "Mexx",
+            "logo": "/images/mexx_.png",
+            "keywords": null,
+            "bgColor": "#482782"
+         },
+         {
+            "id": "milesandmore",
+            "name": "Miles & More",
+            "logo": "/images/milesandmore_.png",
+            "keywords": null,
+            "bgColor": "#0c2058"
+         },
+         {
+            "id": "miraton",
+            "name": "Miraton",
+            "logo": "/images/miraton_.png",
+            "keywords": null,
+            "bgColor": "#131211"
+         },
+         {
+            "id": "moricinema",
+            "name": "mori cinema",
+            "logo": "/images/card-moricinema.png",
+            "keywords": null,
+            "bgColor": "#eaeaea"
+         },
+         {
+            "id": "mothercare",
+            "name": "Mothercare",
+            "logo": "/images/mothercare_.png",
+            "keywords": null,
+            "bgColor": "#00386b"
+         },
+         {
+            "id": "motivi",
+            "name": "Motivi",
+            "logo": "/images/motivi_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "moyo",
+            "name": "Moyo",
+            "logo": "/images/moyo_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "nectar",
+            "name": "Nectar",
+            "logo": "/images/nectar_.png",
+            "keywords": null,
+            "bgColor": "#6f2a8e"
+         },
+         {
+            "id": "nespresso",
+            "name": "Nespresso",
+            "logo": "/images/nespresso_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "next",
+            "name": "Next",
+            "logo": "/images/next_.png",
+            "keywords": null,
+            "bgColor": "#231f20"
+         },
+         {
+            "id": "nike",
+            "name": "NIKE",
+            "logo": "/images/nike.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "norauto",
+            "name": "Norauto",
+            "logo": "/images/norauto_.png",
+            "keywords": null,
+            "bgColor": "#0c0c5c"
+         },
+         {
+            "id": "novus",
+            "name": "NOVUS",
+            "logo": "/images/novus_.png",
+            "keywords": null,
+            "bgColor": "#3fab3c"
+         },
+         {
+            "id": "obi",
+            "name": "OBI",
+            "logo": "/images/card-obi.png",
+            "keywords": null,
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "obuvcom",
+            "name": "obuv.com",
+            "logo": "/images/obuvcom_.png",
+            "keywords": null,
+            "bgColor": "#f05223"
+         },
+         {
+            "id": "okplus",
+            "name": "OK Plus",
+            "logo": "/images/okplus_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "oldi",
+            "name": "OLDI",
+            "logo": "/images/card-oldi.png",
+            "keywords": null,
+            "bgColor": "#043b8d"
+         },
+         {
+            "id": "oodij",
+            "name": "oodji",
+            "logo": "/images/oodij_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "orby",
+            "name": "Orby",
+            "logo": "/images/orby_.png",
+            "keywords": null,
+            "bgColor": "#ff2801"
+         },
+         {
+            "id": "orchestra",
+            "name": "Orchestra",
+            "logo": "/images/orchestra_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "ostin",
+            "name": "O`STIN",
+            "logo": "/images/ostin.png",
+            "keywords": [
+               "ostin",
+               "остин"
+            ],
+            "bgColor": "#363636"
+         },
+         {
+            "id": "palmetta",
+            "name": "Palmetta",
+            "logo": "/images/palmetta.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "flyuia",
+            "name": "Panorama club",
+            "logo": "/images/flyuia_.png",
+            "keywords": null,
+            "bgColor": "#fed343"
+         },
+         {
+            "id": "paolo_conte",
+            "name": "Paolo Conte",
+            "logo": "/images/paolo_conte.png",
+            "keywords": [
+               "конте",
+               "паоло"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "paulandshark",
+            "name": "Paul & Shark",
+            "logo": "/images/paulandshark_.png",
+            "keywords": null,
+            "bgColor": "#a8b7e7"
+         },
+         {
+            "id": "pelican",
+            "name": "Pelican",
+            "logo": "/images/pelican_.png",
+            "keywords": null,
+            "bgColor": "#e31e24"
+         },
+         {
+            "id": "pimkie",
+            "name": "Pimkie",
+            "logo": "/images/pimkie_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "prenatal",
+            "name": "Prenatal",
+            "logo": "/images/prenatal_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "primera",
+            "name": "Primera",
+            "logo": "/images/primera_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "prisma",
+            "name": "PRISMA",
+            "logo": "/images/card-prisma.png",
+            "keywords": null,
+            "bgColor": "#089146"
+         },
+         {
+            "id": "promod",
+            "name": "Promod",
+            "logo": "/images/promod_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "prostor",
+            "name": "PROSTOR",
+            "logo": "/images/prostor_.png",
+            "keywords": null,
+            "bgColor": "#fbd4fa"
+         },
+         {
+            "id": "purehmv",
+            "name": "purehmv",
+            "logo": "/images/purehmv_.png",
+            "keywords": null,
+            "bgColor": "#111111"
+         },
+         {
+            "id": "qatar",
+            "name": "Qatar Airways",
+            "logo": "/images/qatar_.png",
+            "keywords": null,
+            "bgColor": "#5c0632"
+         },
+         {
+            "id": "quiksilver",
+            "name": "Quiksilver",
+            "logo": "/images/quiksilver_.png",
+            "keywords": null,
+            "bgColor": "#f20000"
+         },
+         {
+            "id": "ralf_ringer",
+            "name": "Ralf Ringer",
+            "logo": "/images/card__0018_ralf-ringer.png",
+            "keywords": null,
+            "bgColor": "#002252"
+         },
+         {
+            "id": "re_store",
+            "name": "re:Store",
+            "logo": "/images/re_store.png",
+            "keywords": [
+               "рестор"
+            ],
+            "bgColor": "#292929"
+         },
+         {
+            "id": "reebok",
+            "name": "Reebok",
+            "logo": "/images/reebok.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "rendez_vous",
+            "name": "Rendez-vous",
+            "logo": "/images/rendez_vous.png",
+            "keywords": [
+               "Рандеву",
+               "Рендеву",
+               "rendevu",
+               "randevu"
+            ],
+            "bgColor": "#dd078b"
+         },
+         {
+            "id": "renfe",
+            "name": "Renfe",
+            "logo": "/images/renfe_.png",
+            "keywords": null,
+            "bgColor": "#63044d"
+         },
+         {
+            "id": "repsol",
+            "name": "Repsol",
+            "logo": "/images/repsol_.png",
+            "keywords": null,
+            "bgColor": "#d0cae6"
+         },
+         {
+            "id": "respect",
+            "name": "Respect",
+            "logo": "/images/respect.png",
+            "keywords": [
+               "респект"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "rieker",
+            "name": "Rieker",
+            "logo": "/images/card__0029_rieker.png",
+            "keywords": null,
+            "bgColor": "#dc263c"
+         },
+         {
+            "id": "ritzcarlton",
+            "name": "Ritz-Carlton",
+            "logo": "/images/ritzcarlton_.png",
+            "keywords": null,
+            "bgColor": "#c6d7ec"
+         },
+         {
+            "id": "rockport",
+            "name": "Rockport",
+            "logo": "/images/card-rockport.png",
+            "keywords": null,
+            "bgColor": "#f37020"
+         },
+         {
+            "id": "roxy",
+            "name": "Roxy",
+            "logo": "/images/roxy_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "soliver",
+            "name": "s.Oliver",
+            "logo": "/images/soliver_.png",
+            "keywords": null,
+            "bgColor": "#b90029"
+         },
+         {
+            "id": "sabon",
+            "name": "SABON",
+            "logo": "/images/sabon_.png",
+            "keywords": null,
+            "bgColor": "#562f10"
+         },
+         {
+            "id": "salamander",
+            "name": "Salamander",
+            "logo": "/images/salamander_.png",
+            "keywords": null,
+            "bgColor": "#11743c"
+         },
+         {
+            "id": "eurobonus",
+            "name": "SAS EuroBonus",
+            "logo": "/images/eurobonus_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "savage",
+            "name": "Savage",
+            "logo": "/images/savage.png",
+            "keywords": null,
+            "bgColor": "#666666"
+         },
+         {
+            "id": "sbs_megamall",
+            "name": "SBS MegaMall",
+            "logo": "/images/card__0032_sbs-megamall.png",
+            "keywords": null,
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "mapfre",
+            "name": "Seguros Mapfre",
+            "logo": "/images/mapfre_.png",
+            "keywords": null,
+            "bgColor": "#cd0a1f"
+         },
+         {
+            "id": "sela",
+            "name": "SELA",
+            "logo": "/images/sela.png",
+            "keywords": null,
+            "bgColor": "#25aa37"
+         },
+         {
+            "id": "selgros",
+            "name": "Selgros",
+            "logo": "/images/card__0023_selgros.png",
+            "keywords": null,
+            "bgColor": "#fff500"
+         },
+         {
+            "id": "sephora",
+            "name": "Sephora",
+            "logo": "/images/sephora_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "sergentmajor",
+            "name": "Sergent Major",
+            "logo": "/images/sergentmajor_.png",
+            "keywords": null,
+            "bgColor": "#42063c"
+         },
+         {
+            "id": "shangrila",
+            "name": "Shangri-La Golden Circle",
+            "logo": "/images/shangrila_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "shell_clubsmart",
+            "name": "Shell Clubsmart",
+            "logo": "/images/shellclubsmart.png",
+            "keywords": [
+               "шелл",
+               "клубсмарт"
+            ],
+            "bgColor": "#f7d117"
+         },
+         {
+            "id": "krisflyer",
+            "name": "Singapore Krisflyer",
+            "logo": "/images/krisflyer_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "sisley",
+            "name": "Sisley",
+            "logo": "/images/sisley_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "sixt",
+            "name": "Sixt",
+            "logo": "/images/sixt_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "smyk",
+            "name": "Smyk",
+            "logo": "/images/smyk_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "socar",
+            "name": "Socar",
+            "logo": "/images/socar_.png",
+            "keywords": null,
+            "bgColor": "#70a150"
+         },
+         {
+            "id": "southwest",
+            "name": "Southwest",
+            "logo": "/images/southwest_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "spar",
+            "name": "SPAR",
+            "logo": "/images/card__0015_spar.png",
+            "keywords": null,
+            "bgColor": "#017c50"
+         },
+         {
+            "id": "marks_spenser",
+            "name": "Spenser",
+            "logo": "/images/marks_and_spenser.png",
+            "keywords": null,
+            "bgColor": "#e7e7e7"
+         },
+         {
+            "id": "springfield",
+            "name": "Springfield",
+            "logo": "/images/springfield_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "starbaks",
+            "name": "Starbucks",
+            "logo": "/images/starbucks.png",
+            "keywords": [
+               "старбакс"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "starwood",
+            "name": "Starwood",
+            "logo": "/images/starwood_.png",
+            "keywords": null,
+            "bgColor": "#c5cdd8"
+         },
+         {
+            "id": "statoil",
+            "name": "Statoil",
+            "logo": "/images/statoil_.png",
+            "keywords": null,
+            "bgColor": "#2a2a2a"
+         },
+         {
+            "id": "steigenberger",
+            "name": "Steigenberger",
+            "logo": "/images/steigenberger_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "stockmann",
+            "name": "Stockmann",
+            "logo": "/images/stockmann.png",
+            "keywords": [
+               "стокман"
+            ],
+            "bgColor": "#00664a"
+         },
+         {
+            "id": "subway",
+            "name": "Subway",
+            "logo": "/images/subway_.png",
+            "keywords": null,
+            "bgColor": "#156431"
+         },
+         {
+            "id": "sunlight",
+            "name": "Sunlight Brilliant",
+            "logo": "/images/sunlight.png",
+            "keywords": [
+               "санлайт",
+               " sanlite"
+            ],
+            "bgColor": "#ea1c22"
+         },
+         {
+            "id": "superperfumerias",
+            "name": "Superperfumerias",
+            "logo": "/images/superperfumerias_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "sushishop",
+            "name": "Sushi Shop",
+            "logo": "/images/sushishop_.png",
+            "keywords": null,
+            "bgColor": "#f4ece8"
+         },
+         {
+            "id": "swarovski",
+            "name": "Swarovski",
+            "logo": "/images/swarovski_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "swissotel",
+            "name": "Swissôtel",
+            "logo": "/images/swissotel_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "tervolina",
+            "name": "Tervolina",
+            "logo": "/images/tervolina.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "tescoma",
+            "name": "Tescoma",
+            "logo": "/images/tescoma_.png",
+            "keywords": null,
+            "bgColor": "#da002e"
+         },
+         {
+            "id": "thai",
+            "name": "Thai - Royal Orchid Plus",
+            "logo": "/images/thai_.png",
+            "keywords": null,
+            "bgColor": "#3d1971"
+         },
+         {
+            "id": "alba",
+            "name": "The ALBA",
+            "logo": "/images/alba.png",
+            "keywords": [
+               "alba",
+               " альба"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "thebodyshop",
+            "name": "The Body Shop",
+            "logo": "/images/thebodyshop_.png",
+            "keywords": null,
+            "bgColor": "#000000"
+         },
+         {
+            "id": "thomas_munz",
+            "name": "THOMAS MÜNZ",
+            "logo": "/images/thomas_munz.png",
+            "keywords": [
+               "томас мюнс",
+               " tomas muns"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "timberland",
+            "name": "Timberland",
+            "logo": "/images/timberland_.png",
+            "keywords": null,
+            "bgColor": "#f8a21b"
+         },
+         {
+            "id": "tom_farr",
+            "name": "tom farr",
+            "logo": "/images/tom_farr.png",
+            "keywords": null,
+            "bgColor": "#492f91"
+         },
+         {
+            "id": "tomtailor",
+            "name": "Tom Tailor",
+            "logo": "/images/tomtailor_.png",
+            "keywords": null,
+            "bgColor": "#004b8d"
+         },
+         {
+            "id": "tommyhilfiger",
+            "name": "Tommy Hilfiger",
+            "logo": "/images/tommyhilfiger_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "topsecret",
+            "name": "TOP SECRET",
+            "logo": "/images/topsecret_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "total",
+            "name": "Total",
+            "logo": "/images/total_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "totogroup",
+            "name": "TOTOGROUP",
+            "logo": "/images/card-totogroup.png",
+            "keywords": null,
+            "bgColor": "#dcddde"
+         },
+         {
+            "id": "travelclub",
+            "name": "Travel Club",
+            "logo": "/images/travelclub_.png",
+            "keywords": null,
+            "bgColor": "#007dc3"
+         },
+         {
+            "id": "triumph",
+            "name": "Triumph",
+            "logo": "/images/triumph_.png",
+            "keywords": null,
+            "bgColor": "#c40f2d"
+         },
+         {
+            "id": "turkishairlines",
+            "name": "Turkish Airlines",
+            "logo": "/images/turkishairlines_.png",
+            "keywords": null,
+            "bgColor": "#0060ae"
+         },
+         {
+            "id": "uspolo",
+            "name": "U.S. POLO ASSN",
+            "logo": "/images/card-uspolo.png",
+            "keywords": null,
+            "bgColor": "#ab0835"
+         },
+         {
+            "id": "uspoloassn",
+            "name": "U.S. POLO ASSN.",
+            "logo": "/images/uspoloassn_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "ullapopken",
+            "name": "Ulla Popken",
+            "logo": "/images/ullapopken_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "valtera",
+            "name": "VALTERA",
+            "logo": "/images/card__0008_valtera.png",
+            "keywords": null,
+            "bgColor": "#67005b"
+         },
+         {
+            "id": "vardex",
+            "name": "Vardex",
+            "logo": "/images/card-vardex.png",
+            "keywords": null,
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "velocity",
+            "name": "Velocity",
+            "logo": "/images/velocity_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "villeroyundboch",
+            "name": "Villeroy und Boch",
+            "logo": "/images/villeroyundboch_.png",
+            "keywords": null,
+            "bgColor": "#153d85"
+         },
+         {
+            "id": "virginatlantic",
+            "name": "Virgin Atlantic",
+            "logo": "/images/virginatlantic_.png",
+            "keywords": null,
+            "bgColor": "#e8d9db"
+         },
+         {
+            "id": "watsons",
+            "name": "Watsons",
+            "logo": "/images/watsons_.png",
+            "keywords": null,
+            "bgColor": "#009e96"
+         },
+         {
+            "id": "welfare",
+            "name": "Welfare",
+            "logo": "/images/welfare_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "westfalika",
+            "name": "Westfalika",
+            "logo": "/images/westfalika_.png",
+            "keywords": null,
+            "bgColor": "#e0f7eb"
+         },
+         {
+            "id": "westjet",
+            "name": "WestJet Rewards",
+            "logo": "/images/westjet_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "westland",
+            "name": "Westland",
+            "logo": "/images/westland.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "wittchen",
+            "name": "Wittchen",
+            "logo": "/images/wittchen_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "wog",
+            "name": "WOG",
+            "logo": "/images/wog_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "womensecret",
+            "name": "Women`Secret",
+            "logo": "/images/womensecret_.png",
+            "keywords": null,
+            "bgColor": "#f0eeef"
+         },
+         {
+            "id": "wyndhamrewards",
+            "name": "Wyndham Rewards",
+            "logo": "/images/wyndhamrewards_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "yves_rocher",
+            "name": "Yves Rocher",
+            "logo": "/images/yves_rocher.png",
+            "keywords": [
+               "Ив Роше",
+               " Iv Roshe",
+               " иф роше",
+               " if roshe"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "zarina",
+            "name": "Zarina",
+            "logo": "/images/card__0017_zarina.png",
+            "keywords": null,
+            "bgColor": "#97033d"
+         },
+         {
+            "id": "zenden",
+            "name": "Zenden",
+            "logo": "/images/card__0025_zenden.png",
+            "keywords": null,
+            "bgColor": "#545253"
+         },
+         {
+            "id": "zoobonus",
+            "name": "ZooBonus",
+            "logo": "/images/zoobonus_.png",
+            "keywords": null,
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "abk",
+            "name": "АБК",
+            "logo": "/images/abk_.png",
+            "keywords": [
+               "ABK"
+            ],
+            "bgColor": "#217c3e"
+         },
+         {
+            "id": "avtomag",
+            "name": "Автомаг",
+            "logo": "/images/card-avtomag.png",
+            "keywords": [
+               "Avtomag"
+            ],
+            "bgColor": "#1d93d1"
+         },
+         {
+            "id": "adamas",
+            "name": "Адамас",
+            "logo": "/images/adamas_.png",
+            "keywords": [
+               "adamas",
+               "Adamas"
+            ],
+            "bgColor": "#009689"
+         },
+         {
+            "id": "azbuka_vkusa",
+            "name": "Азбука вкуса",
+            "logo": "/images/azbuka_vkusa.png",
+            "keywords": [
+               "Azbuka vkusa"
+            ],
+            "bgColor": "#4c721d"
+         },
+         {
+            "id": "akademia",
+            "name": "Академия",
+            "logo": "/images/card-akademia.png",
+            "keywords": [
+               "Akademiya"
+            ],
+            "bgColor": "#c3dbf3"
+         },
+         {
+            "id": "akson",
+            "name": "Аксон",
+            "logo": "/images/akson_.png",
+            "keywords": [
+               "akson",
+               "Akson"
+            ],
+            "bgColor": "#ec0e0e"
+         },
+         {
+            "id": "alexandrovsky_sad",
+            "name": "Александровский сад",
+            "logo": "/images/alexandrovsky_sad_.png",
+            "keywords": [
+               "Aleksandrovskii sad"
+            ],
+            "bgColor": "#dfe8af"
+         },
+         {
+            "id": "alefmex",
+            "name": "Алеф",
+            "logo": "/images/alefmex_.png",
+            "keywords": [
+               "Alef"
+            ],
+            "bgColor": "#b3211a"
+         },
+         {
+            "id": "alfavit",
+            "name": "Алфавит",
+            "logo": "/images/alfavit_.png",
+            "keywords": [
+               "Alfavit"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "alpari",
+            "name": "Альпари",
+            "logo": "/images/alpari_.png",
+            "keywords": [
+               "Alpari"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "amstor",
+            "name": "Амстор",
+            "logo": "/images/amstor_.png",
+            "keywords": [
+               "Amstor"
+            ],
+            "bgColor": "#ffe035"
+         },
+         {
+            "id": "ancor",
+            "name": "Анкор",
+            "logo": "/images/ancor_.png",
+            "keywords": [
+               "Ankor"
+            ],
+            "bgColor": "#7f4638"
+         },
+         {
+            "id": "antoshka",
+            "name": "Антошка",
+            "logo": "/images/antoshka_.png",
+            "keywords": [
+               "Antoshka"
+            ],
+            "bgColor": "#e43a32"
+         },
+         {
+            "id": "apteka911",
+            "name": "Аптека 911",
+            "logo": "/images/apteka911_.png",
+            "keywords": [
+               "Apteka 911"
+            ],
+            "bgColor": "#a00f0d"
+         },
+         {
+            "id": "aptekadobrogodnya",
+            "name": "Аптека Доброго Дня",
+            "logo": "/images/aptekadobrogodnya_.png",
+            "keywords": [
+               "Apteka Dobrogo Dnya"
+            ],
+            "bgColor": "#50b948"
+         },
+         {
+            "id": "apteka_zdorovru",
+            "name": "Аптека Здоров.ру",
+            "logo": "/images/card-apteka-zdorovru.png",
+            "keywords": [
+               "Apteka Zdorov.ru"
+            ],
+            "bgColor": "#def6dc"
+         },
+         {
+            "id": "nevis",
+            "name": "АПТЕКА НЕВИС",
+            "logo": "/images/nevis_.png",
+            "keywords": [
+               "APTEKA NEVIS"
+            ],
+            "bgColor": "#d13528"
+         },
+         {
+            "id": "aptekanizkihcen",
+            "name": "Аптека низких цен",
+            "logo": "/images/aptekanizkihcen_.png",
+            "keywords": [
+               "Apteka nizkikh tsen"
+            ],
+            "bgColor": "#ffd413"
+         },
+         {
+            "id": "apteka_ot_sklada",
+            "name": "Аптека от склада",
+            "logo": "/images/card__0012_apteka-ot-sklada.png",
+            "keywords": [
+               "Apteka ot sklada"
+            ],
+            "bgColor": "#492964"
+         },
+         {
+            "id": "apteka_firsthelp",
+            "name": "Аптека Первая помощь",
+            "logo": "/images/card-apteka-firsthelp.png",
+            "keywords": [
+               "Apteka Pervaya pomoshch"
+            ],
+            "bgColor": "#e30013"
+         },
+         {
+            "id": "apteka_fialka",
+            "name": "Аптека Фиалка",
+            "logo": "/images/card-apteka-fialka.png",
+            "keywords": [
+               "Apteka Fialka"
+            ],
+            "bgColor": "#e2ba74"
+         },
+         {
+            "id": "aptekar",
+            "name": "Аптекарь",
+            "logo": "/images/aptekar_.png",
+            "keywords": [
+               "Aptekar"
+            ],
+            "bgColor": "#3595a3"
+         },
+         {
+            "id": "arbormundi",
+            "name": "Арбор Мунди",
+            "logo": "/images/arbormundi_.png",
+            "keywords": [
+               "Arbor Mundi"
+            ],
+            "bgColor": "#251a06"
+         },
+         {
+            "id": "am",
+            "name": "Ароматный Мир",
+            "logo": "/images/am_.png",
+            "keywords": [
+               "Aromatnii Mir"
+            ],
+            "bgColor": "#cc0f0d"
+         },
+         {
+            "id": "batyrrb",
+            "name": "Байрам",
+            "logo": "/images/batyrrb_.png",
+            "keywords": [
+               "Bairam"
+            ],
+            "bgColor": "#f7df63"
+         },
+         {
+            "id": "bahetle",
+            "name": "Бахетле",
+            "logo": "/images/bahetle.png",
+            "keywords": [
+               "Bakhetle"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "bashneft",
+            "name": "Башнефть",
+            "logo": "/images/card-bashneft.png",
+            "keywords": [
+               "Bashneft"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "begemot",
+            "name": "Бегемот",
+            "logo": "/images/card-begemot.png",
+            "keywords": [
+               "Begemot"
+            ],
+            "bgColor": "#ed1066"
+         },
+         {
+            "id": "berezhnaya",
+            "name": "Бережная аптека",
+            "logo": "/images/berezhnaya_.png",
+            "keywords": [
+               "Berezhnaya apteka"
+            ],
+            "bgColor": "#ffebda"
+         },
+         {
+            "id": "bethowen",
+            "name": "Бетховен",
+            "logo": "/images/bethowen.png",
+            "keywords": [
+               "Betkhoven"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "bi_bi",
+            "name": "Би-Би",
+            "logo": "/images/card__0011_bi-bi.png",
+            "keywords": [
+               "Bi-Bi"
+            ],
+            "bgColor": "#ffec02"
+         },
+         {
+            "id": "bomond",
+            "name": "Бомонд",
+            "logo": "/images/bomond_.png",
+            "keywords": [
+               "Bomond"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "brusnichka",
+            "name": "Брусничка",
+            "logo": "/images/brusnichka_.png",
+            "keywords": [
+               "Brusnichka"
+            ],
+            "bgColor": "#a6ce39"
+         },
+         {
+            "id": "budu_mamoy",
+            "name": "Буду мамой",
+            "logo": "/images/budu_mamoy.png",
+            "keywords": [
+               "Budu mamoi"
+            ],
+            "bgColor": "#F2F2F2"
+         },
+         {
+            "id": "bukvoed",
+            "name": "Буквоед",
+            "logo": "/images/card__bukvoed.png",
+            "keywords": [
+               "Bukvoed"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "bustje",
+            "name": "Бюстье",
+            "logo": "/images/bustje.png",
+            "keywords": [
+               "Byuste"
+            ],
+            "bgColor": "#803680"
+         },
+         {
+            "id": "vgoroden",
+            "name": "В городе N",
+            "logo": "/images/vgoroden_.png",
+            "keywords": [
+               "V gorode N"
+            ],
+            "bgColor": "#53b6e9"
+         },
+         {
+            "id": "vasabi",
+            "name": "Васаби",
+            "logo": "/images/vasabi.png",
+            "keywords": [
+               "Vasabi"
+            ],
+            "bgColor": "#ed1b24"
+         },
+         {
+            "id": "kishenya",
+            "name": "Велика Кишеня",
+            "logo": "/images/kishenya_.png",
+            "keywords": [
+               "Velika Kishenya"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "vester",
+            "name": "Вестер",
+            "logo": "/images/vester_.png",
+            "keywords": [
+               "Vester"
+            ],
+            "bgColor": "#fac714"
+         },
+         {
+            "id": "victoria",
+            "name": "Виктория",
+            "logo": "/images/victoria.png",
+            "keywords": [
+               "Viktoriya"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "vkus_will",
+            "name": "ВкусВилл",
+            "logo": "/images/card-vkusvill.png",
+            "keywords": [
+               "VkusVill"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "vopak",
+            "name": "Вопак",
+            "logo": "/images/vopak_.png",
+            "keywords": [
+               "Vopak"
+            ],
+            "bgColor": "#ffd700"
+         },
+         {
+            "id": "votonya",
+            "name": "ВотОнЯ",
+            "logo": "/images/votonya.png",
+            "keywords": [
+               "VotOnYa"
+            ],
+            "bgColor": "#75dfff"
+         },
+         {
+            "id": "vysshaya_liga",
+            "name": "Высшая лига",
+            "logo": "/images/card__0028_vysshaya-liga.png",
+            "keywords": [
+               "Visshaya liga"
+            ],
+            "bgColor": "#f8be06"
+         },
+         {
+            "id": "gazprom_neft",
+            "name": "Газпром АЗС",
+            "logo": "/images/gazprom-azs.png",
+            "keywords": [
+               "Gazprom AZS"
+            ],
+            "bgColor": "#006cb8"
+         },
+         {
+            "id": "hexal",
+            "name": "Гексал",
+            "logo": "/images/hexal_.png",
+            "keywords": [
+               "Geksal"
+            ],
+            "bgColor": "#f0f1f6"
+         },
+         {
+            "id": "gemotest",
+            "name": "Гемотест",
+            "logo": "/images/gemotest_.png",
+            "keywords": [
+               "Gemotest"
+            ],
+            "bgColor": "#017335"
+         },
+         {
+            "id": "globus_gurme",
+            "name": "Глобус гурмэ",
+            "logo": "/images/globus_gurme.png",
+            "keywords": [
+               "Globus gurme"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "goodwin",
+            "name": "Гудвин",
+            "logo": "/images/goodwin.png",
+            "keywords": [
+               "Goodwin"
+            ],
+            "bgColor": "#c1e0e7"
+         },
+         {
+            "id": "deti",
+            "name": "Дети",
+            "logo": "/images/deti_.png",
+            "keywords": [
+               "Deti"
+            ],
+            "bgColor": "#d3181e"
+         },
+         {
+            "id": "detskymir",
+            "name": "Детский Мир",
+            "logo": "/images/detskymir.png",
+            "keywords": [
+               "Detskii Mir"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "defile",
+            "name": "Дефиле",
+            "logo": "/images/card__0039_defile.png",
+            "keywords": [
+               "Defile"
+            ],
+            "bgColor": "#f05081"
+         },
+         {
+            "id": "diana",
+            "name": "Диана",
+            "logo": "/images/diana_.png",
+            "keywords": [
+               "Diana"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "dikaya_orhideya",
+            "name": "Дикая орхидея",
+            "logo": "/images/dikaya_orhideya.png",
+            "keywords": [
+               "Dikaya orkhideya"
+            ],
+            "bgColor": "#c7002b"
+         },
+         {
+            "id": "diksi",
+            "name": "Дикси",
+            "logo": "/images/card__0007_diksi.png",
+            "keywords": [
+               "Diksi"
+            ],
+            "bgColor": "#f26522"
+         },
+         {
+            "id": "dina",
+            "name": "Дина Обувь",
+            "logo": "/images/card-dina.png",
+            "keywords": [
+               "Dina Obuv"
+            ],
+            "bgColor": "#7d1919"
+         },
+         {
+            "id": "domovoi",
+            "name": "Домовой",
+            "logo": "/images/card-domovoi.png",
+            "keywords": [
+               "Domovoi"
+            ],
+            "bgColor": "#ed1a3b"
+         },
+         {
+            "id": "dochki_synochki",
+            "name": "Дочки Сыночки",
+            "logo": "/images/dochki_synochki.png",
+            "keywords": [
+               "Dochki Sinochki"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "evrasia",
+            "name": "Евразия",
+            "logo": "/images/card__0016_evrasia.png",
+            "keywords": [
+               "Yevraziya"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "ekomarket",
+            "name": "Еко маркет",
+            "logo": "/images/ekomarket_.png",
+            "keywords": [
+               "Yeko market"
+            ],
+            "bgColor": "#205ca4"
+         },
+         {
+            "id": "goldapple",
+            "name": "золотое яблоко",
+            "logo": "/images/goldapple_.png",
+            "keywords": [
+               "zolotoe yabloko"
+            ],
+            "bgColor": "#010101"
+         },
+         {
+            "id": "zolotoy",
+            "name": "Золотой",
+            "logo": "/images/zolotoy_.png",
+            "keywords": [
+               "Zolotoi"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "il_de_bote",
+            "name": "Иль де ботэ",
+            "logo": "/images/il_de_beaute.png",
+            "keywords": [
+               "Il de bote"
+            ],
+            "bgColor": "#71002c"
+         },
+         {
+            "id": "imperia_sumok",
+            "name": "Империя сумок",
+            "logo": "/images/card__0040_imperia-sumok.png",
+            "keywords": [
+               "Imperiya sumok"
+            ],
+            "bgColor": "#edeb00"
+         },
+         {
+            "id": "kryoka",
+            "name": "К-Руока",
+            "logo": "/images/card-kryoka.png",
+            "keywords": [
+               "K-Ruoka"
+            ],
+            "bgColor": "#d1ecf5"
+         },
+         {
+            "id": "kant",
+            "name": "Кант",
+            "logo": "/images/kant.png",
+            "keywords": [
+               "Kant"
+            ],
+            "bgColor": "#fa8c1f"
+         },
+         {
+            "id": "karavan",
+            "name": "Караван",
+            "logo": "/images/karavan_.png",
+            "keywords": [
+               "Karavan"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "karapuz",
+            "name": "Карапуз",
+            "logo": "/images/karapuz_.png",
+            "keywords": [
+               "Karapuz"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "karat",
+            "name": "Карат",
+            "logo": "/images/card__0038_karat.png",
+            "keywords": [
+               "Karat"
+            ],
+            "bgColor": "#80bb42"
+         },
+         {
+            "id": "karusel",
+            "name": "Карусель",
+            "logo": "/images/carusel.png",
+            "keywords": [
+               "Karusel"
+            ],
+            "bgColor": "#a3cd00"
+         },
+         {
+            "id": "key",
+            "name": "КЕЙ",
+            "logo": "/images/key_.png",
+            "keywords": [
+               "KEI"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "kinomax",
+            "name": "Киномакс",
+            "logo": "/images/kinomax.png",
+            "keywords": [
+               "Kinomaks"
+            ],
+            "bgColor": "#673267"
+         },
+         {
+            "id": "klass",
+            "name": "Класс",
+            "logo": "/images/klass_.png",
+            "keywords": [
+               "Klass"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "klassika",
+            "name": "Классика",
+            "logo": "/images/klassika_.png",
+            "keywords": [
+               "Klassika"
+            ],
+            "bgColor": "#009667"
+         },
+         {
+            "id": "2k",
+            "name": "Козырная Карта",
+            "logo": "/images/2k_.png",
+            "keywords": [
+               "Kozirnaya Karta"
+            ],
+            "bgColor": "#ea1212"
+         },
+         {
+            "id": "computerwelt",
+            "name": "Компьютерный Мир",
+            "logo": "/images/computerwelt_.png",
+            "keywords": [
+               "Kompyuternii Mir"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "komus",
+            "name": "Комус",
+            "logo": "/images/komus.png",
+            "keywords": [
+               "Komus"
+            ],
+            "bgColor": "#d71920"
+         },
+         {
+            "id": "kopeyka",
+            "name": "Копейка",
+            "logo": "/images/kopeyka_.png",
+            "keywords": [
+               "Kopeika"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "korablik",
+            "name": "Кораблик",
+            "logo": "/images/korablik.png",
+            "keywords": [
+               "Korablik"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "corpcentre",
+            "name": "Корпорация Центр",
+            "logo": "/images/corpcentre_.png",
+            "keywords": [
+               "Korporatsiya Tsentr"
+            ],
+            "bgColor": "#e41d2d"
+         },
+         {
+            "id": "kosmo",
+            "name": "Космо",
+            "logo": "/images/kosmo_.png",
+            "keywords": [
+               "Kosmo"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "coffe_house",
+            "name": "КОФЕ ХАУЗ",
+            "logo": "/images/coffee_house.png",
+            "keywords": [
+               "KOFE KhAUZ"
+            ],
+            "bgColor": "#30130e"
+         },
+         {
+            "id": "cofeinaya_kantata",
+            "name": "Кофейная кантата",
+            "logo": "/images/cofeinaya_cantata.png",
+            "keywords": [
+               "Kofeinaya kantata"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "krasnoeibeloe",
+            "name": "Красное и белое",
+            "logo": "/images/card__0037_krasnoeibeloe.png",
+            "keywords": [
+               "Krasnoe i beloe"
+            ],
+            "bgColor": "#e32028"
+         },
+         {
+            "id": "redcube",
+            "name": "Красный Куб",
+            "logo": "/images/redcube.png",
+            "keywords": [
+               "Krasnii Kub"
+            ],
+            "bgColor": "#1d1a17"
+         },
+         {
+            "id": "kukuruza",
+            "name": "Кукуруза",
+            "logo": "/images/card__0014_kukuruza.png",
+            "keywords": [
+               "Kukuruza"
+            ],
+            "bgColor": "#fcdc05"
+         },
+         {
+            "id": "l_etual_red",
+            "name": "Л`Этуаль",
+            "logo": "/images/l_etual_red_.png",
+            "keywords": [
+               "летуаль",
+               " letual",
+               " лэтуаль",
+               " литуаль",
+               " litual",
+               "L`Etual"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "limefresh",
+            "name": "Лайм",
+            "logo": "/images/card-limefresh.png",
+            "keywords": [
+               "Laim"
+            ],
+            "bgColor": "#e9fef6"
+         },
+         {
+            "id": "lares",
+            "name": "ларес",
+            "logo": "/images/lares_.png",
+            "keywords": [
+               "lares"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "lenta",
+            "name": "Лента",
+            "logo": "/images/card__0026_lenta.png",
+            "keywords": [
+               "Lenta"
+            ],
+            "bgColor": "#1f398e"
+         },
+         {
+            "id": "leonardo",
+            "name": "Леонардо",
+            "logo": "/images/card__0013_leonardo.png",
+            "keywords": [
+               "Leonardo"
+            ],
+            "bgColor": "#c5262a"
+         },
+         {
+            "id": "lukoil",
+            "name": "Лукойл / Ликард",
+            "logo": "/images/licard.png",
+            "keywords": [
+               "Lukoil / Likard"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "m_video",
+            "name": "М.видео",
+            "logo": "/images/m_video.png",
+            "keywords": [
+               "м вИдео",
+               "мвидео",
+               "mvideo",
+               "M.video"
+            ],
+            "bgColor": "#e82c2d"
+         },
+         {
+            "id": "mavt",
+            "name": "МАВТ ВИНОТЕКА",
+            "logo": "/images/mavt_.png",
+            "keywords": [
+               "MAVT VINOTEKA"
+            ],
+            "bgColor": "#111e33"
+         },
+         {
+            "id": "magnolia",
+            "name": "Магнолия",
+            "logo": "/images/magnolia.png",
+            "keywords": [
+               "Magnoliya"
+            ],
+            "bgColor": "#fef232"
+         },
+         {
+            "id": "maxi",
+            "name": "МАКСИ",
+            "logo": "/images/card__0034_maxi.png",
+            "keywords": [
+               "MAKSI"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "maxidom",
+            "name": "Максидом",
+            "logo": "/images/card__0036_maxidom.png",
+            "keywords": [
+               "Maksidom"
+            ],
+            "bgColor": "#d61729"
+         },
+         {
+            "id": "maximus",
+            "name": "Максимус",
+            "logo": "/images/card-maximus.png",
+            "keywords": [
+               "Maksimus"
+            ],
+            "bgColor": "#2c409f"
+         },
+         {
+            "id": "malina",
+            "name": "Малина",
+            "logo": "/images/malina.png",
+            "keywords": [
+               "Malina"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "megajeans",
+            "name": "Мегаджинс",
+            "logo": "/images/card-megajeans.png",
+            "keywords": [
+               "Megadzhins"
+            ],
+            "bgColor": "#03518d"
+         },
+         {
+            "id": "megamartru",
+            "name": "Мегамарт",
+            "logo": "/images/megamartru_.png",
+            "keywords": [
+               "Megamart"
+            ],
+            "bgColor": "#ef0020"
+         },
+         {
+            "id": "melodia_zdorovya",
+            "name": "Мелодия здоровья",
+            "logo": "/images/melodia_zdorovya.png",
+            "keywords": [
+               "Melodiya zdorovya"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "metrika",
+            "name": "Метрика",
+            "logo": "/images/card__0002_metrika.png",
+            "keywords": [
+               "Metrika"
+            ],
+            "bgColor": "#f20000"
+         },
+         {
+            "id": "milavitsa",
+            "name": "Милавица",
+            "logo": "/images/milavitsa.png",
+            "keywords": [
+               "Milavitsa"
+            ],
+            "bgColor": "#ed1459"
+         },
+         {
+            "id": "mnogoru",
+            "name": "Много.RU",
+            "logo": "/images/card-mnogoru.png",
+            "keywords": [
+               "Mnogo.RU"
+            ],
+            "bgColor": "#941d6f"
+         },
+         {
+            "id": "mobilmed",
+            "name": "Мобилмед",
+            "logo": "/images/card-mobilmed.png",
+            "keywords": [
+               "Mobilmed"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "monetka",
+            "name": "Монетка",
+            "logo": "/images/monetka.png",
+            "keywords": [
+               "Monetka"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "monro",
+            "name": "Монро",
+            "logo": "/images/monro.png",
+            "keywords": [
+               "Monro"
+            ],
+            "bgColor": "#da251c"
+         },
+         {
+            "id": "moskovsky_uvelirny_zavod",
+            "name": "Московский Ювелирный завод",
+            "logo": "/images/moskovsky_uvelirny_zavod.png",
+            "keywords": [
+               "Moskovskii Yuvelirnii zavod"
+            ],
+            "bgColor": "#7b173d"
+         },
+         {
+            "id": "motoru",
+            "name": "МОТО.РУ МОСКВА",
+            "logo": "/images/motoru_.png",
+            "keywords": [
+               "MOTO.RU MOSKVA"
+            ],
+            "bgColor": "#3a505a"
+         },
+         {
+            "id": "muztorg",
+            "name": "Музторг",
+            "logo": "/images/muztorg_.png",
+            "keywords": [
+               "Muztorg"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "myasnov",
+            "name": "Мяснов",
+            "logo": "/images/card__0004_myasnov.png",
+            "keywords": [
+               "Myasnov"
+            ],
+            "bgColor": "#f4f0e6"
+         },
+         {
+            "id": "novy_knigny",
+            "name": "Новый книжный",
+            "logo": "/images/novy_knigny_.png",
+            "keywords": [
+               "Novii knizhnii"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "novex",
+            "name": "Новэкс",
+            "logo": "/images/novex_.png",
+            "keywords": [
+               "Noveks"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "norman",
+            "name": "Норман",
+            "logo": "/images/norman.png",
+            "keywords": [
+               "Norman"
+            ],
+            "bgColor": "#e8e4d8"
+         },
+         {
+            "id": "okey",
+            "name": "О`КЕЙ",
+            "logo": "/images/okey.png",
+            "keywords": [
+               "окей",
+               "O`KEI"
+            ],
+            "bgColor": "#e53419"
+         },
+         {
+            "id": "obnova",
+            "name": "Обнова",
+            "logo": "/images/obnova.png",
+            "keywords": [
+               "Obnova"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "ogo",
+            "name": "ОГО",
+            "logo": "/images/card-ogo.png",
+            "keywords": [
+               "OGO"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "o_key",
+            "name": "ОКЕЙ",
+            "logo": "/images/card-okey.png",
+            "keywords": [
+               "OKEI"
+            ],
+            "bgColor": "#8dc73f"
+         },
+         {
+            "id": "allgood",
+            "name": "Ол!Гуд",
+            "logo": "/images/card-allgood.png",
+            "keywords": [
+               "Ol!Gud"
+            ],
+            "bgColor": "#bbd86a"
+         },
+         {
+            "id": "olant",
+            "name": "олант",
+            "logo": "/images/card-olant.png",
+            "keywords": [
+               "olant"
+            ],
+            "bgColor": "#ecfafb"
+         },
+         {
+            "id": "opteka",
+            "name": "Ортека",
+            "logo": "/images/opteka_.png",
+            "keywords": [
+               "Orteka"
+            ],
+            "bgColor": "#ff6e00"
+         },
+         {
+            "id": "ochkarik",
+            "name": "Очкарик",
+            "logo": "/images/ochkarik.png",
+            "keywords": [
+               "Ochkarik"
+            ],
+            "bgColor": "#00a3e4"
+         },
+         {
+            "id": "pan_chemodan",
+            "name": "Пан Чемодан",
+            "logo": "/images/pan_chemodan.png",
+            "keywords": [
+               "Pan Chemodan"
+            ],
+            "bgColor": "#231f20"
+         },
+         {
+            "id": "parfumlider",
+            "name": "Парфюм Лидер",
+            "logo": "/images/parfumlider_.png",
+            "keywords": [
+               "Parfyum Lider"
+            ],
+            "bgColor": "#d8eded"
+         },
+         {
+            "id": "peplos",
+            "name": "ПЕПЛОС",
+            "logo": "/images/peplos_.png",
+            "keywords": [
+               "PEPLOS"
+            ],
+            "bgColor": "#6a150f"
+         },
+         {
+            "id": "perekrestok",
+            "name": "Перекресток",
+            "logo": "/images/card-perekrestok.png",
+            "keywords": [
+               "Perekrestok"
+            ],
+            "bgColor": "#03362d"
+         },
+         {
+            "id": "petrovichstd",
+            "name": "Петрович",
+            "logo": "/images/petrovichstd_.png",
+            "keywords": [
+               "Petrovich"
+            ],
+            "bgColor": "#ffcc33"
+         },
+         {
+            "id": "planeta_zdorovya",
+            "name": "Планета здоровья",
+            "logo": "/images/planeta_zdorovya.png",
+            "keywords": [
+               "Planeta zdorovya"
+            ],
+            "bgColor": "#fff500"
+         },
+         {
+            "id": "podrujka",
+            "name": "Подружка",
+            "logo": "/images/podrujka.png",
+            "keywords": [
+               "Podruzhka"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "pokrishkino",
+            "name": "Покрышкино",
+            "logo": "/images/card__0041_pokrishkino.png",
+            "keywords": [
+               "Pokrishkino"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "polushka",
+            "name": "Полушка",
+            "logo": "/images/card-polushka.png",
+            "keywords": [
+               "Polushka"
+            ],
+            "bgColor": "#f8d800"
+         },
+         {
+            "id": "posuda_center",
+            "name": "Посуда Центр",
+            "logo": "/images/posuda_center.png",
+            "keywords": [
+               "Posuda Tsentr"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "iqtoy",
+            "name": "Правильные игрушки",
+            "logo": "/images/card-iqtoy.png",
+            "keywords": [
+               "Pravilnie igrushki"
+            ],
+            "bgColor": "#f6f9f5"
+         },
+         {
+            "id": "magia",
+            "name": "Практическая Магия",
+            "logo": "/images/magia.png",
+            "keywords": [
+               "Prakticheskaya Magiya"
+            ],
+            "bgColor": "#fedf00"
+         },
+         {
+            "id": "printsburg",
+            "name": "Принтсбург",
+            "logo": "/images/card-printsburg.png",
+            "keywords": [
+               "Printsburg"
+            ],
+            "bgColor": "#ede5e2"
+         },
+         {
+            "id": "sportprofi",
+            "name": "Профи Спорт",
+            "logo": "/images/sportprofi_.png",
+            "keywords": [
+               "Profi Sport"
+            ],
+            "bgColor": "#c7161c"
+         },
+         {
+            "id": "pyaterochka",
+            "name": "Пятерочка",
+            "logo": "/images/pyatyorochka.png",
+            "keywords": [
+               "Pyaterochka"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "rivgosh",
+            "name": "РИВ ГОШ",
+            "logo": "/images/rivgosh.png",
+            "keywords": [
+               "RIV GOSh"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "rigla",
+            "name": "Ригла",
+            "logo": "/images/rigla.png",
+            "keywords": [
+               "Rigla"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "rifarm",
+            "name": "Рифарм",
+            "logo": "/images/rifarm_.png",
+            "keywords": [
+               "Rifarm"
+            ],
+            "bgColor": "#469e31"
+         },
+         {
+            "id": "pinkrabbit",
+            "name": "Розовый кролик",
+            "logo": "/images/card-pinkrabbit.png",
+            "keywords": [
+               "Rozovii krolik"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "rossita",
+            "name": "Россита",
+            "logo": "/images/rossita_.png",
+            "keywords": [
+               "Rossita"
+            ],
+            "bgColor": "#e2e2e2"
+         },
+         {
+            "id": "cakypa",
+            "name": "Сакура",
+            "logo": "/images/cakypa_.png",
+            "keywords": [
+               "Sakura"
+            ],
+            "bgColor": "#d45d61"
+         },
+         {
+            "id": "samotsvety",
+            "name": "Самоцветы",
+            "logo": "/images/samotsvety_.png",
+            "keywords": [
+               "Samotsveti"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "samson_farma",
+            "name": "Самсон Фарма",
+            "logo": "/images/card-samson-farma.png",
+            "keywords": [
+               "Samson Farma"
+            ],
+            "bgColor": "#00abbd"
+         },
+         {
+            "id": "samsung",
+            "name": "Самсунг",
+            "logo": "/images/card-samsung.png",
+            "keywords": [
+               "Samsung"
+            ],
+            "bgColor": "#1428a0"
+         },
+         {
+            "id": "svyaznoy_club",
+            "name": "Связной КЛУБ",
+            "logo": "/images/svyaznoy_club.png",
+            "keywords": [
+               "Svyaznoi KLUB"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "semerochka",
+            "name": "Семёрочка",
+            "logo": "/images/card__0031_semerochka.png",
+            "keywords": [
+               "Semyorochka"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "semya",
+            "name": "Семья",
+            "logo": "/images/semya.png",
+            "keywords": [
+               "Semya"
+            ],
+            "bgColor": "#7dba39"
+         },
+         {
+            "id": "city_obuv",
+            "name": "СИТИ обувь",
+            "logo": "/images/city_obuv.png",
+            "keywords": [
+               "SITI obuv"
+            ],
+            "bgColor": "#1e388d"
+         },
+         {
+            "id": "citylink",
+            "name": "Ситилинк",
+            "logo": "/images/citylink.png",
+            "keywords": [
+               "Sitilink"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "citymarketru",
+            "name": "Ситимаркет",
+            "logo": "/images/citymarketru_.png",
+            "keywords": [
+               "Sitimarket"
+            ],
+            "bgColor": "#0b68ab"
+         },
+         {
+            "id": "slata",
+            "name": "Слата",
+            "logo": "/images/slata_.png",
+            "keywords": [
+               "Slata"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "snejnaya_coroleva",
+            "name": "Снежная Королева",
+            "logo": "/images/snejnaya_coroleva.png",
+            "keywords": [
+               "Snezhnaya Koroleva"
+            ],
+            "bgColor": "#032147"
+         },
+         {
+            "id": "spectr",
+            "name": "Спектр",
+            "logo": "/images/card-spectr.png",
+            "keywords": [
+               "Spektr"
+            ],
+            "bgColor": "#95005e"
+         },
+         {
+            "id": "sportlandiya",
+            "name": "Спортландия",
+            "logo": "/images/sportlandiya.png",
+            "keywords": [
+               "Sportlandiya"
+            ],
+            "bgColor": "#004b87"
+         },
+         {
+            "id": "sport_master",
+            "name": "Спортмастер",
+            "logo": "/images/sportmaster.png",
+            "keywords": [
+               "Sportmaster"
+            ],
+            "bgColor": "#2d4b9b"
+         },
+         {
+            "id": "starik_hottabich",
+            "name": "Старик Хоттабыч",
+            "logo": "/images/starik_hottabich.png",
+            "keywords": [
+               "Starik Khottabich"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "stary_lekar",
+            "name": "Старый лекарь",
+            "logo": "/images/stary_lekar.png",
+            "keywords": [
+               "Starii lekar"
+            ],
+            "bgColor": "#2043a1"
+         },
+         {
+            "id": "stylepark",
+            "name": "Стильпарк",
+            "logo": "/images/stylepark.png",
+            "keywords": [
+               "Stilpark"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "stockcenter",
+            "name": "Сток-центр",
+            "logo": "/images/stockcenter_.png",
+            "keywords": [
+               "Stok-tsentr"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "sudar",
+            "name": "Сударь",
+            "logo": "/images/sudar.png",
+            "keywords": [
+               "Sudar"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "sushi_vok",
+            "name": "Суши wok",
+            "logo": "/images/card__0010_sushi-vok.png",
+            "keywords": [
+               "Sushi wok"
+            ],
+            "bgColor": "#581d1f"
+         },
+         {
+            "id": "tvoy_dom",
+            "name": "Твой Дом",
+            "logo": "/images/card-tvoy-dom.png",
+            "keywords": [
+               "Tvoi Dom"
+            ],
+            "bgColor": "#5ebb5b"
+         },
+         {
+            "id": "technopark",
+            "name": "Технопарк",
+            "logo": "/images/card__0021_technopark.png",
+            "keywords": [
+               "Tekhnopark"
+            ],
+            "bgColor": "#071739"
+         },
+         {
+            "id": "technosila",
+            "name": "Техносила",
+            "logo": "/images/tehnosila.png",
+            "keywords": [
+               "Tekhnosila"
+            ],
+            "bgColor": "#fdf100"
+         },
+         {
+            "id": "tofa",
+            "name": "Тофа",
+            "logo": "/images/card__0005_tofa.png",
+            "keywords": [
+               "Tofa"
+            ],
+            "bgColor": "#d92524"
+         },
+         {
+            "id": "trial_sport",
+            "name": "Триал Спорт",
+            "logo": "/images/trial_sport.png",
+            "keywords": [
+               "trial",
+               "sport",
+               "триал",
+               "спорт",
+               "Trial Sport"
+            ],
+            "bgColor": "#f8f400"
+         },
+         {
+            "id": "r_ulybka",
+            "name": "Улыбка радуги",
+            "logo": "/images/card__0020_r-ulybka.png",
+            "keywords": [
+               "Ulibka radugi"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "untsia",
+            "name": "Унция Кофечай",
+            "logo": "/images/card-untsia.png",
+            "keywords": [
+               "Untsiya Kofechai"
+            ],
+            "bgColor": "#543019"
+         },
+         {
+            "id": "uyuterra",
+            "name": "Уютерра",
+            "logo": "/images/uyuterra.png",
+            "keywords": [
+               "Uyuterra"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "familiya",
+            "name": "Фамилия",
+            "logo": "/images/familiya.png",
+            "keywords": [
+               "Familiya"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "farmakopeika",
+            "name": "Фармакопейка",
+            "logo": "/images/farmakopeika_.png",
+            "keywords": [
+               "Farmakopeika"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "farmlend",
+            "name": "Фармленд",
+            "logo": "/images/card__0030_farmlend.png",
+            "keywords": [
+               "Farmlend"
+            ],
+            "bgColor": "#ffffff"
+         },
+         {
+            "id": "foxtrot",
+            "name": "Фокстрот",
+            "logo": "/images/foxtrot_.png",
+            "keywords": [
+               "Fokstrot"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "fora",
+            "name": "Фора",
+            "logo": "/images/fora_.png",
+            "keywords": [
+               "Fora"
+            ],
+            "bgColor": "#484e57"
+         },
+         {
+            "id": "formulakino",
+            "name": "Формула кино",
+            "logo": "/images/card-formulakino.png",
+            "keywords": [
+               "Formula kino"
+            ],
+            "bgColor": "#162d3c"
+         },
+         {
+            "id": "fotoplus",
+            "name": "ФотоПлюс",
+            "logo": "/images/fotoplus_.png",
+            "keywords": [
+               "FotoPlyus"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "center_obuv",
+            "name": "ЦентрОбувь",
+            "logo": "/images/center_obuv.png",
+            "keywords": [
+               "TsentrObuv"
+            ],
+            "bgColor": "#e51836"
+         },
+         {
+            "id": "championnet",
+            "name": "Чемпион",
+            "logo": "/images/championnet_.png",
+            "keywords": [
+               "Chempion"
+            ],
+            "bgColor": "#b70021"
+         },
+         {
+            "id": "cherny_doctor",
+            "name": "Черный доктор",
+            "logo": "/images/cherny_doctor.png",
+            "keywords": [
+               "Chernii doktor"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "4lapy",
+            "name": "Четыре Лапы",
+            "logo": "/images/card__0027_4lapy.png",
+            "keywords": [
+               "Chetire Lapi"
+            ],
+            "bgColor": "#f57921"
+         },
+         {
+            "id": "chitai_gorod",
+            "name": "Читай Город",
+            "logo": "/images/card__0019_chitai-gorod.png",
+            "keywords": [
+               "Chitai Gorod"
+            ],
+            "bgColor": "#005faf"
+         },
+         {
+            "id": "shokoladnica",
+            "name": "Шоколадница",
+            "logo": "/images/shokoladnica.png",
+            "keywords": [
+               "Shokoladnitsa"
+            ],
+            "bgColor": "#f6d19a"
+         },
+         {
+            "id": "econika",
+            "name": "Эконика",
+            "logo": "/images/econika.png",
+            "keywords": [
+               "Ekonika"
+            ],
+            "bgColor": "#291f1e"
+         },
+         {
+            "id": "electrozon",
+            "name": "Электрозон",
+            "logo": "/images/card-electrozon.png",
+            "keywords": [
+               "Elektrozon"
+            ],
+            "bgColor": "#2f48a2"
+         },
+         {
+            "id": "elize",
+            "name": "ЭЛИЗЭ",
+            "logo": "/images/elize_.png",
+            "keywords": [
+               "ELIZE"
+            ],
+            "bgColor": "#1c2657"
+         },
+         {
+            "id": "eldorado",
+            "name": "Эльдорадо",
+            "logo": "/images/eldorado.png",
+            "keywords": [
+               "Eldorado"
+            ],
+            "bgColor": "#dd0021"
+         },
+         {
+            "id": "esteladoni",
+            "name": "Эстель Адони",
+            "logo": "/images/esteladoni_.png",
+            "keywords": [
+               "Estel Adoni"
+            ],
+            "bgColor": "#FFFFFF"
+         },
+         {
+            "id": "yakitoria",
+            "name": "Якитория",
+            "logo": "/images/card-yakitoria.png",
+            "keywords": [
+               "Yakitoriya"
+            ],
+            "bgColor": "#000000"
+         },
+         {
+            "id": "yaposha",
+            "name": "Япоша",
+            "logo": "/images/yaposha.png",
+            "keywords": [
+               "Yaposha"
+            ],
+            "bgColor": "#FFFFFF"
+         }
+      ]
+   }
+}

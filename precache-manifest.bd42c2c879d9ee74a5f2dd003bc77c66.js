@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "135ec9967669d39c904c9d7bdcd2b8aa",
+    "revision": "f747e3984631124d0c7e5736b71dc7e5",
     "url": "/BonusCards/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BonusCards/static/css/2.0a8dee31.chunk.css"
   },
   {
-    "revision": "d26e2f65c961ed13c7dd",
+    "revision": "e66198c86f36d3d6d898",
     "url": "/BonusCards/static/css/main.fb44e015.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BonusCards/static/js/2.966d5f03.chunk.js"
   },
   {
-    "revision": "d26e2f65c961ed13c7dd",
-    "url": "/BonusCards/static/js/main.20ea60de.chunk.js"
+    "revision": "e66198c86f36d3d6d898",
+    "url": "/BonusCards/static/js/main.c0335cf8.chunk.js"
   },
   {
     "revision": "ed2247b58b16b66150bc",

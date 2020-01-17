@@ -19,10 +19,9 @@ const App = (props) => {
 	const [modal, setModal] = useState(null);
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState(null);
-	
-	
+
 	const poputRef = useRef(popout);
-	const userRef = useRef(user);
+
 
 	const parseQueryString = (string) => {
 		return string.slice(1).split('&')
@@ -38,28 +37,21 @@ const App = (props) => {
 
 	useEffect(() => {
 		poputRef.current = popout;
-		
+
 		//Почему в реакте такая геморная навигация????
 		props.router.canActivate("home", (router) => (toState, fromState) => {
-			if (fromState.name === "card" && poputRef.current!==null) {
+			if (fromState.name === "card" && poputRef.current !== null) {
 				setPopout(null)
 				window.history.go(1)
 				return false;
-			}else{
+			} else {
 				return true;
 			}
-			
+
 		});
-	// eslint-disable-next-line
+		// eslint-disable-next-line
 	}, [popout])
 
-	useEffect(()=>{
-		userRef.current = user;
-
-		vkconnect.subscribe((e) => {
-			console.log("User:"+userRef.current)
-		 });
-	}, [user])
 
 
 	useEffect(() => {
@@ -67,43 +59,74 @@ const App = (props) => {
 
 		const authorise = async function () {
 
+			console.log("check..")
 			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token" + props.search)
+			console.log("checked")
 
 			const json = await response.json();
 
-			console.log("signin...")
 			await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-			await firebase.auth().signInWithCustomToken(json.token);
-
+			console.log("signin...")
+			let cred = await firebase.auth().signInWithCustomToken(json.token);
+			console.log("signed in "+cred.user)
 		}
 
-		const init = function() {
-			firebase.auth().onAuthStateChanged(function (user) {
-				if (user) {
-					console.log("auth ok:" + user.uid)
-					setUser(user);
-	
-					props.dispatch('cards/listen', { uid: user.uid })
-	
-					const hashParams = parseQueryString(props.hash)
-					if (hashParams.add_number != null && hashParams.add_name != null) {
-	
-						props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+		const onUser = function(user){
+			console.log("auth ok:" + user.uid)
+			setUser(user);
+
+			props.dispatch('cards/listen', { uid: user.uid })
+
+			const hashParams = parseQueryString(props.hash)
+			if (hashParams.add_number != null && hashParams.add_name != null) {
+				console.log("share:" + hashParams.add_name + " " + hashParams.add_number + " " + hashParams.add_service_id)
+				console.log("user#1:"+user)
+				props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+			}
+		}
+
+		const init = function () {
+			console.log("user:"+firebase.auth().currentUser)
+			if(firebase.auth().currentUser!=null){
+				onUser(firebase.auth().currentUser)
+			}else{
+				
+				firebase.auth().onAuthStateChanged(function (user) {
+					console.log("onAuthStateChanged")
+					if(user){
+						onUser(user)
+					}else{
+						authorise().catch((error) => {
+							setError(error);
+		
+							console.log("auth error:" + error)
+						})
 					}
-				} else {
-					authorise().catch((error) => {
-						setError(error);
-	
-						console.log("auth error:" + error)
-					})
-				}
-			});
+					
+				}, (error)=>{
+					console.log(error)
+				});
+
+				
+			}
+			
 		}
 
 		init();
 
+		vkconnect.subscribe((e) => {
+			console.log("event>"+e.detail.type)
+			if(e.detail.type==="VKWebAppViewRestore"){
+				let user = firebase.auth().currentUser;
+				if(user){
+					let uid = user.uid;
+					props.dispatch('cards/api/get', uid)
+				}
+			}
+		});
 
-	// eslint-disable-next-line
+
+		// eslint-disable-next-line
 	}, []);
 
 

@@ -23,7 +23,7 @@ class AddCard extends React.Component {
     constructor(props) {
         super(props);
 
-        let number = props.route.params.number != null ? parseInt(props.route.params.number) : '';
+        let number = props.route.params.number || '';
         this.state = {
             tooltip: props.prefs["scan_tooltip_shown"] !== true,
             serviceId: props.route.params.serviceid,
@@ -51,7 +51,7 @@ class AddCard extends React.Component {
     }
 
     onDone = (data) => {
-        this.setState({ number: data.qr_data, error:false })
+        this.setState({ number: data.qr_data, error: false })
     }
 
     onError = (error) => {
@@ -112,11 +112,7 @@ class AddCard extends React.Component {
     }
 
     goHome = () => {
-        if (window.history.length === 1) {
-            this.props.router.navigate("home", {}, { replace: true })
-        } else {
-            window.history.go(1 - window.history.length)
-        }
+        this.props.router.navigate("home", {}, { replace: true })
     }
 
     onAddClick = () => {
@@ -149,7 +145,7 @@ class AddCard extends React.Component {
     }
 
     isValidCard(number) {
-        return number.match("^[\x00-\x7F]{6,24}$");
+        return number != null && number.match("^[\x00-\x7F]{6,24}$");
     }
 
     render() {

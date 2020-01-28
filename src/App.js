@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import connect from 'storeon/react/connect'
-import vkconnect from '@vkontakte/vk-connect';
+
 import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder, PanelHeader } from '@vkontakte/vkui'
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 import { RouteNode } from 'react-router5'
@@ -21,7 +21,6 @@ const App = (props) => {
 	const [error, setError] = useState(null);
 
 	const poputRef = useRef(popout);
-
 
 	const parseQueryString = (string) => {
 		return string.slice(1).split('&')
@@ -53,78 +52,54 @@ const App = (props) => {
 	}, [popout])
 
 
-
 	useEffect(() => {
-		console.log("app useEffect");
 
 		const authorise = async function () {
 
-			console.log("check..")
 			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token" + props.search)
-			console.log("checked")
+
 
 			const json = await response.json();
 
 			await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-			console.log("signin...")
-			let cred = await firebase.auth().signInWithCustomToken(json.token);
-			console.log("signed in "+cred.user)
+
+			await firebase.auth().signInWithCustomToken(json.token);
+
 		}
 
 		const onUser = function(user){
-			console.log("auth ok:" + user.uid)
+
 			setUser(user);
 
 			props.dispatch('cards/listen', { uid: user.uid })
 
 			const hashParams = parseQueryString(props.hash)
 			if (hashParams.add_number != null && hashParams.add_name != null) {
-				console.log("share:" + hashParams.add_name + " " + hashParams.add_number + " " + hashParams.add_service_id)
-				console.log("user#1:"+user)
 				props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
 			}
 		}
 
 		const init = function () {
-			console.log("user:"+firebase.auth().currentUser)
+			
 			if(firebase.auth().currentUser!=null){
 				onUser(firebase.auth().currentUser)
 			}else{
-				
 				firebase.auth().onAuthStateChanged(function (user) {
-					console.log("onAuthStateChanged")
 					if(user){
 						onUser(user)
 					}else{
 						authorise().catch((error) => {
 							setError(error);
-		
 							console.log("auth error:" + error)
 						})
 					}
-					
 				}, (error)=>{
 					console.log(error)
 				});
-
-				
-			}
-			
+			}			
 		}
 
 		init();
-
-		vkconnect.subscribe((e) => {
-			console.log("event>"+e.detail.type)
-			if(e.detail.type==="VKWebAppViewRestore"){
-				let user = firebase.auth().currentUser;
-				if(user){
-					let uid = user.uid;
-					props.dispatch('cards/api/get', uid)
-				}
-			}
-		});
-
 
 		// eslint-disable-next-line
 	}, []);

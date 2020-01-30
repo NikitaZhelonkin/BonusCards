@@ -15,6 +15,7 @@ import StoreContext from 'storeon/react/context'
 
 
 connect.subscribe((e) => {
+    console.log(e.detail.type);
     switch (e.detail.type) {
         case 'VKWebAppUpdateConfig':
             let schemeAttribute = document.createAttribute('scheme');

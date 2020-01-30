@@ -17,10 +17,10 @@ export default store => {
         const db = firebase.firestore();
         db.collection('cards').where("uid", "==", uid)
             .onSnapshot({ includeMetadataChanges: true }, function (snapshot) {
-                console.log("onSnapshot ");
+                console.log(snapshot);
 
                 store.dispatch('cards/api/get', uid)
-            });
+            })
     })
 
     store.on('cards/api/get', ({ cards }, uid) => {
@@ -38,7 +38,9 @@ export default store => {
             })
             store.dispatch('cards/save', { cardsToSave })
 
-        })
+        }).catch((error)=>{
+            console.log("error get cards from firebase:"+error);
+        });
 
     })
 

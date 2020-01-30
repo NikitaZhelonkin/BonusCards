@@ -7,9 +7,12 @@ import { RouteNode } from 'react-router5'
 import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
 import Card from './panels/Card';
+import vkconnect from '@vkontakte/vk-connect';
 import AddCard from './panels/AddCard';
 import Services from './panels/Services';
 import firebase from './firebase'
+
+
 import packageJson from './package.alias.json';
 
 
@@ -58,16 +61,18 @@ const App = (props) => {
 
 			const response = await fetch("https://europe-west2-bonuscards-42f7a.cloudfunctions.net/token" + props.search)
 
-
 			const json = await response.json();
+			console.log("params checked");
+
 
 			await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
+			console.log("signInWithCustomToken");
 			await firebase.auth().signInWithCustomToken(json.token);
 
 		}
 
-		const onUser = function(user){
+		const onUser = function (user) {
 
 			setUser(user);
 
@@ -79,27 +84,38 @@ const App = (props) => {
 			}
 		}
 
-		const init = function () {
-			
-			if(firebase.auth().currentUser!=null){
-				onUser(firebase.auth().currentUser)
-			}else{
-				firebase.auth().onAuthStateChanged(function (user) {
-					if(user){
-						onUser(user)
-					}else{
-						authorise().catch((error) => {
-							setError(error);
-							console.log("auth error:" + error)
-						})
-					}
-				}, (error)=>{
-					console.log(error)
-				});
-			}			
+
+
+		if (firebase.auth().currentUser != null) {
+			onUser(firebase.auth().currentUser)
+		} else {
+			firebase.auth().onAuthStateChanged(function (user) {
+				if (user) {
+					onUser(user)
+				} else {
+					authorise().catch((error) => {
+						setError(error);
+						console.log("auth error:" + error)
+					})
+				}
+			}, (error) => {
+				console.log(error)
+			});
+
 		}
 
-		init();
+		vkconnect.subscribe((e) => {
+			if (e.detail.type === "VKWebAppViewRestore") {
+				let user = firebase.auth().currentUser;
+				if (user) {
+					onUser(user);
+				}
+			} else if (e.detail.type === "VKWebAppViewHide") {
+				console.log("terminate")
+				firebase.firestore().terminate();
+
+			}
+		});
 
 		// eslint-disable-next-line
 	}, []);

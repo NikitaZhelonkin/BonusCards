@@ -71,9 +71,7 @@ class Services extends React.Component {
             .then(res => res.json())
             .then(json =>
                 this.setState({
-                    services: json.data.all, popular: json.data.all.filter(({ id }) => {
-                        return json.data.popular.includes(id)
-                    })
+                    services: json.data.all, popular: null
                 })
             );
     }

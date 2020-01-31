@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import connect from 'storeon/react/connect'
 
-import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder, PanelHeader } from '@vkontakte/vkui'
+import { View, Root, Panel, Spinner, Footer, FixedLayout, Placeholder, PanelHeader, ConfigProvider } from '@vkontakte/vkui'
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
-import { RouteNode } from 'react-router5'
 import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
 import Card from './panels/Card';
@@ -17,6 +16,10 @@ import packageJson from './package.alias.json';
 
 
 const App = (props) => {
+
+	const [activePanel, setActivePanel] = useState({ name: "home", args: {} });
+	const [history, setHistory] = useState([{ name: "home", args: {} }]);
+
 
 	const [popout, setPopout] = useState(null);
 	const [modal, setModal] = useState(null);
@@ -37,25 +40,44 @@ const App = (props) => {
 			}, {})
 	};
 
+	const goBack = () => {
+
+		if (poputRef.current != null) {
+			setPopout(null)
+		} else if (history.length === 1) {
+			vkconnect.send("VKWebAppClose");
+		} else if (history.length > 1) {
+			history.pop()
+			setActivePanel(history[history.length - 1])
+			console.log("setActivePanel"+history[history.length - 1].name)
+		}
+	}
+
+	const goHome = () => {
+		history.length = 0;
+		history.push({ name: "home", args: {} })
+		
+		setActivePanel({ name: "home", args: {} });
+		
+		
+	}
+
+	const goToPage = (page, args) => {
+		window.history.pushState(args, page)
+		history.push({ name: page, args: args || {} })
+		
+		setActivePanel({ name: page, args: args || {} });
+	
+	};
+
 	useEffect(() => {
 		poputRef.current = popout;
-
-		//Почему в реакте такая геморная навигация????
-		props.router.canActivate("home", (router) => (toState, fromState) => {
-			if (fromState.name === "card" && poputRef.current !== null) {
-				setPopout(null)
-				window.history.go(1)
-				return false;
-			} else {
-				return true;
-			}
-
-		});
-		// eslint-disable-next-line
 	}, [popout])
 
 
 	useEffect(() => {
+
+		window.addEventListener('popstate', e => { e.preventDefault(); goBack(e) });
 
 		const authorise = async function () {
 
@@ -80,7 +102,7 @@ const App = (props) => {
 
 			const hashParams = parseQueryString(props.hash)
 			if (hashParams.add_number != null && hashParams.add_name != null) {
-				props.router.navigate('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
+				goToPage('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
 			}
 		}
 
@@ -122,49 +144,54 @@ const App = (props) => {
 
 
 	return (
-		<Root activeView={error != null ? "error" : props.cards.loading === true ? "splash" : "main"}>
-			<View id="splash" activePanel="splash">
-				<Panel id="splash">
+		
+		<ConfigProvider isWebView={true}>
+			<Root activeView={error != null ? "error" : props.cards.loading === true ? "splash" : "main"}>
+				<View id="splash" activePanel="splash">
+					<Panel id="splash">
 
 
-					<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh' }}>
+						<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh' }}>
 
-						<Spinner size="large" />
-					</div>
+							<Spinner size="large" />
+						</div>
 
-					<FixedLayout vertical='bottom'>
+						<FixedLayout vertical='bottom'>
 
-						<Footer className="unselectable">{packageJson.version}</Footer>
-					</FixedLayout>
-				</Panel>
+							<Footer className="unselectable">{packageJson.version}</Footer>
+						</FixedLayout>
+					</Panel>
 
-			</View>
+				</View>
 
-			<View id="error" activePanel="error">
-				<Panel id="error">
-					<PanelHeader >Бонус карты</PanelHeader>
-					<Placeholder
-						icon={<Icon56InfoOutline />}>
-						Произошла ошибка, попробуйте еще раз
+				<View id="error" activePanel="error">
+					<Panel id="error">
+						<PanelHeader >Бонус карты</PanelHeader>
+						<Placeholder
+							icon={<Icon56InfoOutline />}>
+							Произошла ошибка, попробуйте еще раз
 					</Placeholder>
-				</Panel>
+					</Panel>
 
-			</View>
+				</View>
 
-			<View id="main" activePanel={props.route.name} popout={popout} modal={modal}>
-				<Home id='home' router={props.router} route={props.route} user={user} />
-				<Card id='card' router={props.router} route={props.route} setPopout={setPopout} />
-				<Services id='services' router={props.router} route={props.route} />
-				<AddCard id='add' router={props.router} route={props.route} user={user} setModal={setModal} />
+				<View id="main" activePanel={activePanel.name} popout={popout} modal={modal} onSwipeBack={goBack}>
+					<Home id='home' goToPage={goToPage} user={user} args={activePanel.args} />
+					<Card id='card' goToPage={goToPage} goBack={goBack} setPopout={setPopout} args={activePanel.args} />
+					<Services id='services' goToPage={goToPage} goBack={goBack} args={activePanel.args} />
+					<AddCard id='add' goToPage={goToPage} goBack={goBack} goHome={goHome} args={activePanel.args} user={user} setModal={setModal} />
 
-			</View>
-		</Root>
+				</View>
+
+
+			</Root>
+
+
+
+		</ConfigProvider>
 
 	)
 
 }
 
-export default connect('cards', (props) => (
-	<RouteNode nodeName="">
-		{({ route }) => <App route={route} {...props} />}
-	</RouteNode>))
+export default connect('cards', App)

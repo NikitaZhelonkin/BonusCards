@@ -23,11 +23,11 @@ class AddCard extends React.Component {
     constructor(props) {
         super(props);
 
-        let number = props.route.params.number || '';
+        let number = props.args.number || '';
         this.state = {
             tooltip: props.prefs["scan_tooltip_shown"] !== true,
-            serviceId: props.route.params.serviceid,
-            name: decodeURIComponent(props.route.params.name),
+            serviceId: props.args.serviceid,
+            name: decodeURIComponent(props.args.name),
             number: number,
             error: !this.isValidCard(number),
             service: null
@@ -107,13 +107,6 @@ class AddCard extends React.Component {
     }
 
 
-    goBack = () => {
-        window.history.back()
-    }
-
-    goHome = () => {
-        this.props.router.navigate("home", {}, { replace: true })
-    }
 
     onAddClick = () => {
 
@@ -127,7 +120,7 @@ class AddCard extends React.Component {
             const serviceId = this.state.serviceId;
             const uid = this.props.user.uid;
             this.props.dispatch('cards/api/add', { uid, name, number, serviceId })
-            this.goHome();
+            this.props.goHome();
         } else {
             this.setState({ error: true })
         }
@@ -154,7 +147,7 @@ class AddCard extends React.Component {
         return (
             <Panel id={this.props.id}>
                 <PanelHeader
-                    left={<HeaderButton onClick={() => this.goBack()} >
+                    left={<HeaderButton onClick={() => this.props.goBack()} >
                         {osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
                     </HeaderButton>}
 

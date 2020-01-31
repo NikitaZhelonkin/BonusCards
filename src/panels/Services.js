@@ -119,7 +119,7 @@ class Services extends React.Component {
                 removable={false}
                 key={card.id}
                 onClick={() => {
-                    this.props.router.navigate('add', { name: card.name, serviceid: card.id })
+                    this.props.goToPage('add', { name: card.name, serviceid: card.id })
                 }}
             >
                 {card.name}
@@ -128,9 +128,7 @@ class Services extends React.Component {
     }
 
 
-    goBack() {
-        window.history.back()
-    }
+
 
     render() {
         let {
@@ -141,7 +139,7 @@ class Services extends React.Component {
             <Panel id={id}>
 
                 <PanelHeader
-                    left={<HeaderButton onClick={this.goBack} >{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}
+                    left={<HeaderButton onClick={this.props.goBack} >{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}
                 >
 
                     <Search
@@ -149,7 +147,7 @@ class Services extends React.Component {
                         style={{ paddingRight: osname === IOS ? 0 : 56 }}
                         value={this.state.search}
                         onChange={this.onChange}
-                        onClose={this.goBack}
+                        onClose={this.props.goBack}
                     />
 
                 </PanelHeader>

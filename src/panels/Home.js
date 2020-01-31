@@ -53,7 +53,6 @@ class Home extends React.Component {
 	render() {
 		let {
 			id,
-			router,
 		} = this.props
 
 
@@ -108,7 +107,7 @@ class Home extends React.Component {
 									expandable
 									removable={false}
 									key={card.id}
-									onClick={() => router.navigate('card', { id: card.id })}
+									onClick={() => this.props.goToPage('card', { id: card.id })}
 									description={card.number}
 
 								>
@@ -124,7 +123,7 @@ class Home extends React.Component {
 							<Div style={{ float: 'right' }}>
 								<Button
 									className='FixedBottomButton'
-									onClick={() => router.navigate('services')}
+									onClick={() => this.props.goToPage('services')}
 								>
 									<Icon24Add />
 								</Button>
@@ -133,7 +132,7 @@ class Home extends React.Component {
 							<Div>
 								<Button
 									size="xl"
-									onClick={() => router.navigate('services')}
+									onClick={() => this.props.goToPage('services')}
 								>
 									Добавить новую карту
 									</Button>

@@ -21,8 +21,7 @@ const Card = props => {
 
 	const [snackbar, setSnackbar] = useState(null);
 
-
-	const card = cards.data.filter((card) => card.id === props.route.params.id)[0]
+	const card = cards.data.filter((card) => card.id === props.args.id)[0]
 
 
 	const closeDialog = () => {
@@ -67,7 +66,7 @@ const Card = props => {
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
-				left={<HeaderButton onClick={() => window.history.back()} >
+				left={<HeaderButton onClick={() => props.goBack()} >
 					{osName === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
 				</HeaderButton>}
 			>

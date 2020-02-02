@@ -43,10 +43,13 @@ const App = (props) => {
 	const goBack = () => {
 
 		if (poputRef.current != null) {
+			console.log("REMOVE POPOUT")
 			setPopout(null)
 		} else if (history.length === 1) {
+			console.log("CLOSE")
 			vkconnect.send("VKWebAppClose");
 		} else if (history.length > 1) {
+			console.log("POP")
 			history.pop()
 			setActivePanel(history[history.length - 1])
 			console.log("setActivePanel"+history[history.length - 1].name)
@@ -76,8 +79,12 @@ const App = (props) => {
 
 
 	useEffect(() => {
-
-		window.addEventListener('popstate', e => { e.preventDefault(); goBack(e) });
+		
+		window.addEventListener('popstate', e => { 
+			console.log("on pop state")
+			e.preventDefault();
+			 goBack(e) 
+		});
 
 		const authorise = async function () {
 

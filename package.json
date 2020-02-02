@@ -3,7 +3,7 @@
   "version": "1.4.22",
   "description": "",
   "main": "index.js",
-  "homepage": "https://nikitazhelonkin.github.io/BonusCards/",
+  
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

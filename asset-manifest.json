@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/BonusCards/static/css/main.592e95c1.chunk.css",
-    "main.js": "/BonusCards/static/js/main.7e105ec0.chunk.js",
-    "main.js.map": "/BonusCards/static/js/main.7e105ec0.chunk.js.map",
+    "main.js": "/BonusCards/static/js/main.982036cd.chunk.js",
+    "main.js.map": "/BonusCards/static/js/main.982036cd.chunk.js.map",
     "runtime-main.js": "/BonusCards/static/js/runtime-main.d64b49b3.js",
     "runtime-main.js.map": "/BonusCards/static/js/runtime-main.d64b49b3.js.map",
     "static/css/2.2cfa1b23.chunk.css": "/BonusCards/static/css/2.2cfa1b23.chunk.css",
     "static/js/2.83b54c7c.chunk.js": "/BonusCards/static/js/2.83b54c7c.chunk.js",
     "static/js/2.83b54c7c.chunk.js.map": "/BonusCards/static/js/2.83b54c7c.chunk.js.map",
     "index.html": "/BonusCards/index.html",
-    "precache-manifest.173c748b402cb063465d247885ab25be.js": "/BonusCards/precache-manifest.173c748b402cb063465d247885ab25be.js",
+    "precache-manifest.c24e13e78c72e2937c1a4964429fb5bb.js": "/BonusCards/precache-manifest.c24e13e78c72e2937c1a4964429fb5bb.js",
     "service-worker.js": "/BonusCards/service-worker.js",
     "static/css/2.2cfa1b23.chunk.css.map": "/BonusCards/static/css/2.2cfa1b23.chunk.css.map",
     "static/css/main.592e95c1.chunk.css.map": "/BonusCards/static/css/main.592e95c1.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.2cfa1b23.chunk.css",
     "static/js/2.83b54c7c.chunk.js",
     "static/css/main.592e95c1.chunk.css",
-    "static/js/main.7e105ec0.chunk.js"
+    "static/js/main.982036cd.chunk.js"
   ]
 }

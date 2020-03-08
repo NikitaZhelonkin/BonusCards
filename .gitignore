@@ -16,5 +16,5 @@ package-lock.json
 
 .vscode
 .idea
-
-/src/firebase.js
+.firebase/
+/src/firebase_config.js

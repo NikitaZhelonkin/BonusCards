@@ -39,7 +39,6 @@ class Home extends React.Component {
 				bgColor: service != null ? service.bgColor : null
 			})
 		});
-
 		return filtered;
 	}
 
@@ -49,12 +48,10 @@ class Home extends React.Component {
 			.then(json => this.setState({ services: json.data.all }));
 	}
 
-
 	render() {
 		let {
 			id,
 		} = this.props
-
 
 		return (
 			<Panel id={id}>
@@ -66,7 +63,6 @@ class Home extends React.Component {
 
 				</FixedLayout>
 
-
 				{
 					this.cards.length === 0 && this.state.search.length === 0 ?
 						<div>
@@ -74,7 +70,7 @@ class Home extends React.Component {
 							<Placeholder
 
 								icon={<Icon56InfoOutline />}>
-									
+
 								Вы не добавили ни одной карточки
 						</Placeholder>
 						</div>
@@ -88,11 +84,9 @@ class Home extends React.Component {
 								По Вашему запросу ничего не найдено
 							</Placeholder>
 						</div>
-
 				}
 
-
-				<List style={{ paddingTop:60, marginBottom: 60 }}>
+				<List style={{ paddingTop: 60, marginBottom: 60 }}>
 					{
 						this.cards.map((card) =>
 							(
@@ -109,7 +103,6 @@ class Home extends React.Component {
 									key={card.id}
 									onClick={() => this.props.goToPage('card', { id: card.id })}
 									description={card.number}
-
 								>
 									{card.name}
 								</Cell>
@@ -138,14 +131,10 @@ class Home extends React.Component {
 									</Button>
 							</Div>
 					}
-
 				</FixedLayout>
-
-
 			</Panel>
 		);
 	}
 }
-
 
 export default connect('cards', Home)

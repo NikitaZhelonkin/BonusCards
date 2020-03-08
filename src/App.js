@@ -11,15 +11,13 @@ import AddCard from './panels/AddCard';
 import Services from './panels/Services';
 import firebase from './firebase'
 
-
 import packageJson from './package.alias.json';
-
 
 const App = (props) => {
 
 	const [activePanel, setActivePanel] = useState({ name: "home", args: {} });
+	// eslint-disable-next-line
 	const [history, setHistory] = useState([{ name: "home", args: {} }]);
-
 
 	const [popout, setPopout] = useState(null);
 	const [modal, setModal] = useState(null);
@@ -40,37 +38,38 @@ const App = (props) => {
 			}, {})
 	};
 
-	const goBack = () => {
+	const showDialog = async (popout) => {
+		setPopout(popout)
+		window.history.pushState("args", "popout")
+	}
 
+	const goBack = async () => {
 		if (poputRef.current != null) {
 			console.log("REMOVE POPOUT")
 			setPopout(null)
 		} else if (history.length === 1) {
 			console.log("CLOSE")
-			vkconnect.send("VKWebAppClose");
+			vkconnect.send("VKWebAppClose", {"status": "success" });
 		} else if (history.length > 1) {
 			console.log("POP")
 			history.pop()
 			setActivePanel(history[history.length - 1])
-			console.log("setActivePanel"+history[history.length - 1].name)
+			console.log("setActivePanel:" + history[history.length - 1].name)
 		}
 	}
 
-	const goHome = () => {
+
+	const goHome = async () => {
+		setPopout(null)
 		history.length = 0;
-		history.push({ name: "home", args: {} })
-		
-		setActivePanel({ name: "home", args: {} });
-		
-		
+		goToPage("home")
 	}
 
-	const goToPage = (page, args) => {
+	const goToPage = async (page, args) => {
 		window.history.pushState(args, page)
 		history.push({ name: page, args: args || {} })
-		
-		setActivePanel({ name: page, args: args || {} });
-	
+		setActivePanel(history[history.length - 1]);
+		console.log("setActivePanel:" + history[history.length - 1].name)
 	};
 
 	useEffect(() => {
@@ -79,11 +78,11 @@ const App = (props) => {
 
 
 	useEffect(() => {
-		
-		window.addEventListener('popstate', e => { 
+
+		window.addEventListener('popstate', e => {
 			console.log("on pop state")
 			e.preventDefault();
-			 goBack(e) 
+			goBack(e)
 		});
 
 		const authorise = async function () {
@@ -98,7 +97,6 @@ const App = (props) => {
 
 			console.log("signInWithCustomToken");
 			await firebase.auth().signInWithCustomToken(json.token);
-
 		}
 
 		const onUser = function (user) {
@@ -112,8 +110,6 @@ const App = (props) => {
 				goToPage('add', { name: hashParams.add_name, number: hashParams.add_number, serviceid: hashParams.add_service_id })
 			}
 		}
-
-
 
 		if (firebase.auth().currentUser != null) {
 			onUser(firebase.auth().currentUser)
@@ -130,7 +126,6 @@ const App = (props) => {
 			}, (error) => {
 				console.log(error)
 			});
-
 		}
 
 		vkconnect.subscribe((e) => {
@@ -145,18 +140,14 @@ const App = (props) => {
 
 			}
 		});
-
 		// eslint-disable-next-line
 	}, []);
 
-
 	return (
-		
 		<ConfigProvider isWebView={true}>
 			<Root activeView={error != null ? "error" : props.cards.loading === true ? "splash" : "main"}>
 				<View id="splash" activePanel="splash">
 					<Panel id="splash">
-
 
 						<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh' }}>
 
@@ -164,11 +155,9 @@ const App = (props) => {
 						</div>
 
 						<FixedLayout vertical='bottom'>
-
 							<Footer className="unselectable">{packageJson.version}</Footer>
 						</FixedLayout>
 					</Panel>
-
 				</View>
 
 				<View id="error" activePanel="error">
@@ -179,26 +168,18 @@ const App = (props) => {
 							Произошла ошибка, попробуйте еще раз
 					</Placeholder>
 					</Panel>
-
 				</View>
 
 				<View id="main" activePanel={activePanel.name} popout={popout} modal={modal} onSwipeBack={goBack}>
 					<Home id='home' goToPage={goToPage} user={user} args={activePanel.args} />
-					<Card id='card' goToPage={goToPage} goBack={goBack} setPopout={setPopout} args={activePanel.args} />
+					<Card id='card' goToPage={goToPage} goBack={goBack} goHome={goHome} showDialog={showDialog} args={activePanel.args} />
 					<Services id='services' goToPage={goToPage} goBack={goBack} args={activePanel.args} />
 					<AddCard id='add' goToPage={goToPage} goBack={goBack} goHome={goHome} args={activePanel.args} user={user} setModal={setModal} />
-
 				</View>
 
-
 			</Root>
-
-
-
 		</ConfigProvider>
-
 	)
-
 }
 
 export default connect('cards', App)

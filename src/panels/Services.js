@@ -10,10 +10,7 @@ import Icon24Back from '@vkontakte/icons/dist/24/back'
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back'
 import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
 
-
 import './Cards.css';
-
-
 
 const osname = platform();
 
@@ -65,7 +62,6 @@ class Services extends React.Component {
         });
     }
 
-
     componentDidMount() {
         fetch(`./data.json`)
             .then(res => res.json())
@@ -76,7 +72,6 @@ class Services extends React.Component {
             );
     }
 
-
     renderHeader() {
         return (
             <div>
@@ -86,7 +81,6 @@ class Services extends React.Component {
             </div>
         )
     }
-
 
     renderRow(index, key, style, parent) {
         var card = this.services[index];
@@ -127,9 +121,6 @@ class Services extends React.Component {
         )
     }
 
-
-
-
     render() {
         let {
             id,
@@ -141,7 +132,6 @@ class Services extends React.Component {
                 <PanelHeader
                     left={<HeaderButton onClick={this.props.goBack} >{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}
                 >
-
                     <Search
                         theme="header"
                         style={{ paddingRight: osname === IOS ? 0 : 56 }}
@@ -156,8 +146,6 @@ class Services extends React.Component {
                     this.state.services.length === 0 &&
                     <Spinner size="medium" style={{ marginTop: 20 }} />
                 }
-
-
 
                 <AutoSizer>
                     {({ height, width }) => (
@@ -174,18 +162,12 @@ class Services extends React.Component {
                             overscanRowCount={3} >
 
                         </Virtualized>
-
-
                     )}
-
                 </AutoSizer>
-
-
             </Panel>
         );
     }
 }
-
 
 Services.propTypes = {
     id: PropTypes.string.isRequired,

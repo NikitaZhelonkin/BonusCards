@@ -17,7 +17,6 @@ import StoreContext from 'storeon/react/context'
 // Подробнее про сервис воркеры можно почитать тут — https://vk.cc/8MHpmT
 //registerServiceWorker();
 
-
 connect.subscribe((e) => {
     console.log(e.detail.type);
     switch (e.detail.type) {
@@ -28,22 +27,19 @@ connect.subscribe((e) => {
             break;
         default:
             console.log(e.detail.type);
+            console.log(e.detail.data);
     }
- });
-
+});
 
 // Init VK  Mini App
 connect.send('VKWebAppInit');
 
 const store = createStore([cards, prefs, persistState(['prefs']),])
 
-
-
 const search = window.location.search
 const hash = window.location.hash
 
-
-ReactDOM.render(<StoreContext.Provider value={store}><App  search={search} hash={hash} /></StoreContext.Provider>, document.getElementById('root'));
+ReactDOM.render(<StoreContext.Provider value={store}><App search={search} hash={hash} /></StoreContext.Provider>, document.getElementById('root'));
 // ReactDOM.render((
 //         <StoreContext.Provider value={store}>
 //             <App  search={search} hash={hash} />

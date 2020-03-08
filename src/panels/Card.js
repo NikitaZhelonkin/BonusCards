@@ -23,13 +23,12 @@ const Card = props => {
 
 	const card = cards.data.filter((card) => card.id === props.args.id)[0]
 
-
 	const closeDialog = () => {
-		props.setPopout(null)
+		props.goBack()
 	}
 
 	const showDeleteDialog = () => {
-		props.setPopout(<Alert
+		props.showDialog(<Alert
 			actionsLayout="vertical"
 			onClose={closeDialog}
 			actions={[{
@@ -37,8 +36,7 @@ const Card = props => {
 				false: true,
 				style: 'destructive',
 				action: () => {
-					closeDialog()
-					window.history.back()
+					props.goHome()
 					dispatch('cards/api/delete', card)
 				},
 			}, {
@@ -76,7 +74,6 @@ const Card = props => {
 
 			</PanelHeader>
 
-
 			{
 				typeof card !== 'undefined' &&
 				<div>
@@ -89,7 +86,6 @@ const Card = props => {
 						</div>
 
 					</Group>
-
 
 					<Footer className="unselectable">Предъявите этот код на кассе магазина</Footer>
 
@@ -105,7 +101,6 @@ const Card = props => {
 					icon={<Icon56InfoOutline />}>
 					Такой карточки нет, либо она была удалена
 				</Placeholder>
-
 			}
 			{
 				snackbar && <Snackbar
@@ -115,12 +110,8 @@ const Card = props => {
 					Номер скопирован в буфер обмена
 	  			</Snackbar>
 			}
-
-
 		</Panel>
 	);
 }
-
-
 
 export default Card;

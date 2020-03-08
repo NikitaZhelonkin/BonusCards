@@ -1,22 +1,18 @@
 import React from 'react';
 
-
 import { Panel, PanelHeader, FormLayout, Input, Button, Div, platform, IOS, HeaderButton, Cell, Avatar, Tooltip, ModalCard, ModalRoot } from '@vkontakte/vkui'
-
-
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon28Money from '@vkontakte/icons/dist/28/money_transfer'
+import vkconnect from '@vkontakte/vk-connect';
 
 import connect from 'storeon/react/connect'
-import vkconnect from '@vkontakte/vk-connect';
 
 import { ReactComponent as IconBarcode } from '../img/barcode.svg';
 import imgBarcode from '../img/barcode_how.png';
 
 import './Cards.css';
-
 
 class AddCard extends React.Component {
 
@@ -32,7 +28,6 @@ class AddCard extends React.Component {
             error: !this.isValidCard(number),
             service: null
         };
-
     }
 
     componentDidMount() {
@@ -94,22 +89,16 @@ class AddCard extends React.Component {
         } else {
             this.scan(prop);
         }
-
     }
-
 
     scan = (prop) => {
         vkconnect
             .sendPromise('VKWebAppOpenQR')
             .then(this.onDone)
             .catch(this.onError);
-
     }
 
-
-
     onAddClick = () => {
-
         let {
             name,
             number
@@ -124,7 +113,6 @@ class AddCard extends React.Component {
         } else {
             this.setState({ error: true })
         }
-
     }
 
     onChangeText = (e) => {
@@ -150,12 +138,9 @@ class AddCard extends React.Component {
                     left={<HeaderButton onClick={() => this.props.goBack()} >
                         {osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
                     </HeaderButton>}
-
                 >
                     Новая карта
-
                 </PanelHeader>
-
 
                 <Cell
                     style={{ marginTop: 10 }}
@@ -169,10 +154,7 @@ class AddCard extends React.Component {
                     {this.state.name}
                 </Cell>
 
-
                 <FormLayout>
-
-
                     <div >
                         <Tooltip text="Карту можно отсканировать"
                             isShown={this.state.tooltip}
@@ -192,13 +174,8 @@ class AddCard extends React.Component {
                         </Tooltip>
 
                         <IconBarcode onClick={this.onScanClick} className="Scan" width={30} height={30} fill="var(--control_foreground)" />
-
-
                     </div>
-
                 </FormLayout>
-
-
 
                 <Div>
                     <Button
@@ -212,8 +189,6 @@ class AddCard extends React.Component {
             </Panel>
         );
     }
-
-
 }
 
 export default connect('cards', "prefs", AddCard)

@@ -12,13 +12,11 @@ export default store => {
         return { cards: cards }
     })
 
-
     store.on('cards/listen', ({ cards }, { uid }) => {
         const db = firebase.firestore();
         db.collection('cards').where("uid", "==", uid)
             .onSnapshot({ includeMetadataChanges: true }, function (snapshot) {
                 console.log(snapshot);
-
                 store.dispatch('cards/api/get', uid)
             })
     })
@@ -37,13 +35,11 @@ export default store => {
                 }
             })
             store.dispatch('cards/save', { cardsToSave })
-
         }).catch((error)=>{
             console.log("error get cards from firebase:"+error);
         });
 
     })
-
 
     store.on('cards/api/add', ({ cards }, card) => {
         const db = firebase.firestore();
@@ -56,7 +52,6 @@ export default store => {
             service_id: card.serviceId
         })
     })
-
 
     store.on('cards/api/delete', ({ cards }, card) => {
         const db = firebase.firestore();
@@ -72,5 +67,4 @@ export default store => {
         }
         return result;
     }
-
 }
